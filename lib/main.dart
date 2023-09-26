@@ -4,10 +4,15 @@ import 'package:craftgirlsss/src/mainpage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter/scheduler.dart';
+
+import 'src/views/splashscreen/splashscreen.dart';
 
 Future<void> main() async {
   HttpOverrides.global = CertificateNetwork();
   WidgetsFlutterBinding.ensureInitialized();
+  final isLight =
+      SchedulerBinding.instance.window.platformBrightness == Brightness.light;
   runApp(const MyApp());
   await Supabase.initialize(
     url: 'https://zhfjjcaxzhmrexhkzest.supabase.co',
@@ -18,18 +23,18 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       transitionDuration: const Duration(milliseconds: 500),
       defaultTransition: Transition.rightToLeft,
-      title: 'Flutter Demo',
+      title: 'Craftgirlsss',
+      darkTheme: ThemeData.dark().copyWith(primaryColor: Colors.red),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MainPage(),
+      home: const SplashScreen(),
     );
   }
 }
