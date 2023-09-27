@@ -1,14 +1,20 @@
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:flutter/material.dart';
 
-TextField kTextField({
-  String? label = "Email",
-  TextEditingController? controller,
-}) {
-  return TextField(
+TextFormField kTextField(
+    {String? label = "Email",
+    TextEditingController? controller,
+    TextInputType? textInputType = TextInputType.name}) {
+  return TextFormField(
     controller: controller,
     style: title(fontSize: 20, color: Colors.black),
-    keyboardType: TextInputType.emailAddress,
+    keyboardType: textInputType,
+    validator: (value) {
+      if (value!.isEmpty) {
+        return "Mohon diisi";
+      }
+      return null;
+    },
     decoration: InputDecoration(
       contentPadding: const EdgeInsets.symmetric(horizontal: 20),
       filled: true, //<-- SEE HERE
@@ -23,6 +29,20 @@ TextField kTextField({
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(25.0),
+        borderSide: const BorderSide(
+          color: Colors.black,
+          width: 1,
+        ),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(35),
+        borderSide: const BorderSide(
+          color: Colors.black,
+          width: 1,
+        ),
+      ),
+      disabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(35),
         borderSide: const BorderSide(
           color: Colors.black,
           width: 1,

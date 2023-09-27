@@ -1,5 +1,7 @@
+import 'package:craftgirlsss/src/mainpage.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
+import 'package:craftgirlsss/src/view-models/popup/alertgagal/alertgagal.dart';
 import 'package:craftgirlsss/src/view-models/textfields/emailtextinput.dart';
 import 'package:craftgirlsss/src/views/forgotpassword/forgotpassword.dart';
 import 'package:craftgirlsss/src/views/signup/signup.dart';
@@ -100,8 +102,12 @@ class _LoginPageState extends State<LoginPage> {
             child: kButtons(context,
                 backgroundColor: Colors.green.shade500,
                 fonSize: 19,
-                label: "Masuk",
-                onPressed: () {}),
+                label: "Masuk", onPressed: () {
+              Get.to(() => const MainPage());
+              // kAlertGagal(context,
+              //     title:
+              //         "Akun sudah terdaftar, mohon kembali ke halaman login.");
+            }),
           ),
           const SizedBox(height: 15),
           Row(

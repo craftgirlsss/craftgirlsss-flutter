@@ -1,18 +1,15 @@
 import 'dart:io';
 import 'package:craftgirlsss/src/helpers/certificates/certificate.dart';
-import 'package:craftgirlsss/src/mainpage.dart';
+import 'package:craftgirlsss/src/views/splashscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter/scheduler.dart';
 
-import 'src/views/splashscreen/splashscreen.dart';
-
 Future<void> main() async {
   HttpOverrides.global = CertificateNetwork();
   WidgetsFlutterBinding.ensureInitialized();
-  final isLight =
-      SchedulerBinding.instance.window.platformBrightness == Brightness.light;
+  SchedulerBinding.instance.window.platformBrightness == Brightness.light;
   runApp(const MyApp());
   await Supabase.initialize(
     url: 'https://zhfjjcaxzhmrexhkzest.supabase.co',

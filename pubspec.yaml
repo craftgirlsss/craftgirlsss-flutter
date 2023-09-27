@@ -22,6 +22,9 @@ dependencies:
   introduction_screen: any
   cupertino_icons: ^1.0.2
   bottom_navy_bar: ^6.0.0
+  animated_text_kit: ^4.2.2
+  jumping_dot: ^0.0.6
+  video_player: ^2.7.2
 
 dev_dependencies:
   flutter_test:
