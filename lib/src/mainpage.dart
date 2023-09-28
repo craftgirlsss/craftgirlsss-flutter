@@ -3,6 +3,8 @@ import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/views/profile/profile.dart';
 import 'package:flutter/material.dart';
 
+import 'views/home/home.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -14,9 +16,7 @@ class _MainPageState extends State<MainPage> {
   int currentIndex = 0;
 
   List listOfColors = [
-    Container(
-      color: Colors.blueAccent,
-    ),
+    const HomePage(),
     Container(
       color: Colors.redAccent,
     ),

@@ -12,6 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class LoginCrontroller extends GetxController {
   var isLoadingSignUp = false.obs;
   var isLoadingSignIn = false.obs;
+  var isLoadingForgotPassword = false.obs;
   var id = vars.client.auth.currentUser?.id;
 
   fetchLogin(context, {String? email, String? password}) async {
@@ -68,5 +69,15 @@ class LoginCrontroller extends GetxController {
       kAlertGagal(context, title: e.toString());
     }
     isLoadingSignUp.value = false;
+  }
+
+  fetchForgotPassword(context, {String? email}) async {
+    isLoadingForgotPassword.value = true;
+    try {
+      await vars.client.auth.resetPasswordForEmail(email!);
+    } catch (e) {
+      kAlertGagal(context, title: e.toString());
+    }
+    isLoadingForgotPassword.value = false;
   }
 }
