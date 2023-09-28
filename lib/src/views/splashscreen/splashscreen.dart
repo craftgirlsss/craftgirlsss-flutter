@@ -23,9 +23,19 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (wasIntroduction != null && wasIntroduction == true) {
       if (wasLogin != null && wasLogin == true) {
-        Get.to(() => const MainPage());
+        Future.delayed(
+            Duration.zero,
+            () => Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const MainPage()),
+                (route) => false));
       } else {
-        Get.to(() => const LoginPage());
+        Future.delayed(
+            Duration.zero,
+            () => Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+                (route) => false));
       }
     } else {
       Get.to(() => const IntroductionScreen());

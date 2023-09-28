@@ -5,10 +5,11 @@ TextStyle title(
     Color? color = Colors.black,
     FontWeight? fontWeight = FontWeight.bold}) {
   return TextStyle(
-      fontFamily: "Caveat",
-      fontSize: fontSize,
-      color: color,
-      fontWeight: fontWeight);
+    fontFamily: "Caveat",
+    fontSize: fontSize,
+    color: color,
+    fontWeight: fontWeight,
+  );
 }
 
 TextStyle titleInter(

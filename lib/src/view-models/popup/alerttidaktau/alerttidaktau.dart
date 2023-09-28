@@ -26,11 +26,6 @@ Future kAlertTidakTau(context,
       ),
       titlePadding: const EdgeInsets.all(7),
       actions: [
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                shape: const StadiumBorder(), elevation: 0),
-            onPressed: onOK,
-            child: const Text("OK")),
         isNeedCancelButton == true
             ? ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -43,6 +38,11 @@ Future kAlertTidakTau(context,
                 color: Colors.transparent,
                 height: 0,
                 width: 0,
-              )
+              ),
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                shape: const StadiumBorder(), elevation: 0),
+            onPressed: onOK,
+            child: const Text("OK")),
       ]);
 }

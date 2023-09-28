@@ -15,8 +15,9 @@ Widget kButtons(
     child: ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+        elevation: 0,
         backgroundColor: backgroundColor,
-        shape: const StadiumBorder(),
+        shape: const StadiumBorder(side: BorderSide(color: Colors.black54)),
       ),
       child: Text(
         label!,
