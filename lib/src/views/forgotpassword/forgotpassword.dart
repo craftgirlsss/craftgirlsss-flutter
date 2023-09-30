@@ -24,7 +24,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         backgroundColor: const Color(0xfffffcb9),
-        appBar: kAppBar(context, isTitle: false),
+        appBar: kAppBar(
+          context,
+          isTitle: false,
+          autoImplyLeading: true,
+        ),
         body: Form(
           key: formKey,
           child: ListView(

@@ -1,6 +1,5 @@
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/backgrounds/backgroundimage/backgroundimage.dart';
-import 'package:craftgirlsss/src/view-models/containers/containerdiscount/containerdiscount.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/views/profile/profile.dart';
 import 'package:flutter/material.dart';

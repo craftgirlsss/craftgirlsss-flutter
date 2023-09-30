@@ -19,7 +19,7 @@ class LoginCrontroller extends GetxController {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     isLoadingSignIn.value = true;
     List checkEmail =
-        await vars.client.from('user').select().eq('email', email);
+        await vars.client.from('user').select('*').eq('email', email);
     if (checkEmail.isNotEmpty) {
       try {
         await vars.client.auth
@@ -67,6 +67,7 @@ class LoginCrontroller extends GetxController {
       }
     } catch (e) {
       kAlertGagal(context, title: e.toString());
+      isLoadingSignUp.value = false;
     }
     isLoadingSignUp.value = false;
   }

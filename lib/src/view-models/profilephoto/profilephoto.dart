@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 Widget photo(context,
     {String? nama,
-    Function()? onPressed,
+    Function()? onPressedButtonChange,
     String? urlPhoto,
     String? email,
     bool? button}) {
@@ -15,7 +15,7 @@ Widget photo(context,
       child: Column(
         children: [
           profilePhotoChange(context,
-              onPressed: onPressed,
+              onPressed: onPressedButtonChange,
               button: button,
               urlProfile:
                   urlPhoto ?? 'https://googleflutter.com/sample_image.jpg'),
