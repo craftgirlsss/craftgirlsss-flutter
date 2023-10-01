@@ -1,9 +1,11 @@
-import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
-import 'package:craftgirlsss/src/view-models/backgrounds/backgroundimage/backgroundimage.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:craftgirlsss/src/view-models/appbars/appbarhome.dart';
+import 'package:craftgirlsss/src/view-models/containers/cardproduct/cartproduct.dart';
+import 'package:craftgirlsss/src/view-models/containers/categoryproduct/categoryproduct.dart';
+import 'package:craftgirlsss/src/view-models/containers/flashsale/flashsale.dart';
+import 'package:craftgirlsss/src/view-models/containers/footer/footer.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
-import 'package:craftgirlsss/src/views/profile/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,39 +18,74 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: kAppBar(context, onTapProfile: () {
-        Get.to(() => const ProfileTab());
-      },
-          withLeadingData: false,
-          withLeadingImage: true,
-          isTitle: true,
-          titleText: "Beranda",
-          autoImplyLeading: false),
-      body: Stack(
+      appBar: kAppBarHome(),
+      body: ListView(
         children: [
-          kBackgroundImage(context, urlAsset: 'assets/images/bg-imagine.jpg'),
-          ListView(
-            children: [
-              Center(
-                child: Text(
-                  "Koleksi Baru",
-                  style: title(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+          CarouselSlider(
+              items: listItemStaredImages.map((e) {
+                return GestureDetector(
+                  onTap: () {},
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        e,
+                        width: 470,
+                        height: 200,
+                        fit: BoxFit.cover,
+                      )),
+                );
+              }).toList(),
+              options: CarouselOptions(
+                height: 150,
+                enlargeCenterPage: true,
+                reverse: true,
+                autoPlay: true,
+                aspectRatio: 19 / 6,
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enableInfiniteScroll: false,
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                viewportFraction: 0.7,
+              )),
+          const SizedBox(height: 20),
+          Text(
+            '  Kategori',
+            style: title(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          categoryProduct(context),
+          Text(
+            '  Koleksi Terbaik',
+            style: title(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          Padding(
+            padding: const EdgeInsets.only(left: 7),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxHeight: 210),
+              child: ListView.separated(
+                itemCount: 5,
+                physics: const ScrollPhysics(),
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return kCardProduct(onTap: () {}, productName: "Dress Viral");
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return const SizedBox(width: 10);
+                },
               ),
-              Center(
-                child: Text(
-                  "Dengan diskon 15%",
-                  style: title(fontWeight: FontWeight.bold, fontSize: 24),
-                ),
-              ),
-              // containerDiscount(context, urlImage: '')
-            ],
-          )
+            ),
+          ),
+          const SizedBox(height: 10),
+          const FlashSale(),
+          footer(context)
         ],
       ),
     );
   }
+
+  var listItemStaredImages = [
+    'assets/images/banner-product-discount.jpg',
+    'assets/images/banner-product-discount.jpg',
+  ];
 }
