@@ -6,8 +6,6 @@ Widget cardFlashsale(
   return GestureDetector(
     onTap: onTap,
     child: Container(
-      padding: const EdgeInsets.all(1),
-      width: 140,
       height: 180,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -15,11 +13,13 @@ Widget cardFlashsale(
       ),
       child: Stack(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: const Image(
-              image: AssetImage('assets/images/example.jpg'),
-              fit: BoxFit.cover,
+          Center(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: const Image(
+                image: AssetImage('assets/images/example.jpg'),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Positioned(

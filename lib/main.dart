@@ -2,16 +2,11 @@ import 'dart:io';
 import 'package:craftgirlsss/src/helpers/certificates/certificate.dart';
 import 'package:craftgirlsss/src/views/splashscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter/scheduler.dart';
 
 Future<void> main() async {
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.blue, // navigation bar color
-    statusBarColor: Colors.white, // status bar color
-  ));
   HttpOverrides.global = CertificateNetwork();
   WidgetsFlutterBinding.ensureInitialized();
   SchedulerBinding.instance.window.platformBrightness == Brightness.light;

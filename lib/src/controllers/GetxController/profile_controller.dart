@@ -46,7 +46,10 @@ class ProfileController extends GetxController {
       var result = await vars.client.storage.from('image_profile').upload(
           'public/$nameFile', avatarFile,
           fileOptions: const FileOptions(cacheControl: '3600', upsert: false));
-      String? fullURL = urlPhotoSupabase.value + result;
+      var resultPulicURL =
+          vars.client.storage.from('avatars').getPublicUrl('public/$nameFile');
+      print(resultPulicURL);
+      String? fullURL = urlPhotoSupabase.value + resultPulicURL;
       print(result);
       var resultWrite = await vars.client
           .from('cr_profiles')

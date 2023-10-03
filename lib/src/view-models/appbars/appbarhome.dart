@@ -1,5 +1,7 @@
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
+import 'package:craftgirlsss/src/views/favorite/favorite.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 AppBar kAppBarHome() {
   return AppBar(
@@ -26,7 +28,9 @@ AppBar kAppBarHome() {
           icon: Image.asset('assets/icons/search.png')),
       IconButton(
           tooltip: 'Favorit',
-          onPressed: () {},
+          onPressed: () {
+            Get.to(() => const FavoritePage());
+          },
           icon: Image.asset('assets/icons/favorit.png')),
       IconButton(
           tooltip: 'Cart',

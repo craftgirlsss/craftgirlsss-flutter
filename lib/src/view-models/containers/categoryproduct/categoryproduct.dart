@@ -5,7 +5,7 @@ Container categoryProduct(context) {
     padding: const EdgeInsets.only(left: 10, right: 10),
     color: Colors.transparent,
     width: MediaQuery.of(context).size.width,
-    height: MediaQuery.of(context).size.height / 8,
+    height: 65,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

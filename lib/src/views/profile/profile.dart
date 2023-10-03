@@ -49,7 +49,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       ? photo(context,
                           button: true,
                           urlPhoto:
-                              "https://zhfjjcaxzhmrexhkzest.supabase.co/storage/v1/object/${profileC.profileModels[0].urlProfile}",
+                              "https://zhfjjcaxzhmrexhkzest.supabase.co/storage/v1/object/public/${profileC.profileModels[0].urlProfile}",
                           email: profileC.profileModels[0].email,
                           nama: profileC.profileModels[0].name,
                           onPressedButtonChange: () async {

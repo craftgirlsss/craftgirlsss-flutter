@@ -9,8 +9,6 @@ Widget listTileProfile(
   return Padding(
     padding: const EdgeInsets.all(5),
     child: ListTile(
-      minVerticalPadding: 10,
-      style: ListTileStyle.drawer,
       tileColor: Colors.white,
       selectedTileColor: Colors.grey.shade400,
       onTap: onPressed,

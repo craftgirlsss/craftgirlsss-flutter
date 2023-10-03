@@ -19,6 +19,63 @@ class _FlashSaleState extends State<FlashSale> {
   bool countDown = true;
   bool countDown1 = true;
 
+  Future<bool> _onWillPop() async {
+    final isRunning = timer == null ? false : timer!.isActive;
+    if (isRunning) {
+      timer?.cancel();
+    }
+    Navigator.of(context, rootNavigator: true).pop(context);
+    return true;
+  }
+
+  void reset() {
+    if (countDown) {
+      setState(() => duration = countdownDuration);
+    } else {
+      setState(() => duration = const Duration());
+    }
+  }
+
+  void reset1() {
+    if (countDown) {
+      setState(() => duration1 = countdownDuration1);
+    } else {
+      setState(() => duration1 = const Duration());
+    }
+  }
+
+  void startTimer() {
+    timer = Timer.periodic(const Duration(seconds: 1), (_) => addTime());
+  }
+
+  void startTimer1() {
+    timer = Timer.periodic(const Duration(seconds: 1), (_) => addTime1());
+  }
+
+  void addTime() {
+    const addSeconds = 1;
+    setState(() {
+      final seconds = duration.inSeconds + addSeconds;
+      if (seconds < 0) {
+        timer?.cancel();
+      } else {
+        duration = Duration(seconds: seconds);
+      }
+    });
+  }
+
+  void addTime1() {
+    const addSeconds = 1;
+    setState(() {
+      final seconds = duration1.inSeconds - addSeconds;
+      if (seconds < 0) {
+        timer1?.cancel();
+      } else {
+        duration1 = Duration(seconds: seconds);
+      }
+    });
+  }
+
   @override
   void initState() {
     var hours;
@@ -41,6 +98,13 @@ class _FlashSaleState extends State<FlashSale> {
     startTimer1();
     reset1();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    timer1?.cancel();
+    timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -99,63 +163,6 @@ class _FlashSaleState extends State<FlashSale> {
         ),
       ),
     );
-  }
-
-  Future<bool> _onWillPop() async {
-    final isRunning = timer == null ? false : timer!.isActive;
-    if (isRunning) {
-      timer!.cancel();
-    }
-    Navigator.of(context, rootNavigator: true).pop(context);
-    return true;
-  }
-
-  void reset() {
-    if (countDown) {
-      setState(() => duration = countdownDuration);
-    } else {
-      setState(() => duration = const Duration());
-    }
-  }
-
-  void reset1() {
-    if (countDown) {
-      setState(() => duration1 = countdownDuration1);
-    } else {
-      setState(() => duration1 = const Duration());
-    }
-  }
-
-  void startTimer() {
-    timer = Timer.periodic(const Duration(seconds: 1), (_) => addTime());
-  }
-
-  void startTimer1() {
-    timer = Timer.periodic(const Duration(seconds: 1), (_) => addTime1());
-  }
-
-  void addTime() {
-    const addSeconds = 1;
-    setState(() {
-      final seconds = duration.inSeconds + addSeconds;
-      if (seconds < 0) {
-        timer?.cancel();
-      } else {
-        duration = Duration(seconds: seconds);
-      }
-    });
-  }
-
-  void addTime1() {
-    const addSeconds = 1;
-    setState(() {
-      final seconds = duration1.inSeconds - addSeconds;
-      if (seconds < 0) {
-        timer1?.cancel();
-      } else {
-        duration1 = Duration(seconds: seconds);
-      }
-    });
   }
 
   Widget buildTime() {

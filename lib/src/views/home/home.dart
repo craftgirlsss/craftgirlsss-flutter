@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbarhome.dart';
+import 'package:craftgirlsss/src/view-models/cards/cardproduct.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardproduct/cartproduct.dart';
 import 'package:craftgirlsss/src/view-models/containers/categoryproduct/categoryproduct.dart';
 import 'package:craftgirlsss/src/view-models/containers/flashsale/flashsale.dart';
@@ -18,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfffffcb9),
       appBar: kAppBarHome(),
       body: ListView(
         children: [
@@ -77,7 +79,33 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const SizedBox(height: 10),
-          const FlashSale(),
+          // const FlashSale(),
+          const SizedBox(height: 8),
+          Text(
+            '  Rekomendasi',
+            style: title(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GridView.builder(
+                shrinkWrap: true,
+                physics: const ScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 250,
+                    childAspectRatio: 1 / 1.4,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8),
+                itemCount: 11,
+                itemBuilder: (BuildContext ctx, index) {
+                  return cardProductGridView(
+                      needFavoritIcon: true,
+                      urlImage: 'assets/images/example.jpg',
+                      onPressedFavorit: () {},
+                      productName: "Daster",
+                      productPrice: 50000);
+                }),
+          ),
           footer(context)
         ],
       ),
