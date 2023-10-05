@@ -78,21 +78,16 @@ class _FlashSaleState extends State<FlashSale> {
 
   @override
   void initState() {
-    var hours;
-    var mints;
-    var secs;
-    hours = int.parse("00");
-    mints = int.parse("00");
-    secs = int.parse("00");
+    var hours = int.parse("00");
+    var mints = int.parse("00");
+    var secs = int.parse("00");
     countdownDuration = Duration(hours: hours, minutes: mints, seconds: secs);
     startTimer();
     reset();
-    var hours1;
-    var mints1;
-    var secs1;
-    hours1 = int.parse("10");
-    mints1 = int.parse("00");
-    secs1 = int.parse("00");
+
+    var hours1 = int.parse("10");
+    var mints1 = int.parse("00");
+    var secs1 = int.parse("00");
     countdownDuration1 =
         Duration(hours: hours1, minutes: mints1, seconds: secs1);
     startTimer1();

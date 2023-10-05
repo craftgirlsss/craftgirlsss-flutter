@@ -48,7 +48,7 @@ class ProfileController extends GetxController {
           fileOptions: const FileOptions(cacheControl: '3600', upsert: false));
       var resultPulicURL =
           vars.client.storage.from('avatars').getPublicUrl('public/$nameFile');
-      print(resultPulicURL);
+      // print(resultPulicURL);
       String? fullURL = urlPhotoSupabase.value + resultPulicURL;
       print(result);
       var resultWrite = await vars.client

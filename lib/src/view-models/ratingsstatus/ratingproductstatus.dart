@@ -85,6 +85,34 @@ Container ratingRow(context,
   );
 }
 
+ListTile kTileUlasan(context, {double? rating, Function()? onPressed}) {
+  return ListTile(
+    tileColor: Colors.white,
+    onTap: onPressed,
+    title: Text(
+      "Penilaian produk",
+      style: titleInter(
+          color: Colors.black, fontSize: 13, fontWeight: FontWeight.bold),
+    ),
+    subtitle: Row(
+      children: [
+        kRratingStar(rating: rating),
+        const SizedBox(width: 5),
+        Text(
+          rating != null ? rating.toString() : 0.toString(),
+          style: titleInter(color: Colors.black, fontSize: 12),
+        ),
+      ],
+    ),
+    trailing: TextButton(
+        onPressed: onPressed,
+        child: Text(
+          'Lihat ulasan',
+          style: titleInter(color: Colors.blue, fontSize: 12),
+        )),
+  );
+}
+
 Widget kRratingStar({double? rating}) {
   return RatingBarIndicator(
     rating: rating ?? 0,

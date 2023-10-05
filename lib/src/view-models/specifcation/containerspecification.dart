@@ -16,11 +16,11 @@ Widget kProductSpecification(context, {Function()? onTap}) {
             style: titleInter(
                 color: Colors.black87,
                 fontSize: 15,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.bold),
           ),
-          const Icon(
-            Icons.keyboard_arrow_down_rounded,
-            color: Colors.black87,
+          TextButton(
+            onPressed: onTap,
+            child: const Text('Lihat'),
           )
         ],
       ),

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 showProductSpecification(context) {
   return showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.white,
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(5)),
       ),
       builder: (context) {
         return FractionallySizedBox(

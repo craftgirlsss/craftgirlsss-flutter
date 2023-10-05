@@ -1,12 +1,13 @@
-import 'dart:ui';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:craftgirlsss/src/helpers/formatcurrency/formatcurrency.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
+import 'package:craftgirlsss/src/view-models/containers/descriptions/descriptions.dart';
+import 'package:craftgirlsss/src/view-models/containers/ongkirdetail/ongkoskirim.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/view-models/modalbottom/modalbottomsheet.dart';
 import 'package:craftgirlsss/src/view-models/ratingsstatus/ratingproductstatus.dart';
+import 'package:craftgirlsss/src/view-models/reviews/productreview.dart';
 import 'package:craftgirlsss/src/view-models/specifcation/containerspecification.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +24,25 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfffffcb9),
+      // backgroundColor: const Color(0xfffffcb9),
       appBar: kAppBar(context,
-          autoImplyLeading: true, isTitle: true, titleText: "Detail Produk"),
+          withLeadingData: true,
+          listData: [
+            IconButton(
+                onPressed: () {},
+                tooltip: 'Chat admin',
+                icon: Image.asset(
+                  'assets/icons/chat.png',
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Center(child: Text('Error')),
+                  scale: 0.7,
+                ))
+          ],
+          autoImplyLeading: true,
+          isTitle: true,
+          titleText: "Detail Produk"),
       body: ListView(
+        physics: const ScrollPhysics(),
         children: [
           Stack(
             children: [
@@ -103,11 +119,28 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               onTapShare: () {},
               rating: 4.5,
               soldCount: 2356),
-          const SizedBox(height: 3),
+          const SizedBox(height: 5),
           kProductSpecification(context, onTap: () {
             showProductSpecification(context);
           }),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
+          kOngkir(
+              onTap: () {}, endDate: "2", startDate: '1', month: 'September'),
+          const SizedBox(height: 5),
+          kDescription(context,
+              description:
+                  "fakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkb"),
+          const SizedBox(height: 5),
+          kTileUlasan(context, onPressed: () {}, rating: 4.5),
+          productReview(
+            context,
+            commentatorName: "Regard",
+            imageURLDescription: ['https://googleflutter.com/sample_image.jpg'],
+            reasons:
+                'dhkjhdfshfuiwehfesihfjcksfhewhfnckcdshiuerfdghjagdkasbdafkajsbdkasbdbaskjfbkasbdkaguadkjcakbdiwedjkbcksb',
+            starCount: 3,
+          ),
+          const SizedBox(height: 70)
         ],
       ),
       bottomSheet: Container(
@@ -124,9 +157,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             Flexible(
                 child: SizedBox(
               height: 40,
-              width: 100,
+              width: 140,
               child: kButtons(context,
-                  label: "Checkout",
+                  label: "Beli sekarang",
                   backgroundColor: Colors.green.shade400,
                   onPressed: () {}),
             ))
