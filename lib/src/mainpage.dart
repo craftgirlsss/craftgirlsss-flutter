@@ -31,6 +31,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: listOfColors[currentIndex],
       bottomNavigationBar: BottomNavyBar(
+        backgroundColor: const Color(0xfffffcb9),
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         selectedIndex: currentIndex,
         onItemSelected: (index) {
@@ -45,7 +46,7 @@ class _MainPageState extends State<MainPage> {
                 : Image.asset('assets/icons/home-inactive.png'),
             title: Text(
               ' Beranda',
-              style: title(fontSize: 18, color: Colors.green),
+              style: title(fontSize: 18, color: Colors.black),
             ),
           ),
           BottomNavyBarItem(
@@ -54,7 +55,7 @@ class _MainPageState extends State<MainPage> {
                 : Image.asset('assets/icons/explore-inactive.png'),
             title: Text(
               ' Jelajahi',
-              style: title(fontSize: 18, color: Colors.green),
+              style: title(fontSize: 18, color: Colors.black),
             ),
           ),
           BottomNavyBarItem(
@@ -63,7 +64,7 @@ class _MainPageState extends State<MainPage> {
                 : Image.asset('assets/icons/history-inactive.png'),
             title: Text(
               ' Riwayat',
-              style: title(fontSize: 18, color: Colors.green),
+              style: title(fontSize: 18, color: Colors.black),
             ),
           ),
           BottomNavyBarItem(
@@ -72,7 +73,7 @@ class _MainPageState extends State<MainPage> {
                 : Image.asset('assets/icons/person-inactive.png'),
             title: Text(
               ' Profil',
-              style: title(fontSize: 18, color: Colors.green),
+              style: title(fontSize: 18, color: Colors.black),
             ),
           ),
         ],

@@ -1,6 +1,8 @@
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/cards/cardproduct.dart';
+import 'package:craftgirlsss/src/views/products/productdetail/productdetailcheckout.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({super.key});
@@ -26,7 +28,9 @@ class _FavoritePageState extends State<FavoritePage> {
             mainAxisSpacing: 8),
         itemBuilder: (context, index) => InkWell(
           onLongPress: () {},
-          onTap: () {},
+          onTap: () {
+            Get.to(() => const ProductDetailPage());
+          },
           child: cardProductGridView(
               needFavoritIcon: false,
               urlImage: 'assets/images/example.jpg',

@@ -18,7 +18,6 @@ import 'package:craftgirlsss/src/helpers/globalvariable/variablehelper.dart'
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:supabase/supabase.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class ProfileTab extends StatefulWidget {

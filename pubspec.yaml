@@ -1,12 +1,12 @@
 name: craftgirlsss
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: ">=2.19.6 <3.0.0"
 
 dependencies:
   flutter:
@@ -33,7 +33,10 @@ dependencies:
   http: ^0.13.6
   animations: ^2.0.7
   url_launcher: any
-  # flutter_launcher_icons: ^0.13.1
+  flutter_launcher_icons: ^0.13.1
+  dots_indicator: any
+  five_pointed_star: ^1.0.3
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -42,7 +45,6 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -54,7 +56,7 @@ flutter:
     - family: Caveat
       fonts:
         - asset: assets/fonts/Caveat.ttf
-  #         style: italic
+    #         style: italic
     - family: Inter
       fonts:
         - asset: assets/fonts/inter.ttf
