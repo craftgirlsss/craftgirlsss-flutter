@@ -37,6 +37,10 @@ dependencies:
   dots_indicator: any
   five_pointed_star: ^1.0.3
   flutter_rating_bar: ^4.0.1
+  # flutter_chat_ui: ^0.0.2
+  open_filex: ^4.3.4
+  flutter_chat_types: ^3.6.2
+  uuid: ^4.1.0
 
 dev_dependencies:
   flutter_test:

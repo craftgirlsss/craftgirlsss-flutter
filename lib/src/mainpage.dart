@@ -1,5 +1,4 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/views/profile/profile.dart';
 import 'package:flutter/material.dart';
 
@@ -41,40 +40,34 @@ class _MainPageState extends State<MainPage> {
         },
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
-            icon: currentIndex == 0
-                ? Image.asset('assets/icons/home-active.png')
-                : Image.asset('assets/icons/home-inactive.png'),
-            title: Text(
-              ' Beranda',
-              style: title(fontSize: 18, color: Colors.black),
-            ),
+            inactiveColor: Colors.black,
+            icon: const Icon(Icons.apps),
+            title: const Text('Home'),
+            activeColor: Colors.red,
+            textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: currentIndex == 1
-                ? Image.asset('assets/icons/explore-active.png')
-                : Image.asset('assets/icons/explore-inactive.png'),
-            title: Text(
-              ' Jelajahi',
-              style: title(fontSize: 18, color: Colors.black),
-            ),
+            inactiveColor: Colors.black,
+            icon: const Icon(Icons.search_outlined),
+            title: const Text('Search'),
+            activeColor: Colors.green,
+            textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: currentIndex == 2
-                ? Image.asset('assets/icons/history-active.png')
-                : Image.asset('assets/icons/history-inactive.png'),
-            title: Text(
-              ' Riwayat',
-              style: title(fontSize: 18, color: Colors.black),
+            inactiveColor: Colors.black,
+            icon: const Icon(Icons.shopping_cart_outlined),
+            title: const Text(
+              'Keranjangku ',
             ),
+            activeColor: Colors.amber.shade800,
+            textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: currentIndex == 3
-                ? Image.asset('assets/icons/person-active.png')
-                : Image.asset('assets/icons/person-inactive.png'),
-            title: Text(
-              ' Profil',
-              style: title(fontSize: 18, color: Colors.black),
-            ),
+            inactiveColor: Colors.black,
+            icon: const Icon(Icons.account_box),
+            title: const Text('Account'),
+            activeColor: Colors.blue,
+            textAlign: TextAlign.center,
           ),
         ],
       ),

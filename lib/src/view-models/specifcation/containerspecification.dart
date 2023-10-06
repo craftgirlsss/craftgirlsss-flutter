@@ -20,7 +20,13 @@ Widget kProductSpecification(context, {Function()? onTap}) {
           ),
           TextButton(
             onPressed: onTap,
-            child: const Text('Lihat'),
+            child: Text(
+              'Lihat',
+              style: titleInter(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12),
+            ),
           )
         ],
       ),

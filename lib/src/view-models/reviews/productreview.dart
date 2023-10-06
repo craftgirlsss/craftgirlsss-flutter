@@ -7,6 +7,7 @@ Container productReview(context,
     String? commentatorName,
     double? starCount,
     String? reasons,
+    Function()? onPressedViewImage,
     List? imageURLDescription}) {
   return Container(
     padding: const EdgeInsets.all(10),
@@ -51,6 +52,22 @@ Container productReview(context,
                       color: Colors.black54,
                       fontWeight: FontWeight.normal,
                       fontSize: 12)),
+              imageURLDescription != null
+                  ? Center(
+                      child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Lihat gambar',
+                            style: titleInter(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12),
+                          )),
+                    )
+                  : const SizedBox(
+                      height: 0,
+                      width: 0,
+                    )
             ],
           ),
         ),

@@ -43,18 +43,16 @@ class ProfileController extends GetxController {
     final fileExt = avatarFile.path.split('.').last;
     String? nameFile = "${DateTime.now().toIso8601String()} + $fileExt";
     try {
-      var result = await vars.client.storage.from('image_profile').upload(
+      await vars.client.storage.from('image_profile').upload(
           'public/$nameFile', avatarFile,
           fileOptions: const FileOptions(cacheControl: '3600', upsert: false));
       var resultPulicURL =
           vars.client.storage.from('avatars').getPublicUrl('public/$nameFile');
       // print(resultPulicURL);
       String? fullURL = urlPhotoSupabase.value + resultPulicURL;
-      print(result);
-      var resultWrite = await vars.client
+      await vars.client
           .from('cr_profiles')
           .update({'url_profile': fullURL}).eq('user_uuid', id);
-      print(resultWrite);
       isLoadingUploadImage.value = false;
     } catch (e) {
       kAlertGagal(context, title: e.toString());

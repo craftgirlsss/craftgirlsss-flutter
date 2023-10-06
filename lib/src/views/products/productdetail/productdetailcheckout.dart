@@ -9,8 +9,12 @@ import 'package:craftgirlsss/src/view-models/modalbottom/modalbottomsheet.dart';
 import 'package:craftgirlsss/src/view-models/ratingsstatus/ratingproductstatus.dart';
 import 'package:craftgirlsss/src/view-models/reviews/productreview.dart';
 import 'package:craftgirlsss/src/view-models/specifcation/containerspecification.dart';
+// import 'package:craftgirlsss/src/views/products/conversations/chat.dart';
+import 'package:craftgirlsss/src/views/products/productreviews/productreviews.dart';
+import 'package:craftgirlsss/src/views/profile/addresses.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductDetailPage extends StatefulWidget {
   const ProductDetailPage({super.key});
@@ -29,7 +33,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           withLeadingData: true,
           listData: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  // Get.to(() => const ChatPage());
+                },
                 tooltip: 'Chat admin',
                 icon: Image.asset(
                   'assets/icons/chat.png',
@@ -68,7 +74,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     },
                     pageSnapping: true,
                     height: 250,
-                    enlargeCenterPage: true,
+                    enlargeCenterPage: false,
                     reverse: false,
                     autoPlay: true,
                     aspectRatio: 19 / 6,
@@ -125,21 +131,41 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           }),
           const SizedBox(height: 5),
           kOngkir(
-              onTap: () {}, endDate: "2", startDate: '1', month: 'September'),
+              onTap: () {
+                showProductOngkir(context,
+                    endDate: "2",
+                    kabupaten: "Sidoarjo",
+                    month: "September", onTapLocationName: () {
+                  Get.to(() => const LokasiPengiriman());
+                }, priceOngkir: 12000, startDate: '1', tipeOngkir: 'Reguler');
+              },
+              endDate: "2",
+              startDate: '1',
+              ongkir: 12000,
+              month: 'September'),
           const SizedBox(height: 5),
           kDescription(context,
               description:
                   "fakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkb"),
           const SizedBox(height: 5),
-          kTileUlasan(context, onPressed: () {}, rating: 4.5),
-          productReview(
-            context,
-            commentatorName: "Regard",
-            imageURLDescription: ['https://googleflutter.com/sample_image.jpg'],
-            reasons:
-                'dhkjhdfshfuiwehfesihfjcksfhewhfnckcdshiuerfdghjagdkasbdafkajsbdkasbdbaskjfbkasbdkaguadkjcakbdiwedjkbcksb',
-            starCount: 3,
-          ),
+          kTileUlasan(context, onPressed: () {
+            Get.to(() => const PrductReviews());
+          }, rating: 4.5),
+          ListView.separated(
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              itemBuilder: (context, index) => productReview(
+                    context,
+                    commentatorName: "Regard",
+                    imageURLDescription: [
+                      'https://googleflutter.com/sample_image.jpg'
+                    ],
+                    reasons:
+                        'dhkjhdfshfuiwehfesihfjcksfhewhfnckcdshiuerfdghjagdkasbdafkajsbdkasbdbaskjfbkasbdkaguadkjcakbdiwedjkbcksb',
+                    starCount: 3,
+                  ),
+              separatorBuilder: (context, index) => const SizedBox(height: 3),
+              itemCount: 2),
           const SizedBox(height: 70)
         ],
       ),

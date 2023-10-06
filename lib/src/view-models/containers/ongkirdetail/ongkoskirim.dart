@@ -41,7 +41,13 @@ Container kOngkir(
           ),
         ],
       ),
-      TextButton(onPressed: onTap, child: const Text('Lihat detail'))
+      TextButton(
+          onPressed: onTap,
+          child: Text(
+            'Lihat detail',
+            style: titleInter(
+                color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 12),
+          ))
     ]),
   );
 }

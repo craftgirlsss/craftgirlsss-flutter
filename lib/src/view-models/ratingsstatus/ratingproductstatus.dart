@@ -40,6 +40,7 @@ Container ratingRow(context,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
+          color: Colors.transparent,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -68,12 +69,15 @@ Container ratingRow(context,
           ),
         ),
         Container(
+          color: Colors.transparent,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(
-                  onPressed: onTapFavofite,
-                  icon: const Icon(Icons.favorite_border, size: 19)),
+                onPressed: onTapFavofite,
+                icon: const Icon(Icons.favorite_border, size: 19),
+                tooltip: 'Tambah ke favorut',
+              ),
               IconButton(
                   onPressed: onTapShare,
                   icon: const Icon(Icons.share_outlined, size: 19))

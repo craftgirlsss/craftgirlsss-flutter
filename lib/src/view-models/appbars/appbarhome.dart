@@ -22,10 +22,10 @@ AppBar kAppBarHome() {
       ),
     ),
     actions: [
-      IconButton(
-          tooltip: 'Cari',
-          onPressed: () {},
-          icon: Image.asset('assets/icons/search.png')),
+      // IconButton(
+      //     tooltip: 'Cari',
+      //     onPressed: () {},
+      //     icon: Image.asset('assets/icons/search.png')),
       IconButton(
           tooltip: 'Favorit',
           onPressed: () {
