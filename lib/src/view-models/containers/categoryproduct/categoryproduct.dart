@@ -36,7 +36,8 @@ Widget iconCategory(
         ),
         const SizedBox(height: 3),
         Text(categoryName!,
-            style: const TextStyle(fontFamily: 'Inter', fontSize: 12))
+            style: const TextStyle(
+                fontFamily: 'Inter', fontSize: 12, color: Colors.black))
       ],
     ),
   );

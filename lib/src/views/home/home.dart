@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfffffcb9),
+      backgroundColor: Colors.white,
       appBar: kAppBarHome(),
       body: ListView(
         children: [

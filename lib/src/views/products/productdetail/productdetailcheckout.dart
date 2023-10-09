@@ -28,7 +28,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color(0xfffffcb9),
+      backgroundColor: Colors.white,
       appBar: kAppBar(context,
           withLeadingData: true,
           listData: [
@@ -125,11 +125,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               onTapShare: () {},
               rating: 4.5,
               soldCount: 2356),
-          const SizedBox(height: 5),
+          const Divider(),
           kProductSpecification(context, onTap: () {
             showProductSpecification(context);
           }),
-          const SizedBox(height: 5),
+          const Divider(),
           kOngkir(
               onTap: () {
                 showProductOngkir(context,
@@ -143,11 +143,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               startDate: '1',
               ongkir: 12000,
               month: 'September'),
-          const SizedBox(height: 5),
+          const Divider(),
           kDescription(context,
               description:
                   "fakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkbfakjbdkjadkjbfkjsbfbsdkjbcksdbkjdsbfkjsd h bfsdnfkjjfkebfjksbfdkjskfskbfkb"),
-          const SizedBox(height: 5),
+          const Divider(),
           kTileUlasan(context, onPressed: () {
             Get.to(() => const PrductReviews());
           }, rating: 4.5),
@@ -164,7 +164,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                         'dhkjhdfshfuiwehfesihfjcksfhewhfnckcdshiuerfdghjagdkasbdafkajsbdkasbdbaskjfbkasbdkaguadkjcakbdiwedjkbcksb',
                     starCount: 3,
                   ),
-              separatorBuilder: (context, index) => const SizedBox(height: 3),
+              separatorBuilder: (context, index) => const Divider(),
               itemCount: 2),
           const SizedBox(height: 70)
         ],
