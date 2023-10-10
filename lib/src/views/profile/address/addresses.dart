@@ -4,7 +4,7 @@ import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/view-models/listtiles/listtilelocations.dart';
 import 'package:craftgirlsss/src/view-models/loadings/loading.dart';
 import 'package:craftgirlsss/src/view-models/textfields/textfieldsearch.dart';
-import 'package:craftgirlsss/src/views/profile/addaddress.dart';
+import 'package:craftgirlsss/src/views/profile/address/addaddress.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -99,7 +99,7 @@ class _LokasiPengirimanState extends State<LokasiPengiriman> {
 
   @override
   void initState() {
-    addressC.fetchAllAddress();
+    addressC.fetchAllAddress(context);
     _getCurrentLocation();
     marker();
     super.initState();
@@ -137,23 +137,26 @@ class _LokasiPengirimanState extends State<LokasiPengiriman> {
                     fontSize: 15,
                     fontWeight: FontWeight.normal)),
             const SizedBox(height: 10),
-            ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.vertical,
-                physics: const ScrollPhysics(),
-                itemBuilder: (context, index) => addressC
-                            .isLoadingLoadData.value ==
-                        true
-                    ? kLoading()
-                    : kListTileMyLocation(
-                        title:
-                            '${addressC.addressesModelsList[index].namaPenerima} | ${addressC.addressesModelsList[index].noHpPenerima}',
-                        descriptionLocation:
-                            addressC.addressesModelsList[index].detailLainnya,
-                        isDefault:
-                            addressC.addressesModelsList[index].isDefault,
-                        onTap: () {}),
-                itemCount: addressC.addressesModelsList.length)
+            Obx(
+              () => addressC.isLoadingLoadData.value == true
+                  ? SizedBox(height: 150, child: kLoading())
+                  : addressC.addressesModelsList.isNotEmpty
+                      ? ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: addressC.addressesModelsList.length,
+                          scrollDirection: Axis.vertical,
+                          physics: const ScrollPhysics(),
+                          itemBuilder: (context, index) => kListTileMyLocation(
+                              title:
+                                  '${addressC.addressesModelsList[index].namaPenerima} | ${addressC.addressesModelsList[index].noHpPenerima}',
+                              descriptionLocation:
+                                  "${addressC.addressesModelsList[index].vilagesName}\n${addressC.addressesModelsList[index].cityName}\n${addressC.addressesModelsList[index].provinceName}\n${addressC.addressesModelsList[index].detailLainnya}\n${addressC.addressesModelsList[index].fullAddress}\n${addressC.addressesModelsList[index].postalCode}",
+                              isDefault:
+                                  addressC.addressesModelsList[index].isDefault,
+                              onTap: () {}),
+                        )
+                      : const Center(child: Text('Tidak ada data alamat')),
+            )
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(

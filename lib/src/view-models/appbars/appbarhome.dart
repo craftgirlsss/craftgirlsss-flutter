@@ -31,13 +31,16 @@ AppBar kAppBarHome() {
           onPressed: () {
             Get.to(() => const FavoritePage());
           },
-          icon: Image.asset('assets/icons/favorit.png')),
+          icon: const Icon(
+            Icons.favorite_border,
+            color: Colors.black54,
+          )),
       IconButton(
-          tooltip: 'Cart',
+          tooltip: 'Notifikasi',
           onPressed: () {},
-          icon: Image.asset(
-            'assets/icons/cart.png',
-            scale: 0.9,
+          icon: const Icon(
+            Icons.notifications_none,
+            color: Colors.black54,
           )),
     ],
   );

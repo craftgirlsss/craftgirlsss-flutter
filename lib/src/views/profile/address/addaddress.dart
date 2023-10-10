@@ -4,6 +4,7 @@ import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/view-models/textfields/nolimitpaddingtextfield.dart';
 import 'package:craftgirlsss/src/views/login/login.dart';
+import 'package:craftgirlsss/src/views/profile/address/listaddress.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,7 +24,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
   TextEditingController desaC = TextEditingController();
   TextEditingController detailC = TextEditingController();
   TextEditingController blokRumahC = TextEditingController();
-  bool light1 = true;
+  bool light1 = false;
   String? pilihan;
 
   final MaterialStateProperty<Icon?> thumbIcon =
@@ -73,8 +74,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                 controller: provinceC,
                 hint: 'Provinsi, Kota, Kecamatan, Kode Pos',
                 onTap: () {
-                  print('ditekan');
-                  Get.to(() => const LoginPage());
+                  Get.to(() => const ListOfAddress());
                 },
                 suffixIcon: true),
             const SizedBox(height: 2),
@@ -187,17 +187,17 @@ class _AddAddressPageState extends State<AddAddressPage> {
               child: kButtons(context,
                   backgroundColor: Colors.green.shade300,
                   label: "Tambah Alamat", onPressed: () async {
-                await addressC.insertAddress(context,
-                    aturSebagai: "Kantor",
-                    desa: "Lumajang",
-                    detailLainnya: "Lumajang adalah desaku",
-                    fullAddress: "Lorem Ipsum",
-                    isdefault: true,
-                    kabupaten: "Sidoarjo",
-                    namaPenerima: "Putra",
-                    nomorHpPenerima: "0821123232",
-                    postalCode: "61258",
-                    province: "Jawa Timur");
+                // await addressC.insertAddress(context,
+                //     aturSebagai: "Kantor",
+                //     desa: "Lumajang",
+                //     detailLainnya: "Lumajang adalah desaku",
+                //     fullAddress: "Lorem Ipsum",
+                //     isdefault: true,
+                //     kabupaten: "Sidoarjo",
+                //     namaPenerima: "Putra",
+                //     nomorHpPenerima: "0821123232",
+                //     postalCode: "61258",
+                //     province: "Jawa Timur");
               }),
             )
           ],

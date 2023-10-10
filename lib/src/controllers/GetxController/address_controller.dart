@@ -1,8 +1,13 @@
+import 'dart:convert';
+
 import 'package:craftgirlsss/src/models/addressmodels/addressmodels.dart';
+import 'package:craftgirlsss/src/models/addressmodels/provincemodels.dart';
+import 'package:craftgirlsss/src/view-models/popup/alertgagal/alertgagal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:craftgirlsss/src/helpers/globalvariable/variablehelper.dart'
     as vars;
+import 'package:http/http.dart' as http;
 
 class AddressController extends GetxController {
   var isLoadingInsert = false.obs;
@@ -13,23 +18,18 @@ class AddressController extends GetxController {
   var id = vars.client.auth.currentUser?.id;
   var addressCount = 0.obs;
   var addressesModelsList = <AddressesModels>[].obs;
+  var provinceModels = Rxn<ProvinceModels>();
   var itemDefault = 0.obs;
   var idDefault = 0.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-    // fetchAllAddress();
-  }
-
-  fetchAllAddress() async {
+  fetchAllAddress(context) async {
     isLoadingLoadData.value = true;
     try {
       List data = await vars.client
           .from('cr_addresses')
           .select('*')
           .eq("user_uuid", id);
-      print(data);
+      // print(data);
       addressCount.value = data.length;
       addressesModelsList.value =
           data.map((e) => AddressesModels.fromJson(e)).toList();
@@ -39,14 +39,15 @@ class AddressController extends GetxController {
           .eq('user_uuid', id)
           .eq('deleted', false)
           .eq('is_default', true);
-      print("ini length dari default ${isDefaultMoreThanOne.length}");
-      print(
-          "Ini id address yang ada default nya ${isDefaultMoreThanOne[0]['id']}");
+      // print("ini length dari default ${isDefaultMoreThanOne.length}");
+      // print(
+      //     "Ini id address yang ada default nya ${isDefaultMoreThanOne[0]['id']}");
       idDefault.value = isDefaultMoreThanOne[0]['id'];
       itemDefault.value = isDefaultMoreThanOne.length;
     } catch (e) {
       debugPrint(e.toString());
       isLoadingLoadData.value = false;
+      // kAlertGagal(context, title: e.toString());
       // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       //     content: Text('Gagal mendapatkan alamat',
       //         style: TextStyle(color: Colors.white)),
@@ -101,13 +102,30 @@ class AddressController extends GetxController {
         ),
       );
     } catch (e) {
-      print(e);
-      isLoadingInsert.value = false;
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Gagal menambahkan alamat',
-              style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.red));
+      // print(e);
+      kAlertGagal(context, title: e.toString());
     }
     isLoadingInsert.value = false;
+  }
+
+  getProvince() async {
+    try {
+      isLoadingGetProvince(true);
+      http.Response response = await http.get(
+          Uri.tryParse("https://pro.rajaongkir.com/api/province")!,
+          headers: {'key': 'e049d10db2bd7fc4d5ec3cb4035633be'});
+      if (response.statusCode == 200) {
+        var result = jsonDecode(response.body);
+        print(result);
+        provinceModels.value = ProvinceModels.fromJson(result);
+      } else {
+        ///error
+        print('error');
+      }
+    } catch (e) {
+      // print('Error while getting data is $e');
+    } finally {
+      isLoadingGetProvince(false);
+    }
   }
 }

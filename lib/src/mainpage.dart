@@ -30,7 +30,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: listOfColors[currentIndex],
       bottomNavigationBar: BottomNavyBar(
-        backgroundColor: const Color(0xfffffcb9),
+        backgroundColor: Colors.white,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         selectedIndex: currentIndex,
         onItemSelected: (index) {

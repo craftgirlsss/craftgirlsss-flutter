@@ -11,7 +11,7 @@ import 'package:craftgirlsss/src/view-models/reviews/productreview.dart';
 import 'package:craftgirlsss/src/view-models/specifcation/containerspecification.dart';
 // import 'package:craftgirlsss/src/views/products/conversations/chat.dart';
 import 'package:craftgirlsss/src/views/products/productreviews/productreviews.dart';
-import 'package:craftgirlsss/src/views/profile/addresses.dart';
+import 'package:craftgirlsss/src/views/profile/address/addresses.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
