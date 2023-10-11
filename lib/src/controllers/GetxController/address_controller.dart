@@ -116,11 +116,9 @@ class AddressController extends GetxController {
           headers: {'key': 'e049d10db2bd7fc4d5ec3cb4035633be'});
       if (response.statusCode == 200) {
         var result = jsonDecode(response.body);
-        print(result);
         provinceModels.value = ProvinceModels.fromJson(result);
       } else {
         ///error
-        print('error');
       }
     } catch (e) {
       // print('Error while getting data is $e');

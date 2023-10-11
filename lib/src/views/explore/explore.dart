@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardproduct/cardproductv2.dart';
 import 'package:craftgirlsss/src/views/products/productdetail/productdetailcheckout.dart';

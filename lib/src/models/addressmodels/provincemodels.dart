@@ -9,9 +9,9 @@ class ProvinceModels {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['rajaongkir'] = rajaongkir.toJson();
-    return _data;
+    final data = <String, dynamic>{};
+    data['rajaongkir'] = rajaongkir.toJson();
+    return data;
   }
 }
 
@@ -33,11 +33,11 @@ class Rajaongkir {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['query'] = query;
-    _data['status'] = status.toJson();
-    _data['results'] = results.map((e) => e.toJson()).toList();
-    return _data;
+    final data = <String, dynamic>{};
+    data['query'] = query;
+    data['status'] = status.toJson();
+    data['results'] = results.map((e) => e.toJson()).toList();
+    return data;
   }
 }
 
@@ -55,10 +55,10 @@ class Status {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['code'] = code;
-    _data['description'] = description;
-    return _data;
+    final data = <String, dynamic>{};
+    data['code'] = code;
+    data['description'] = description;
+    return data;
   }
 }
 
@@ -76,9 +76,9 @@ class Results {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['province_id'] = provinceId;
-    _data['province'] = province;
-    return _data;
+    final data = <String, dynamic>{};
+    data['province_id'] = provinceId;
+    data['province'] = province;
+    return data;
   }
 }

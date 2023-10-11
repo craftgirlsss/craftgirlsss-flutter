@@ -163,17 +163,17 @@ Widget cardProductV2(context,
 }
 
 class CardProductForMyCart extends StatefulWidget {
-  final String? productName, urlImage;
-  final Function()? onPressed;
+  String? productName, urlImage, ukuran, warna;
+  Function()? onPressed;
   int? index, productPrice;
-  final double? rating;
   CardProductForMyCart(
       {super.key,
       required this.productName,
       this.onPressed,
       this.urlImage,
       this.index,
-      this.rating,
+      this.ukuran,
+      this.warna,
       this.productPrice});
 
   @override
@@ -181,7 +181,7 @@ class CardProductForMyCart extends StatefulWidget {
 }
 
 class _CardProductForMyCartState extends State<CardProductForMyCart> {
-  int _itemCount = 1;
+  int _itemCount = 0;
   int totalPriceNow = 0;
   int price = 0;
   @override
@@ -239,7 +239,7 @@ class _CardProductForMyCartState extends State<CardProductForMyCart> {
                             width: 70,
                             height: 70,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(4),
                                 image: DecorationImage(
                                   image: AssetImage(widget.urlImage ??
                                       'assets/images/no-available-image.png'),
@@ -254,15 +254,14 @@ class _CardProductForMyCartState extends State<CardProductForMyCart> {
                               color: Colors.transparent,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
                                     widget.productName ?? '-',
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
                                     style: titleInter(
-                                        fontWeight: FontWeight.normal,
+                                        fontWeight: FontWeight.bold,
                                         fontSize: 14),
                                   ),
                                   const SizedBox(height: 5),
@@ -273,34 +272,23 @@ class _CardProductForMyCartState extends State<CardProductForMyCart> {
                                         fontSize: 14),
                                   ),
                                   const SizedBox(height: 5),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 2, vertical: 2),
-                                    width: 45,
-                                    height: 20,
-                                    decoration: BoxDecoration(
-                                        color: Colors.green.shade700,
-                                        borderRadius: BorderRadius.circular(3)),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        const Icon(Icons.star_border,
-                                            color: Colors.white, size: 16),
-                                        const SizedBox(
-                                          width: 2,
-                                        ),
-                                        Text(
-                                          widget.rating != null
-                                              ? widget.rating.toString()
-                                              : '3.5',
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                          'Ukuran : ${widget.ukuran != null ? widget.ukuran?.toUpperCase() : "-"}',
                                           style: titleInter(
-                                              color: Colors.white,
-                                              fontSize: 12),
-                                        )
-                                      ],
-                                    ),
-                                  ),
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 12)),
+                                      const SizedBox(width: 5),
+                                      Text(
+                                        'Warna : ${widget.warna ?? "-"}',
+                                        style: titleInter(
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 12),
+                                      )
+                                    ],
+                                  )
                                 ],
                               ),
                             ),
@@ -330,7 +318,7 @@ class _CardProductForMyCartState extends State<CardProductForMyCart> {
                           child: Row(
                             children: [
                               InkWell(
-                                  onTap: _itemCount != 1
+                                  onTap: _itemCount != 0
                                       ? () {
                                           setState(() {
                                             _itemCount--;
@@ -355,7 +343,9 @@ class _CardProductForMyCartState extends State<CardProductForMyCart> {
                                 child: Text(
                                   _itemCount.toString(),
                                   style: const TextStyle(
-                                      color: Colors.black, fontSize: 16),
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
                               InkWell(
@@ -527,9 +517,7 @@ Widget cardProductForCart(context,
                         child: Row(
                           children: [
                             InkWell(
-                                onTap: () {
-                                  print('remove ditekan');
-                                },
+                                onTap: () {},
                                 child: const Icon(
                                   Icons.remove,
                                   color: Colors.black,
@@ -549,9 +537,7 @@ Widget cardProductForCart(context,
                               ),
                             ),
                             InkWell(
-                                onTap: () {
-                                  print('add ditekan');
-                                },
+                                onTap: () {},
                                 child: const Icon(
                                   Icons.add,
                                   color: Colors.black87,

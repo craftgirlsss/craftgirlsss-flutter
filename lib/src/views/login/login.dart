@@ -134,30 +134,37 @@ class _LoginPageState extends State<LoginPage> {
                     )),
               ],
             ),
-            GestureDetector(
-              onTap: () {},
-              child: Padding(
-                padding: const EdgeInsets.only(left: 50, right: 50),
-                child: Container(
-                  height: 50,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.white),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset('assets/icons/google.png'),
-                      const SizedBox(width: 5),
-                      const Text(
-                        'Masuk dengan Google',
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            )
+            kButtonsWithImage(context,
+                backgroundColor: Colors.white,
+                withIcon: true,
+                labelColor: Colors.black54,
+                icons: Image.asset('assets/icons/google.png'),
+                label: "Masuk dengan Google",
+                onPressed: () {})
+            // GestureDetector(
+            //   onTap: () {},
+            //   child: Padding(
+            //     padding: const EdgeInsets.only(left: 50, right: 50),
+            //     child: Container(
+            //       height: 50,
+            //       padding:
+            //           const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            //       decoration: BoxDecoration(
+            //           borderRadius: BorderRadius.circular(5),
+            //           color: Colors.white),
+            //       child: Row(
+            //         mainAxisAlignment: MainAxisAlignment.center,
+            //         children: [
+            //           Image.asset('assets/icons/google.png'),
+            //           const SizedBox(width: 5),
+            //           const Text(
+            //             'Masuk dengan Google',
+            //           )
+            //         ],
+            //       ),
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),

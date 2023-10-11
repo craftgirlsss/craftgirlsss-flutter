@@ -1,3 +1,4 @@
+import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:flutter/material.dart';
 
 Widget kColumnItem(
@@ -15,12 +16,10 @@ Widget kColumnItem(
         const SizedBox(height: 5),
         Text(
           name!,
-          style: const TextStyle(
-            fontFamily: "Caveat",
-            fontSize: 18,
-            color: Colors.black,
-            fontWeight: FontWeight.normal,
-          ),
+          style: titleInter(
+              color: Colors.black54,
+              fontSize: 15,
+              fontWeight: FontWeight.normal),
         )
       ],
     ),

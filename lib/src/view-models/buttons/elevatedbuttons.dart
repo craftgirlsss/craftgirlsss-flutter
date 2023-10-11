@@ -59,3 +59,43 @@ Widget kButtons(
   //   ),
   // );
 }
+
+Widget kButtonsWithImage(
+  context, {
+  String? label,
+  Function()? onPressed,
+  bool? withIcon = false,
+  Widget? icons,
+  Color? labelColor = Colors.white,
+  Color backgroundColor = Colors.green,
+  double? fonSize = 17,
+}) {
+  return AnimatedButton(
+    color: backgroundColor,
+    shape: BoxShape.rectangle,
+    width: 150,
+    height: 40,
+    onPressed: onPressed!,
+    enabled: true,
+    shadowDegree: ShadowDegree.light,
+    child: withIcon == true
+        ? Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              icons!,
+              const SizedBox(width: 7),
+              Text(
+                label!,
+                style: title(color: labelColor, fontSize: fonSize),
+              )
+            ],
+          )
+        : Text(
+            label!,
+            style: titleInter(
+                color: labelColor,
+                fontSize: fonSize,
+                fontWeight: FontWeight.bold),
+          ),
+  );
+}

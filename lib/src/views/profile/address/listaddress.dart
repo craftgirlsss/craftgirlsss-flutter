@@ -1,7 +1,6 @@
 import 'package:animated_button/animated_button.dart';
 import 'package:craftgirlsss/src/controllers/GetxController/address_controller.dart';
 import 'package:craftgirlsss/src/helpers/paddings/defaultpadding.dart';
-import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/view-models/loadings/loading.dart';
 import 'package:flutter/material.dart';

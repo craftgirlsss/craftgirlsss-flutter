@@ -3,7 +3,6 @@ import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/view-models/textfields/nolimitpaddingtextfield.dart';
-import 'package:craftgirlsss/src/views/login/login.dart';
 import 'package:craftgirlsss/src/views/profile/address/listaddress.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,7 +43,6 @@ class _AddAddressPageState extends State<AddAddressPage>
   }
 
   _toggleContainer() {
-    print(_animation?.status);
     if (_animation?.status != AnimationStatus.completed) {
       _controller?.forward();
     } else {

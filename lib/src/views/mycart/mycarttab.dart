@@ -1,9 +1,8 @@
-import 'package:craftgirlsss/src/helpers/paddings/defaultpadding.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
+import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardproduct/cardproductv2.dart';
-import 'package:craftgirlsss/src/views/products/productdetail/productdetailcheckout.dart';
+import 'package:craftgirlsss/src/view-models/containers/cardtotalproduct/totalpriceproduct.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class MyCartProduct extends StatefulWidget {
   const MyCartProduct({super.key});
@@ -19,7 +18,8 @@ class _MyCartProductState extends State<MyCartProduct> {
       appBar: kAppBar(context,
           autoImplyLeading: false, isTitle: true, titleText: 'Keranjangku'),
       body: ListView(
-        padding: kDefaultPadding(),
+        padding:
+            const EdgeInsets.only(left: 15, right: 15, bottom: 15, top: 10),
         children: [
           ListView.separated(
               shrinkWrap: true,
@@ -30,19 +30,23 @@ class _MyCartProductState extends State<MyCartProduct> {
                   productName: 'Baju Favorit',
                   index: index,
                   onPressed: () {},
-                  rating: 4.5,
+                  ukuran: "XL",
                   urlImage: 'assets/images/sampel-1.jpeg'),
-              // cardProductForCart(context,
-              //         index: index, onAdd: () {}, onPressed: () {
-              //       Get.to(() => const ProductDetailPage());
-              //     },
-              //         onFavorite: () {},
-              //         productName: 'Baju favorit',
-              //         productPrice: 225000,
-              //         urlImage: 'assets/images/sampel-1.jpeg',
-              //         ratings: 4.5),
-              separatorBuilder: (context, index) => const SizedBox(height: 7),
+              separatorBuilder: (context, index) => const SizedBox(height: 10),
               itemCount: 5),
+          const SizedBox(height: 10),
+          totalPriceProductCheckOut(context,
+              biayaLainnya: 0, discount: 0, grandTotal: 0, orderTotal: 0),
+          const SizedBox(height: 10),
+          Center(
+            child: kButtons(context,
+                backgroundColor: Colors.green.shade400,
+                label: "Checkout",
+                onPressed: () {},
+                fonSize: 16,
+                withIcon: true,
+                icons: Icons.shopping_cart_checkout),
+          )
         ],
       ),
     );

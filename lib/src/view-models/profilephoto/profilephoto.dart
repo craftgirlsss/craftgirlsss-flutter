@@ -21,11 +21,18 @@ Widget photo(context,
                   urlPhoto ?? 'https://googleflutter.com/sample_image.jpg'),
           Text(
             "$nama",
-            style: title(),
+            style: titleInter(
+                color: Colors.black54,
+                fontSize: 15,
+                fontWeight: FontWeight.bold),
           ),
+          const SizedBox(height: 5),
           Text(
             "$email",
-            style: title(),
+            style: titleInter(
+                color: Colors.black54,
+                fontSize: 14,
+                fontWeight: FontWeight.normal),
           ),
         ],
       ),
@@ -67,6 +74,7 @@ Widget profilePhotoChange(context,
               height: 100,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
+                // border: Border.all(color: Colors.black26),
                 image: DecorationImage(
                     image: urlProfile != 'tidak diset' || urlProfile != null
                         ? NetworkImage(urlProfile!)
@@ -78,22 +86,21 @@ Widget profilePhotoChange(context,
           ),
           if (button == true)
             Positioned(
-              bottom: 8,
-              left: 75,
-              child: Container(
-                height: 38,
-                width: 38,
-                decoration: const BoxDecoration(
-                  color: Colors.green,
-                  shape: BoxShape.circle,
-                ),
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.camera_alt,
-                    size: 19,
+              bottom: 13,
+              left: 80,
+              child: GestureDetector(
+                onTap: onPressed,
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                      color: Colors.black54.withOpacity(0.7),
+                      borderRadius: BorderRadius.circular(8)),
+                  child: const Icon(
+                    Icons.edit,
+                    size: 17,
                     color: Colors.white,
                   ),
-                  onPressed: onPressed,
                 ),
               ),
             ),

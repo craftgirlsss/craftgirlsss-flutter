@@ -2,8 +2,11 @@ import 'package:craftgirlsss/src/view-models/columns/columnsitem/columnitem.dart
 import 'package:flutter/material.dart';
 
 Widget kRowsInfoPengiriman() {
-  return Padding(
+  return Container(
     padding: const EdgeInsets.all(5.0),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(7),
+        border: Border.all(color: Colors.black12)),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
