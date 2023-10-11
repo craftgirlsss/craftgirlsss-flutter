@@ -5,8 +5,10 @@ import 'package:craftgirlsss/src/view-models/containers/categoryproduct/category
 // import 'package:craftgirlsss/src/view-models/containers/flashsale/flashsale.dart';
 import 'package:craftgirlsss/src/view-models/containers/footer/footer.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
+import 'package:craftgirlsss/src/views/products/productdetail/productdetailcheckout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Colors.white,
       appBar: kAppBarHome(),
       body: ListView(
         children: [
@@ -67,14 +69,14 @@ class _HomePageState extends State<HomePage> {
               physics: const ScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                return cardProductV2(context,
-                    index: index,
-                    onAdd: () {},
-                    onPressed: () {},
+                return cardProductV2(context, index: index, onAdd: () {},
+                    onPressed: () {
+                  Get.to(() => const ProductDetailPage());
+                },
                     onFavorite: () {},
-                    productName:
-                        'Baju favorit dsakjbfakdkjadjkasfbsndnasjfnalnclfjdlksjflksdmflsdnflsndflsndflsndflk',
+                    productName: 'Baju favorit',
                     productPrice: 225000,
+                    urlImage: 'assets/images/sampel-1.jpeg',
                     ratings: 4.5);
                 // return kCardProduct(onTap: () {}, productName: "Dress Viral");
               },

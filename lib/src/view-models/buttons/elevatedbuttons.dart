@@ -15,8 +15,8 @@ Widget kButtons(
   return AnimatedButton(
     color: backgroundColor,
     shape: BoxShape.rectangle,
-    width: MediaQuery.of(context).size.width - 50,
-    height: 45,
+    width: 150,
+    height: 40,
     onPressed: onPressed!,
     enabled: true,
     shadowDegree: ShadowDegree.light,

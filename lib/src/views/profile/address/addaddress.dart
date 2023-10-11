@@ -15,7 +15,8 @@ class AddAddressPage extends StatefulWidget {
   State<AddAddressPage> createState() => _AddAddressPageState();
 }
 
-class _AddAddressPageState extends State<AddAddressPage> {
+class _AddAddressPageState extends State<AddAddressPage>
+    with TickerProviderStateMixin {
   AddressController addressC = Get.put(AddressController());
   TextEditingController nameC = TextEditingController();
   TextEditingController noHpC = TextEditingController();
@@ -26,6 +27,30 @@ class _AddAddressPageState extends State<AddAddressPage> {
   TextEditingController blokRumahC = TextEditingController();
   bool light1 = false;
   String? pilihan;
+  AnimationController? _controller;
+  Animation<double>? _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 1),
+      vsync: this,
+    );
+    _animation = CurvedAnimation(
+      parent: _controller!,
+      curve: Curves.fastLinearToSlowEaseIn,
+    );
+  }
+
+  _toggleContainer() {
+    print(_animation?.status);
+    if (_animation?.status != AnimationStatus.completed) {
+      _controller?.forward();
+    } else {
+      _controller?.animateBack(0, duration: const Duration(seconds: 2));
+    }
+  }
 
   final MaterialStateProperty<Icon?> thumbIcon =
       MaterialStateProperty.resolveWith<Icon?>(
@@ -113,6 +138,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                             onTap: () {
                               setState(() {
                                 pilihan = 'Kantor';
+                                _toggleContainer();
                               });
                             },
                             child: Container(
@@ -127,6 +153,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                             onTap: () {
                               setState(() {
                                 pilihan = 'Rumah';
+                                _toggleContainer();
                               });
                             },
                             child: Container(
@@ -144,13 +171,24 @@ class _AddAddressPageState extends State<AddAddressPage> {
                       ? Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              'Anda memilih : $pilihan',
-                              style: titleInter(
-                                  fontSize: 14,
-                                  color: Colors.green.shade600,
-                                  fontWeight: FontWeight.normal),
+                            SizeTransition(
+                              sizeFactor: _animation!,
+                              axis: Axis.vertical,
+                              child: Text(
+                                'Anda memilih : $pilihan',
+                                style: titleInter(
+                                    fontSize: 14,
+                                    color: Colors.green.shade600,
+                                    fontWeight: FontWeight.normal),
+                              ),
                             ),
+                            // Text(
+                            //   'Anda memilih : $pilihan',
+                            //   style: titleInter(
+                            //       fontSize: 14,
+                            //       color: Colors.green.shade600,
+                            //       fontWeight: FontWeight.normal),
+                            // ),
                           ],
                         )
                       : const SizedBox(height: 0, width: 0),

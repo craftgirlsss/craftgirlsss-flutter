@@ -1,7 +1,9 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:craftgirlsss/src/views/mycart/mycarttab.dart';
 import 'package:craftgirlsss/src/views/profile/profile.dart';
 import 'package:flutter/material.dart';
 
+import 'views/explore/explore.dart';
 import 'views/home/home.dart';
 
 class MainPage extends StatefulWidget {
@@ -16,12 +18,8 @@ class _MainPageState extends State<MainPage> {
 
   List listOfColors = [
     const HomePage(),
-    Container(
-      color: Colors.redAccent,
-    ),
-    Container(
-      color: Colors.orangeAccent,
-    ),
+    const SearchPage(),
+    const MyCartProduct(),
     const ProfileTab()
   ];
 
