@@ -27,7 +27,7 @@ class _SearchPageState extends State<SearchPage> {
             return <Widget>[createSilverAppBar1(), createSilverAppBar2()];
           },
           body: ListView.separated(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             itemCount: 5,
             itemBuilder: (context, index) {
               return cardProductV2(context, index: index, onAdd: () {},

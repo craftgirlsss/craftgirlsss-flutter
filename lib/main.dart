@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:craftgirlsss/src/helpers/certificates/certificate.dart';
 import 'package:craftgirlsss/src/views/splashscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter/scheduler.dart';
@@ -22,6 +23,10 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       transitionDuration: const Duration(milliseconds: 500),

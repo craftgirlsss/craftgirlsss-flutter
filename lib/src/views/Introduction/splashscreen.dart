@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/views/login/login.dart';
+import 'package:craftgirlsss/src/views/login/loginv2.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -66,7 +67,7 @@ class IntroductionScreen extends StatelessWidget {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const LoginPage()),
+                                builder: (context) => const LoginPageV2()),
                             (route) => false);
                       });
                     },

@@ -5,6 +5,7 @@ TextStyle title(
     Color? color = Colors.black,
     FontWeight? fontWeight = FontWeight.bold}) {
   return TextStyle(
+    decoration: TextDecoration.none,
     fontFamily: "Caveat",
     fontSize: fontSize,
     color: color,

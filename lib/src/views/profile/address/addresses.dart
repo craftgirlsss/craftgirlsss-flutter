@@ -110,10 +110,9 @@ class _LokasiPengirimanState extends State<LokasiPengiriman> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        appBar: kAppBar(context,
-            isTitle: true,
-            autoImplyLeading: true,
-            titleText: "Lokasi Pengiriman"),
+        backgroundColor: Colors.white,
+        appBar: defaultAppBar(
+            autoImplyLeading: true, title: "Atur Lokasi Pengiriman"),
         body: ListView(
           padding:
               const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 0),

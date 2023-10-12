@@ -3,6 +3,7 @@ import 'package:craftgirlsss/src/helpers/globalvariable/variablehelper.dart'
 import 'dart:io';
 import 'package:craftgirlsss/src/controllers/GetxController/profile_controller.dart';
 import 'package:craftgirlsss/src/helpers/getrandom/getrandomstring.dart';
+import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/view-models/loadings/loading.dart';
@@ -28,17 +29,7 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: Text(
-          'Edit Profile',
-          style: titleInter(
-              color: Colors.black54, fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-        elevation: 0,
-        backgroundColor: Colors.white,
-      ),
+      appBar: defaultAppBar(title: "Edit Profil", autoImplyLeading: true),
       body: ListView(
         padding: const EdgeInsets.all(10),
         children: [

@@ -15,8 +15,7 @@ class _MyCartProductState extends State<MyCartProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: kAppBar(context,
-          autoImplyLeading: false, isTitle: true, titleText: 'Keranjangku'),
+      appBar: defaultAppBar(title: "Keranjangku"),
       body: ListView(
         padding:
             const EdgeInsets.only(left: 15, right: 15, bottom: 15, top: 10),

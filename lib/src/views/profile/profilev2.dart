@@ -3,7 +3,7 @@ import 'package:craftgirlsss/src/helpers/globalvariable/variablehelper.dart'
 import 'dart:io';
 import 'package:craftgirlsss/src/controllers/GetxController/profile_controller.dart';
 import 'package:craftgirlsss/src/helpers/getrandom/getrandomstring.dart';
-import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
+import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/listtiles/listtileprofile.dart';
 import 'package:craftgirlsss/src/view-models/loadings/loading.dart';
 import 'package:craftgirlsss/src/view-models/nodata/nodata.dart';
@@ -11,12 +11,14 @@ import 'package:craftgirlsss/src/view-models/popup/alerttidaktau/alerttidaktau.d
 import 'package:craftgirlsss/src/view-models/profilephoto/profilephoto.dart';
 import 'package:craftgirlsss/src/view-models/rows/rowsinfopengiriman/rowsinfopengiriman.dart';
 import 'package:craftgirlsss/src/views/login/login.dart';
+import 'package:craftgirlsss/src/views/login/loginv2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'address/addresses.dart';
 import 'editprofile/editprofile.dart';
 
 class ProfileV2 extends StatefulWidget {
@@ -32,17 +34,7 @@ class _ProfileV2State extends State<ProfileV2> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: Text(
-          'Pengaturan',
-          style: titleInter(
-              color: Colors.black54, fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-        elevation: 0,
-        backgroundColor: Colors.white,
-      ),
+      appBar: defaultAppBar(title: "Pengaturan"),
       body: ListView(
         padding: const EdgeInsets.all(10),
         children: [
@@ -58,8 +50,6 @@ class _ProfileV2State extends State<ProfileV2> {
                         nama: profileC.profileModels[0].name,
                         onPressedButtonChange: () async {
                         getImage(ImageSource.gallery);
-                        // await profileC.uploadImageProfile(context,
-                        //     media: ImageSource.gallery);
                       })
                     : kNoData(),
           ),
@@ -74,11 +64,15 @@ class _ProfileV2State extends State<ProfileV2> {
               title: "Edit Profil"),
           listTileProfileV2(
               iconAsset: 'assets/icons/freshicons/MapPinLinenew.png',
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => const LokasiPengiriman());
+              },
               title: "Edit Alamat Pengiriman"),
           listTileProfileV2(
               iconAsset: 'assets/icons/freshicons/Heartnew.png',
-              onPressed: () {},
+              onPressed: () {
+                // Get.to(() => const LoginPageV2());
+              },
               title: "Favorit Saya"),
           listTileProfileV2(
               iconAsset: 'assets/icons/freshicons/StarHalf.png',
