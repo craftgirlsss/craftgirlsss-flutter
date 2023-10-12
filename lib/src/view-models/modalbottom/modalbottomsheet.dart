@@ -30,18 +30,42 @@ showProductSpecification(context) {
                 color: Colors.white,
                 padding: const EdgeInsets.all(20.0),
                 child: Table(
-                  children: const [
+                  children: [
                     TableRow(children: [
-                      Text('Stok'),
-                      Text('31'),
+                      Text('Stok',
+                          style: titleInter(
+                              color: Colors.black54,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal)),
+                      Text('31',
+                          style: titleInter(
+                              color: Colors.black54,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal)),
                     ]),
                     TableRow(children: [
-                      Text('Ukuran'),
-                      Text('XL, L, XXL, M'),
+                      Text('Ukuran',
+                          style: titleInter(
+                              color: Colors.black54,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal)),
+                      Text('XL, L, XXL, M',
+                          style: titleInter(
+                              color: Colors.black54,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal)),
                     ]),
                     TableRow(children: [
-                      Text('Merek'),
-                      Text('Cardinal'),
+                      Text('Merek',
+                          style: titleInter(
+                              color: Colors.black54,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal)),
+                      Text('Cardinal',
+                          style: titleInter(
+                              color: Colors.black54,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal)),
                     ])
                   ],
                 ),
@@ -68,7 +92,7 @@ showProductOngkir(context,
       ),
       builder: (context) {
         return FractionallySizedBox(
-          heightFactor: 0.7,
+          heightFactor: 0.6,
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Column(
@@ -79,7 +103,7 @@ showProductOngkir(context,
                   child: Text(
                     "Informasi Ongkir",
                     style: titleInter(
-                        color: Colors.black,
+                        color: Colors.black54,
                         fontWeight: FontWeight.normal,
                         fontSize: 15),
                   ),
@@ -88,10 +112,11 @@ showProductOngkir(context,
                 ListTile(
                     contentPadding: const EdgeInsets.all(0),
                     onTap: onTapLocationName,
+                    dense: false,
                     title: Text(
                       'Kirim ke',
                       style: titleInter(
-                          color: Colors.black,
+                          color: Colors.black54,
                           fontSize: 13,
                           fontWeight: FontWeight.normal),
                     ),
@@ -115,13 +140,19 @@ showProductOngkir(context,
                     title: Text(
                       'Biaya',
                       style: titleInter(
-                          color: Colors.black,
+                          color: Colors.black54,
                           fontSize: 13,
                           fontWeight: FontWeight.normal),
                     ),
-                    trailing: Text(priceOngkir != null
-                        ? formatCurrency.format(priceOngkir)
-                        : 'Rp. 0')),
+                    trailing: Text(
+                      priceOngkir != null
+                          ? formatCurrency.format(priceOngkir)
+                          : 'Rp. 0',
+                      style: titleInter(
+                          color: Colors.black54,
+                          fontSize: 13,
+                          fontWeight: FontWeight.normal),
+                    )),
                 Text(
                   'Akan diterima pada tanggal $startDate - $endDate $month',
                   style: titleInter(

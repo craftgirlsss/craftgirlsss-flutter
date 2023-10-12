@@ -29,107 +29,93 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: listOfColors[currentIndex],
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
-          boxShadow: [
-            BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 5),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(30.0),
-            topRight: Radius.circular(30.0),
+      bottomNavigationBar: BottomNavyBar(
+        backgroundColor: Colors.white,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        selectedIndex: currentIndex,
+        onItemSelected: (index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+        items: <BottomNavyBarItem>[
+          BottomNavyBarItem(
+            inactiveColor: Colors.black,
+            icon: Padding(
+              padding: const EdgeInsets.only(left: 4),
+              child: Image.asset(
+                'assets/icons/freshicons/fluent_home-32-regular.png',
+                scale: 1.3,
+              ),
+            ),
+            title: Text(
+              'Home',
+              style: titleInter(
+                  color: Colors.black54,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+            activeColor: Colors.red,
+            textAlign: TextAlign.center,
           ),
-          child: BottomNavyBar(
-            backgroundColor: Colors.white,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            selectedIndex: currentIndex,
-            onItemSelected: (index) {
-              setState(() {
-                currentIndex = index;
-              });
-            },
-            items: <BottomNavyBarItem>[
-              BottomNavyBarItem(
-                inactiveColor: Colors.black,
-                icon: Padding(
-                  padding: const EdgeInsets.only(left: 4),
-                  child: Image.asset(
-                    'assets/icons/freshicons/fluent_home-32-regular.png',
-                    scale: 1.3,
-                  ),
-                ),
-                title: Text(
-                  'Home',
-                  style: titleInter(
-                      color: Colors.black54,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
-                ),
-                activeColor: Colors.red,
-                textAlign: TextAlign.center,
+          BottomNavyBarItem(
+            inactiveColor: Colors.black,
+            icon: Padding(
+              padding: const EdgeInsets.only(left: 4),
+              child: Image.asset(
+                'assets/icons/freshicons/MagnifyingGlass.png',
+                scale: 1.3,
               ),
-              BottomNavyBarItem(
-                inactiveColor: Colors.black,
-                icon: Padding(
-                  padding: const EdgeInsets.only(left: 4),
-                  child: Image.asset(
-                    'assets/icons/freshicons/MagnifyingGlass.png',
-                    scale: 1.3,
-                  ),
-                ),
-                title: Text(
-                  'Cari',
-                  style: titleInter(
-                      color: Colors.black54,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
-                ),
-                activeColor: Colors.green,
-                textAlign: TextAlign.center,
-              ),
-              BottomNavyBarItem(
-                inactiveColor: Colors.black,
-                icon: Padding(
-                  padding: const EdgeInsets.only(left: 4),
-                  child: Image.asset(
-                    'assets/icons/freshicons/ShoppingCart.png',
-                    scale: 1.3,
-                  ),
-                ),
-                title: Text(
-                  'Keranjang',
-                  style: titleInter(
-                      color: Colors.black54,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
-                ),
-                activeColor: Colors.amber.shade800,
-                textAlign: TextAlign.center,
-              ),
-              BottomNavyBarItem(
-                inactiveColor: Colors.black,
-                icon: Padding(
-                  padding: const EdgeInsets.only(left: 4),
-                  child: Image.asset(
-                    'assets/icons/freshicons/GearSix.png',
-                    scale: 1.3,
-                  ),
-                ),
-                title: Text(
-                  'Pengaturan',
-                  style: titleInter(
-                      color: Colors.black54,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
-                ),
-                activeColor: Colors.blue,
-                textAlign: TextAlign.center,
-              ),
-            ],
+            ),
+            title: Text(
+              'Cari',
+              style: titleInter(
+                  color: Colors.black54,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+            activeColor: Colors.green,
+            textAlign: TextAlign.center,
           ),
-        ),
+          BottomNavyBarItem(
+            inactiveColor: Colors.black,
+            icon: Padding(
+              padding: const EdgeInsets.only(left: 4),
+              child: Image.asset(
+                'assets/icons/freshicons/ShoppingCart.png',
+                scale: 1.3,
+              ),
+            ),
+            title: Text(
+              'Keranjang',
+              style: titleInter(
+                  color: Colors.black54,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+            activeColor: Colors.amber.shade800,
+            textAlign: TextAlign.center,
+          ),
+          BottomNavyBarItem(
+            inactiveColor: Colors.black,
+            icon: Padding(
+              padding: const EdgeInsets.only(left: 4),
+              child: Image.asset(
+                'assets/icons/freshicons/GearSix.png',
+                scale: 1.3,
+              ),
+            ),
+            title: Text(
+              'Pengaturan',
+              style: titleInter(
+                  color: Colors.black54,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+            activeColor: Colors.blue,
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }

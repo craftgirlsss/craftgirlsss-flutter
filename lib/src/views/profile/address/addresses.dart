@@ -132,7 +132,7 @@ class _LokasiPengirimanState extends State<LokasiPengiriman> {
             const SizedBox(height: 10),
             Text("Daftar alamat saya",
                 style: titleInter(
-                    color: Colors.black87,
+                    color: Colors.black54,
                     fontSize: 15,
                     fontWeight: FontWeight.normal)),
             const SizedBox(height: 10),

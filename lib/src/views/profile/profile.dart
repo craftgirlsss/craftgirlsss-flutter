@@ -132,5 +132,6 @@ class _ProfileTabState extends State<ProfileTab> {
     await vars.client
         .from('cr_profiles')
         .update({'url_profile': fullURL}).eq('user_uuid', id);
+    await profileC.fetchProfile();
   }
 }

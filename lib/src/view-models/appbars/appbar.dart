@@ -82,7 +82,7 @@ AppBar defaultAppBar(
           color: Colors.black54, fontSize: 16, fontWeight: FontWeight.bold),
     ),
     elevation: 0,
-    backgroundColor: Colors.transparent,
+    backgroundColor: Colors.white,
     actions: withActions == true ? actions : null,
   );
 }

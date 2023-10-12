@@ -29,24 +29,23 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: kAppBar(context,
-          withLeadingData: true,
-          listData: [
+      appBar: defaultAppBar(
+          title: "Detail Produk",
+          autoImplyLeading: true,
+          withActions: true,
+          actions: [
             IconButton(
                 onPressed: () {
                   // Get.to(() => const ChatPage());
                 },
                 tooltip: 'Chat admin',
                 icon: Image.asset(
-                  'assets/icons/chat.png',
+                  'assets/icons/freshicons/ChatTeardropText.png',
                   errorBuilder: (context, error, stackTrace) =>
                       const Center(child: Text('Error')),
                   scale: 0.7,
                 ))
-          ],
-          autoImplyLeading: true,
-          isTitle: true,
-          titleText: "Detail Produk"),
+          ]),
       body: ListView(
         physics: const ScrollPhysics(),
         children: [

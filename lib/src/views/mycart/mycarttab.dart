@@ -2,7 +2,9 @@ import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardproduct/cardproductv2.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardtotalproduct/totalpriceproduct.dart';
+import 'package:craftgirlsss/src/views/products/productdetail/productdetailcheckout.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyCartProduct extends StatefulWidget {
   const MyCartProduct({super.key});
@@ -15,7 +17,8 @@ class _MyCartProductState extends State<MyCartProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: defaultAppBar(title: "Keranjangku"),
+      backgroundColor: Colors.white,
+      appBar: defaultAppBar(title: "Keranjangku", autoImplyLeading: false),
       body: ListView(
         padding:
             const EdgeInsets.only(left: 15, right: 15, bottom: 15, top: 10),
@@ -28,7 +31,9 @@ class _MyCartProductState extends State<MyCartProduct> {
                   productPrice: 15000,
                   productName: 'Baju Favorit',
                   index: index,
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(() => const ProductDetailPage());
+                  },
                   ukuran: "XL",
                   urlImage: 'assets/images/sampel-1.jpeg'),
               separatorBuilder: (context, index) => const SizedBox(height: 10),

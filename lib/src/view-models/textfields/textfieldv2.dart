@@ -18,6 +18,10 @@ SizedBox textFieldV2(
           fillColor: Colors.grey.shade100,
           contentPadding: const EdgeInsets.all(12),
           hintText: hintText ?? 'Cari',
+          hintStyle: titleInter(
+              color: Colors.black54,
+              fontSize: 15,
+              fontWeight: FontWeight.normal),
           prefixIconColor: Colors.black54,
           prefixIcon:
               preffixIcon == true ? Icon(icon, color: Colors.black54) : null,
@@ -27,8 +31,6 @@ SizedBox textFieldV2(
     ),
   );
 }
-
-
 
 SizedBox textFieldCustomized(
     {TextEditingController? controller,

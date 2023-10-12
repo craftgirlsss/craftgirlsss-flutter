@@ -16,6 +16,10 @@ SizedBox kSearchTextField(
           fillColor: Colors.grey.shade200,
           contentPadding: const EdgeInsets.all(3),
           hintText: hintText ?? 'Cari',
+          hintStyle: titleInter(
+              color: Colors.black54,
+              fontSize: 15,
+              fontWeight: FontWeight.normal),
           prefixIconColor: Colors.black54,
           prefixIcon: const Icon(Icons.search, color: Colors.black54),
           border: const OutlineInputBorder(borderSide: BorderSide.none)),

@@ -8,8 +8,8 @@ class PrductReviews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: kAppBar(context,
-          autoImplyLeading: true, isTitle: true, titleText: "Ulasan"),
+      backgroundColor: Colors.white,
+      appBar: defaultAppBar(title: "Semua Ulasan", autoImplyLeading: true),
       body: ListView.separated(
           shrinkWrap: true,
           physics: const ScrollPhysics(),

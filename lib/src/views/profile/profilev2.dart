@@ -11,7 +11,6 @@ import 'package:craftgirlsss/src/view-models/popup/alerttidaktau/alerttidaktau.d
 import 'package:craftgirlsss/src/view-models/profilephoto/profilephoto.dart';
 import 'package:craftgirlsss/src/view-models/rows/rowsinfopengiriman/rowsinfopengiriman.dart';
 import 'package:craftgirlsss/src/views/login/login.dart';
-import 'package:craftgirlsss/src/views/login/loginv2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -32,79 +31,84 @@ class _ProfileV2State extends State<ProfileV2> {
   ProfileController profileC = Get.put(ProfileController());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: defaultAppBar(title: "Pengaturan"),
-      body: ListView(
-        padding: const EdgeInsets.all(10),
-        children: [
-          Obx(
-            () => profileC.isLoadingProfilePage.value == true
-                ? kLoading()
-                : profileC.profileModels.isNotEmpty
-                    ? photo(context,
-                        button: true,
-                        urlPhoto:
-                            "https://zhfjjcaxzhmrexhkzest.supabase.co/storage/v1/object/public/${profileC.profileModels[0].urlProfile}",
-                        email: profileC.profileModels[0].email,
-                        nama: profileC.profileModels[0].name,
-                        onPressedButtonChange: () async {
-                        getImage(ImageSource.gallery);
-                      })
-                    : kNoData(),
-          ),
-          const SizedBox(height: 20),
-          kRowsInfoPengiriman(),
-          const SizedBox(height: 20),
-          listTileProfileV2(
-              iconAsset: 'assets/icons/freshicons/Usernew.png',
-              onPressed: () {
-                Get.to(() => const EditProfile());
-              },
-              title: "Edit Profil"),
-          listTileProfileV2(
-              iconAsset: 'assets/icons/freshicons/MapPinLinenew.png',
-              onPressed: () {
-                Get.to(() => const LokasiPengiriman());
-              },
-              title: "Edit Alamat Pengiriman"),
-          listTileProfileV2(
-              iconAsset: 'assets/icons/freshicons/Heartnew.png',
-              onPressed: () {
-                // Get.to(() => const LoginPageV2());
-              },
-              title: "Favorit Saya"),
-          listTileProfileV2(
-              iconAsset: 'assets/icons/freshicons/StarHalf.png',
-              onPressed: () {},
-              title: "Beri Rating App"),
-          listTileProfileV2(
-              iconAsset: 'assets/icons/freshicons/ChatsCirclenew.png',
-              onPressed: () {},
-              title: "Chat Admin"),
-          listTileProfileV2(
-              iconAsset: 'assets/icons/freshicons/SignOutnew.png',
-              onPressed: () {
-                kAlertTidakTau(context,
-                    title: "Log Out",
-                    isNeedCancelButton: true,
-                    content: "Apakah anda yakin keluar dari akun anda?",
-                    onOK: () async {
-                  SharedPreferences prefs =
-                      await SharedPreferences.getInstance();
-                  await vars.client.auth.signOut();
-                  await prefs.setBool('loggedIn', false);
-                  Future.delayed(
-                      const Duration(seconds: 1),
-                      () => Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LoginPage()),
-                          (route) => false));
-                });
-              },
-              title: "Sign Out"),
-        ],
+    return RefreshIndicator(
+      onRefresh: () async {
+        await profileC.fetchProfile();
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: defaultAppBar(title: "Pengaturan"),
+        body: ListView(
+          padding: const EdgeInsets.all(10),
+          children: [
+            Obx(
+              () => profileC.isLoadingProfilePage.value == true
+                  ? kLoading()
+                  : profileC.profileModels.isNotEmpty
+                      ? photo(context,
+                          button: true,
+                          urlPhoto:
+                              "https://zhfjjcaxzhmrexhkzest.supabase.co/storage/v1/object/public/${profileC.profileModels[0].urlProfile}",
+                          email: profileC.profileModels[0].email,
+                          nama: profileC.profileModels[0].name,
+                          onPressedButtonChange: () async {
+                          getImage(ImageSource.gallery);
+                        })
+                      : kNoData(),
+            ),
+            const SizedBox(height: 20),
+            kRowsInfoPengiriman(),
+            const SizedBox(height: 20),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/Usernew.png',
+                onPressed: () {
+                  Get.to(() => const EditProfile());
+                },
+                title: "Edit Profil"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/MapPinLinenew.png',
+                onPressed: () {
+                  Get.to(() => const LokasiPengiriman());
+                },
+                title: "Edit Alamat Pengiriman"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/Heartnew.png',
+                onPressed: () {
+                  // Get.to(() => const LoginPageV2());
+                },
+                title: "Favorit Saya"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/StarHalf.png',
+                onPressed: () {},
+                title: "Beri Rating App"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/ChatsCirclenew.png',
+                onPressed: () {},
+                title: "Chat Admin"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/SignOutnew.png',
+                onPressed: () {
+                  kAlertTidakTau(context,
+                      title: "Log Out",
+                      isNeedCancelButton: true,
+                      content: "Apakah anda yakin keluar dari akun anda?",
+                      onOK: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    await vars.client.auth.signOut();
+                    await prefs.setBool('loggedIn', false);
+                    Future.delayed(
+                        const Duration(seconds: 1),
+                        () => Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginPage()),
+                            (route) => false));
+                  });
+                },
+                title: "Sign Out"),
+          ],
+        ),
       ),
     );
   }
