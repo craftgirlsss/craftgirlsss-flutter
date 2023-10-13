@@ -3,7 +3,7 @@ import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/view-models/textfields/nolimitpaddingtextfield.dart';
-import 'package:craftgirlsss/src/views/profile/address/listaddress.dart';
+import 'package:craftgirlsss/src/views/profile/address/listaddressprovinsi.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,6 +32,7 @@ class _AddAddressPageState extends State<AddAddressPage>
   @override
   void initState() {
     super.initState();
+    // provinceC = TextEditingController(text: addressC.provinceName.value.isNotEmpty ? addressC.provinceName.value );
     _controller = AnimationController(
       duration: const Duration(seconds: 1),
       vsync: this,
@@ -66,10 +67,8 @@ class _AddAddressPageState extends State<AddAddressPage>
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,
-        appBar: kAppBar(context,
-            autoImplyLeading: true,
-            isTitle: true,
-            titleText: 'Tambah lokasi pengiriman'),
+        appBar: defaultAppBar(
+            title: "Tambah Lokasi Pengiriman", autoImplyLeading: true),
         body: ListView(
           children: [
             const SizedBox(height: 5),
@@ -93,13 +92,25 @@ class _AddAddressPageState extends State<AddAddressPage>
                   fontWeight: FontWeight.normal),
             ),
             const SizedBox(height: 5),
-            kNoLimitPaddingTextField(
-                controller: provinceC,
-                hint: 'Provinsi, Kota, Kecamatan, Kode Pos',
-                onTap: () {
-                  Get.to(() => const ListOfAddress());
-                },
-                suffixIcon: true),
+            Obx(
+              () => addressC.provinceName.value.isNotEmpty
+                  ? kNoLimitPaddingTextField(
+                      controller: TextEditingController(
+                          text:
+                              "${addressC.provinceName.value}, ${addressC.kabupatenName.value}, ${addressC.kecamatanName.value}, ${addressC.postalcode.value}"),
+                      hint: 'Provinsi, Kota, Kecamatan, Kode Pos',
+                      onTap: () {
+                        Get.to(() => const ListOfAddressProvince());
+                      },
+                      suffixIcon: true)
+                  : kNoLimitPaddingTextField(
+                      controller: provinceC,
+                      hint: 'Provinsi, Kota, Kecamatan, Kode Pos',
+                      onTap: () {
+                        Get.to(() => const ListOfAddressProvince());
+                      },
+                      suffixIcon: true),
+            ),
             const SizedBox(height: 2),
             kNoLimitPaddingTextField(
                 controller: detailC, hint: 'Nama Jalan, Gedung, No. Rumah'),
@@ -218,22 +229,24 @@ class _AddAddressPageState extends State<AddAddressPage>
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(20),
+            const SizedBox(height: 20),
+            Center(
               child: kButtons(context,
                   backgroundColor: Colors.green.shade300,
                   label: "Tambah Alamat", onPressed: () async {
-                // await addressC.insertAddress(context,
-                //     aturSebagai: "Kantor",
-                //     desa: "Lumajang",
-                //     detailLainnya: "Lumajang adalah desaku",
-                //     fullAddress: "Lorem Ipsum",
-                //     isdefault: true,
-                //     kabupaten: "Sidoarjo",
-                //     namaPenerima: "Putra",
-                //     nomorHpPenerima: "0821123232",
-                //     postalCode: "61258",
-                //     province: "Jawa Timur");
+                // print(
+                //     "${addressC.provinceName.value}, ${addressC.kabupatenName.value}, ${addressC.kecamatanName.value}, ${addressC.postalcode.value}, $pilihan, ${blokRumahC.text}, ${noHpC.text}, ${detailC.text}, ${nameC.text}, $light1");
+                await addressC.insertAddress(context,
+                    aturSebagai: pilihan,
+                    desa: addressC.kecamatanName.value,
+                    detailLainnya: blokRumahC.text,
+                    fullAddress: detailC.text,
+                    isdefault: light1,
+                    kabupaten: addressC.kabupatenName.value,
+                    namaPenerima: nameC.text,
+                    nomorHpPenerima: noHpC.text,
+                    postalCode: addressC.postalcode.value,
+                    province: addressC.provinceName.value);
               }),
             )
           ],

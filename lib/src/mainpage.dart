@@ -1,7 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/views/mycart/mycarttab.dart';
-import 'package:craftgirlsss/src/views/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'views/explore/explore.dart';
 import 'views/home/home.dart';
@@ -11,10 +10,10 @@ class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
   @override
-  _MainPageState createState() => _MainPageState();
+  MainPageState createState() => MainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class MainPageState extends State<MainPage> {
   int currentIndex = 0;
 
   List listOfColors = [

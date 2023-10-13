@@ -9,6 +9,8 @@ TextFormField kNoLimitPaddingTextField(
   return TextFormField(
     onTap: onTap,
     controller: controller,
+    style: titleInter(
+        color: Colors.black54, fontSize: 14, fontWeight: FontWeight.normal),
     // enabled: suffixIcon == true ? false : true,
     decoration: InputDecoration(
         filled: true,

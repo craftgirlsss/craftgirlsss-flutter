@@ -4,7 +4,6 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:craftgirlsss/src/mainpage.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/views/Introduction/splashscreen.dart';
-import 'package:craftgirlsss/src/views/login/login.dart';
 import 'package:craftgirlsss/src/views/login/loginv2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

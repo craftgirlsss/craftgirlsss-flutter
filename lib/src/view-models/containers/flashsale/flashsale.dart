@@ -6,10 +6,10 @@ class FlashSale extends StatefulWidget {
   const FlashSale({super.key});
 
   @override
-  _FlashSaleState createState() => _FlashSaleState();
+  FlashSaleState createState() => FlashSaleState();
 }
 
-class _FlashSaleState extends State<FlashSale> {
+class FlashSaleState extends State<FlashSale> {
   static var countdownDuration = const Duration(minutes: 10);
   static var countdownDuration1 = const Duration(minutes: 10);
   Duration duration = const Duration();

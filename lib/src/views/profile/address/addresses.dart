@@ -140,7 +140,7 @@ class _LokasiPengirimanState extends State<LokasiPengiriman> {
               () => addressC.isLoadingLoadData.value == true
                   ? SizedBox(height: 150, child: kLoading())
                   : addressC.addressesModelsList.isNotEmpty
-                      ? ListView.builder(
+                      ? ListView.separated(
                           shrinkWrap: true,
                           itemCount: addressC.addressesModelsList.length,
                           scrollDirection: Axis.vertical,
@@ -153,9 +153,12 @@ class _LokasiPengirimanState extends State<LokasiPengiriman> {
                               isDefault:
                                   addressC.addressesModelsList[index].isDefault,
                               onTap: () {}),
+                          separatorBuilder: (context, index) =>
+                              const SizedBox(height: 5),
                         )
                       : const Center(child: Text('Tidak ada data alamat')),
-            )
+            ),
+            const SizedBox(height: 100),
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(

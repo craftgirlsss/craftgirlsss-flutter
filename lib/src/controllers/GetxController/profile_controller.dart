@@ -33,6 +33,23 @@ class ProfileController extends GetxController {
     isLoadingProfilePage.value = false;
   }
 
+  // updateProfile({
+  //   String? email,
+  // }) async {
+  //   isLoadingProfilePage.value = true;
+  //   try {
+  //     List resultProfilesDetail =
+  //         await vars.client.from('cr_profiles').select('*').eq('user_uuid', id);
+  //     if (resultProfilesDetail.isNotEmpty) {
+  //       // await vars.client.from('cr_profiles').update(values)
+  //     }
+  //     isLoadingProfilePage.value = false;
+  //   } catch (e) {
+  //     isLoadingProfilePage.value = false;
+  //   }
+  //   isLoadingProfilePage.value = false;
+  // }
+
   uploadImageProfile(context, {ImageSource? media}) async {
     isLoadingUploadImage.value = true;
     XFile? image;
