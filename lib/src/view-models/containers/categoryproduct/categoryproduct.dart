@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 Container categoryProduct(context) {
   return Container(
-    padding: const EdgeInsets.only(left: 10, right: 10),
-    color: Colors.transparent,
+    padding: const EdgeInsets.all(10),
     width: MediaQuery.of(context).size.width,
-    height: 65,
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(7),
+        border: Border.all(color: Colors.black12)),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

@@ -72,3 +72,51 @@ Widget listTileProfileV2(
         )),
   );
 }
+
+Widget listTileWithoutIconLeading(
+    {String? title = '-', Function()? onPressed, String? value}) {
+  return GestureDetector(
+    onTap: onPressed,
+    child: Column(
+      children: [
+        Container(
+            height: 38,
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  color: Colors.transparent,
+                  child: Text(
+                    title!,
+                    style: titleInter(
+                        color: Colors.black54,
+                        fontSize: 15,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+                Container(
+                  color: Colors.transparent,
+                  child: Row(children: [
+                    Text(
+                      value ?? 'Atur Sekarang',
+                      style: titleInter(
+                          color: Colors.black54,
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal),
+                    ),
+                    const SizedBox(width: 5),
+                    const Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      size: 17,
+                      color: Colors.black54,
+                    ),
+                  ]),
+                )
+              ],
+            )),
+        const Divider()
+      ],
+    ),
+  );
+}

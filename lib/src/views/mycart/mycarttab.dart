@@ -14,6 +14,8 @@ class MyCartProduct extends StatefulWidget {
 }
 
 class _MyCartProductState extends State<MyCartProduct> {
+  // CardProductListForWhistList cartController =
+  //     Get.put(CardProductListForWhistList());
   @override
   Widget build(BuildContext context) {
     return Scaffold(

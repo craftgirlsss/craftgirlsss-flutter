@@ -161,6 +161,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.6"
+  date_field:
+    dependency: "direct main"
+    description:
+      name: date_field
+      sha256: "756305983fa63e3a3a74b6f1074716a37fa8f4156b97ddf184b8576c1caef630"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.5"
   dots_indicator:
     dependency: "direct main"
     description:
@@ -278,6 +286,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.6.2"
+  flutter_cupertino_date_picker:
+    dependency: "direct main"
+    description:
+      name: flutter_cupertino_date_picker
+      sha256: ff7d7ef990379e586e88b16925db768d8e4641cb5ad17a669ddd13d320aca01e
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.26+2"
   flutter_keyboard_visibility:
     dependency: transitive
     description:

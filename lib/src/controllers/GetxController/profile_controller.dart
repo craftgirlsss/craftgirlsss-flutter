@@ -15,8 +15,8 @@ class ProfileController extends GetxController {
   var id = vars.client.auth.currentUser?.id;
   @override
   void onInit() {
-    super.onInit();
     fetchProfile();
+    super.onInit();
   }
 
   fetchProfile() async {
@@ -24,6 +24,7 @@ class ProfileController extends GetxController {
     try {
       List resultProfilesDetail =
           await vars.client.from('cr_profiles').select('*').eq('user_uuid', id);
+      // print(resultProfilesDetail);
       profileModels.value =
           resultProfilesDetail.map((e) => ProfileModels.fromJson(e)).toList();
       isLoadingProfilePage.value = false;

@@ -1,11 +1,13 @@
 class ProfileModels {
   int? id;
-  String? name, phone, email, urlProfile;
+  String? name, phone, email, urlProfile, jenisKelamin, dateOfBirth;
   bool? deleted, isVerified;
 
   ProfileModels(
       {this.id,
       this.name,
+      this.dateOfBirth,
+      this.jenisKelamin,
       this.urlProfile,
       this.email,
       this.deleted,
@@ -15,7 +17,9 @@ class ProfileModels {
   factory ProfileModels.fromJson(Map<String, dynamic> json) {
     return ProfileModels(
         id: json['id'],
+        dateOfBirth: json['dob'] ?? 'Belum diset',
         name: json['name'] ?? '-',
+        jenisKelamin: json['jenis_kelamin'] ?? 'Belum diset',
         email: json['email'] ?? "-",
         urlProfile: json['url_profile'] ?? '-',
         isVerified: json['is_verified'],

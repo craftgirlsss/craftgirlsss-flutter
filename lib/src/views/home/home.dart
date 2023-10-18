@@ -56,7 +56,10 @@ class _HomePageState extends State<HomePage> {
             style: title(fontSize: 22, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
-          categoryProduct(context),
+          Padding(
+            padding: const EdgeInsets.only(left: 8, right: 8),
+            child: categoryProduct(context),
+          ),
           Text(
             '  Koleksi Terbaik',
             style: title(fontSize: 22, fontWeight: FontWeight.bold),
