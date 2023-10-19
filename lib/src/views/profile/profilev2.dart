@@ -19,6 +19,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'address/addresses.dart';
 import 'editprofile/editprofile.dart';
+import 'voucher/voucher.dart';
 
 class ProfileV2 extends StatefulWidget {
   const ProfileV2({super.key});
@@ -77,6 +78,12 @@ class _ProfileV2State extends State<ProfileV2> {
                   // Get.to(() => const LoginPageV2());
                 },
                 title: "Favorit Saya"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/voucher.png',
+                onPressed: () {
+                  Get.to(() => const VoucherPage());
+                },
+                title: "Voucherku"),
             listTileProfileV2(
                 iconAsset: 'assets/icons/freshicons/StarHalf.png',
                 onPressed: () {},

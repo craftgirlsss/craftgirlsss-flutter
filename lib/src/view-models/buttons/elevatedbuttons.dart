@@ -99,3 +99,28 @@ Widget kButtonsWithImage(
           ),
   );
 }
+
+Widget kButtonsNew(
+  context, {
+  String? label,
+  Function()? onPressed,
+  IconData? icons,
+  Color? labelColor = Colors.white,
+  Color backgroundColor = Colors.green,
+  double? fontSize = 15,
+}) {
+  return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        minimumSize: const Size.fromHeight(44),
+        backgroundColor: backgroundColor,
+      ),
+      child: Text(
+        label ?? '-',
+        style: titleInter(
+            fontSize: fontSize,
+            color: labelColor,
+            fontWeight: FontWeight.normal),
+      ));
+}

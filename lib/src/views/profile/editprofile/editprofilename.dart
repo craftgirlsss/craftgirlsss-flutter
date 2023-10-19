@@ -18,7 +18,6 @@ class EditprofileName extends StatefulWidget {
 }
 
 class _EditprofileNameState extends State<EditprofileName> {
-  @override
   TextEditingController? nameController;
 
   @override
@@ -38,10 +37,9 @@ class _EditprofileNameState extends State<EditprofileName> {
           textFieldV2(controller: nameController, preffixIcon: false),
           const SizedBox(height: 10),
           Center(
-            child: kButtons(
+            child: kButtonsNew(
               context,
               backgroundColor: Colors.green,
-              withIcon: false,
               onPressed: () async {
                 if (nameController!.text == widget.name) {
                   kAlertTidakTau(context,

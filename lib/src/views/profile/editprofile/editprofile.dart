@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:craftgirlsss/src/controllers/GetxController/profile_controller.dart';
 import 'package:craftgirlsss/src/helpers/getrandom/getrandomstring.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
-import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/listtiles/listtileprofile.dart';
 import 'package:craftgirlsss/src/view-models/loadings/loading.dart';
 import 'package:craftgirlsss/src/view-models/nodata/nodata.dart';
@@ -13,13 +12,12 @@ import 'package:craftgirlsss/src/view-models/popup/alertgagal/alertgagal.dart';
 import 'package:craftgirlsss/src/view-models/profilephoto/profilephoto.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-import 'package:skeletons/skeletons.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'editemail.dart';
 import 'editprofilename.dart';
 
 class EditProfile extends StatefulWidget {
@@ -119,21 +117,30 @@ class _EditProfileState extends State<EditProfile> {
                               },
                               title: "Jenis Kelamin"),
                           listTileWithoutIconLeading(
-                              onPressed: () {
-                                // showDialog(
-                                //   CupertinoDatePicker(
-                                //     initialDateTime: date,
-                                //     dateOrder: DatePickerDateOrder.dmy,
-                                //     mode: CupertinoDatePickerMode.date,
-                                //     onDateTimeChanged:
-                                //         (DateTime newDate) async {
-                                //       setState(() {
-                                //         finaldate = DateFormat('dd-MM-yyyy')
-                                //             .format(newDate);
-                                //       });
-                                //     },
-                                //   ),
-                                // );
+                              onPressed: () async {
+                                DateTime? pickedDate = await showDatePicker(
+                                    context: context,
+                                    initialDate: DateTime.now(),
+                                    firstDate: DateTime(
+                                        1955), //DateTime.now() - not to allow to choose before today.
+                                    lastDate: DateTime(2030));
+
+                                if (pickedDate != null) {
+                                  String formattedDate =
+                                      DateFormat('dd-MM-yyyy')
+                                          .format(pickedDate);
+                                  setState(() {
+                                    finaldate =
+                                        formattedDate; //set output date to TextField value.
+                                  });
+                                  await vars.client
+                                      .from('cr_profiles')
+                                      .update({'dob': finaldate}).eq(
+                                          'user_uuid', profileC.id);
+                                  profileC.fetchProfile();
+                                } else {
+                                  // print("Date is not selected");
+                                }
                               },
                               value: finaldate,
                               title: "Tanggal Lahir"),
@@ -143,7 +150,9 @@ class _EditProfileState extends State<EditProfile> {
                               title: "No. Handphone"),
                           listTileWithoutIconLeading(
                               value: emailC?.replaceRange(2, 14, '******'),
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(() => const EditEmail());
+                              },
                               title: "Email"),
                         ],
                       )

@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: kAppBarHome(),
+      appBar: kAppBarHome(lengthNotifications: 4, lengthFavorite: 1),
       body: ListView(
         children: [
           CarouselSlider(

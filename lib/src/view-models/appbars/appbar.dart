@@ -74,7 +74,10 @@ AppBar defaultAppBar(
     leading: autoImplyLeading == true
         ? InkWell(
             onTap: () => Get.back(),
-            child: Image.asset('assets/icons/freshicons/ArrowBendUpLeft.png'))
+            child: const Icon(
+              Icons.arrow_back,
+              color: Colors.black54,
+            ))
         : null,
     title: Text(
       title ?? '',

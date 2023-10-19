@@ -57,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+  badges:
+    dependency: "direct main"
+    description:
+      name: badges
+      sha256: "6e7f3ec561ec08f47f912cfe349d4a1707afdc8dda271e17b046aa6d42c89e77"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -286,14 +294,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.6.2"
-  flutter_cupertino_date_picker:
-    dependency: "direct main"
-    description:
-      name: flutter_cupertino_date_picker
-      sha256: ff7d7ef990379e586e88b16925db768d8e4641cb5ad17a669ddd13d320aca01e
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.26+2"
   flutter_keyboard_visibility:
     dependency: transitive
     description:
