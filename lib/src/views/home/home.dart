@@ -127,4 +127,27 @@ class _HomePageState extends State<HomePage> {
     'assets/images/banner-product-discount.jpg',
     'assets/images/banner-product-discount.jpg',
   ];
+
+  List<Map> productsCategory = [
+    {"image": "0", "name": "Komputer & Aksesoris", "onPressed": () {}},
+    {"image": "1", "name": "Handphone & Aksesoris", "onPressed": () {}},
+    {"image": "2", "name": "Buku & Alat Tulis", "onPressed": () {}},
+    {"image": "3", "name": "Alat Elektronik", "onPressed": () {}},
+    {"image": "4", "name": "Fashion & Aksesoris", "onPressed": () {}},
+    {"image": "5", "name": "Busana Muslim", "onPressed": () {}},
+    {"image": "6", "name": "Kesehatan dan Obat", "onPressed": () {}},
+    {"image": "7", "name": "Olahraga & Outdoor", "onPressed": () {}},
+    {"image": "8", "name": "Otomotif", "onPressed": () {}},
+    {"image": "9", "name": "Fashion Anak", "onPressed": () {}},
+    {"image": "10", "name": "Baju Pria", "onPressed": () {}},
+    {"image": "11", "name": "Baju Wanita", "onPressed": () {}},
+    {"image": "12", "name": "Perabotan Rumah", "onPressed": () {}},
+    {"image": "13", "name": "Alat Kerja", "onPressed": () {}},
+    {"image": "14", "name": "Sepatu Pria", "onPressed": () {}},
+    {"image": "15", "name": "Sepatu Wanita", "onPressed": () {}},
+    {"image": "16", "name": "Snack", "onPressed": () {}},
+    {"image": "17", "name": "Tas Pria", "onPressed": () {}},
+    {"image": "18", "name": "Tas Wanita", "onPressed": () {}},
+    {"image": "19", "name": "Gift", "onPressed": () {}},
+  ];
 }

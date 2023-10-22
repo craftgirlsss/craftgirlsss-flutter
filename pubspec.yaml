@@ -78,6 +78,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/icons/freshicons/
+    - assets/icons/category/
 
   fonts:
     - family: Caveat

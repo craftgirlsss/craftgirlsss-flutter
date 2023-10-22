@@ -16,9 +16,11 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
 import 'address/addresses.dart';
 import 'editprofile/editprofile.dart';
+import 'laporkanbug/laporkanbug.dart';
+import 'prettycoin/prettycoin.dart';
+import 'resetpassword/resetpassword.dart';
 import 'voucher/voucher.dart';
 
 class ProfileV2 extends StatefulWidget {
@@ -74,9 +76,7 @@ class _ProfileV2State extends State<ProfileV2> {
                 title: "Edit Alamat Pengiriman"),
             listTileProfileV2(
                 iconAsset: 'assets/icons/freshicons/Heartnew.png',
-                onPressed: () {
-                  // Get.to(() => const LoginPageV2());
-                },
+                onPressed: () {},
                 title: "Favorit Saya"),
             listTileProfileV2(
                 iconAsset: 'assets/icons/freshicons/voucher.png',
@@ -85,9 +85,39 @@ class _ProfileV2State extends State<ProfileV2> {
                 },
                 title: "Voucherku"),
             listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/Coins.png',
+                onPressed: () {
+                  Get.to(() => const PrettyCoin());
+                },
+                title: "Pretty Koin"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/Group.png',
+                onPressed: () {
+                  Get.to(() => const PrettyCoin());
+                },
+                title: "Mulai Jualan"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/Password(1).png',
+                onPressed: () {
+                  Get.to(() => ResetPassword(
+                        email: profileC.profileModels[0].email,
+                      ));
+                },
+                title: "Ubah Kata Sandi"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/History.png',
+                onPressed: () {},
+                title: "Riwayat Transaksi"),
+            listTileProfileV2(
                 iconAsset: 'assets/icons/freshicons/StarHalf.png',
                 onPressed: () {},
                 title: "Beri Rating App"),
+            listTileProfileV2(
+                iconAsset: 'assets/icons/freshicons/BugBeetle.png',
+                onPressed: () {
+                  Get.to(() => const LaporkanBug());
+                },
+                title: "Laporkan Bug"),
             listTileProfileV2(
                 iconAsset: 'assets/icons/freshicons/ChatsCirclenew.png',
                 onPressed: () {},

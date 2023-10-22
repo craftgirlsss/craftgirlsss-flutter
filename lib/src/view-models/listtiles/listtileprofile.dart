@@ -47,10 +47,14 @@ Widget listTileProfile(
 }
 
 Widget listTileProfileV2(
-    {String? title = '', Function()? onPressed, String? iconAsset = ''}) {
+    {String? title = '',
+    Function()? onPressed,
+    String? iconAsset = '',
+    Color? color = Colors.white}) {
   return Padding(
     padding: const EdgeInsets.all(5),
     child: ListTile(
+        tileColor: color,
         dense: true,
         minLeadingWidth: 3,
         onTap: onPressed,

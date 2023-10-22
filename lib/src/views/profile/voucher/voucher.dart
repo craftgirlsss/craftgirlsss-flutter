@@ -45,7 +45,7 @@ class _VoucherPageState extends State<VoucherPage> {
                           fontSize: 13,
                           fontWeight: FontWeight.normal))),
               Tab(
-                  icon: Text("Toko",
+                  icon: Text("Gratis Ongkir",
                       style: titleInter(
                           color: Colors.black54,
                           fontSize: 13,
@@ -60,6 +60,7 @@ class _VoucherPageState extends State<VoucherPage> {
         ),
         body: TabBarView(
           children: [
+            // tab untuk voucher semuanya
             ListView.separated(
                 padding: const EdgeInsets.all(15),
                 itemBuilder: (context, index) {
@@ -80,6 +81,7 @@ class _VoucherPageState extends State<VoucherPage> {
                 separatorBuilder: (context, index) =>
                     const SizedBox(height: 10),
                 itemCount: 10),
+            // tab untuk voucher dari craftgirlsss
             ListView.separated(
                 padding: const EdgeInsets.all(15),
                 itemBuilder: (context, index) {
@@ -92,7 +94,19 @@ class _VoucherPageState extends State<VoucherPage> {
                 separatorBuilder: (context, index) =>
                     const SizedBox(height: 10),
                 itemCount: 10),
-            const Text("Toko"),
+            // tab untuk voucher dari Gratis Ongkir
+            ListView.separated(
+                padding: const EdgeInsets.all(15),
+                itemBuilder: (context, index) {
+                  return ticketContainerGratisOngkir(context,
+                      expireDate: "31 Desember 2024",
+                      onPressed: () {},
+                      title: "Gratis Ongkir",
+                      subtitle: "Minimal belanja 0 Rupiah");
+                },
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: 10),
+                itemCount: 10),
           ],
         ),
       ),

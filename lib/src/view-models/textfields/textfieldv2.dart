@@ -17,7 +17,7 @@ SizedBox textFieldV2(
           filled: true,
           fillColor: Colors.grey.shade100,
           contentPadding: const EdgeInsets.all(12),
-          hintText: hintText ?? 'Cari',
+          hintText: hintText ?? '',
           hintStyle: titleInter(
               color: Colors.black54,
               fontSize: 15,

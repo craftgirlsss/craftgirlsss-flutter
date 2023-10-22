@@ -18,6 +18,7 @@ import 'package:intl/intl.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'editemail.dart';
+import 'editnamatoko.dart';
 import 'editprofilename.dart';
 
 class EditProfile extends StatefulWidget {
@@ -34,6 +35,7 @@ class _EditProfileState extends State<EditProfile> {
   String? nomorC;
   String? gender;
   String? finaldate;
+  String? namaToko;
   DateTime date = DateTime(2016, 10, 26);
 
   void showDialog(Widget child) {
@@ -62,7 +64,7 @@ class _EditProfileState extends State<EditProfile> {
     nomorC = profileC.profileModels[0].phone ?? '-';
     gender = profileC.profileModels[0].jenisKelamin ?? 'Atur Sekarang';
     finaldate = profileC.profileModels[0].dateOfBirth ?? 'Atur Sekarang';
-    // gender = profileC.profileModels[0]
+    namaToko = profileC.profileModels[0].namaToko;
   }
 
   @override
@@ -144,6 +146,15 @@ class _EditProfileState extends State<EditProfile> {
                               },
                               value: finaldate,
                               title: "Tanggal Lahir"),
+                          listTileWithoutIconLeading(
+                              value: namaToko ??
+                                  profileC.profileModels[0].namaToko,
+                              onPressed: () {
+                                Get.to(() => EditNamaToko(
+                                      name: namaToko,
+                                    ));
+                              },
+                              title: "Nama Toko"),
                           listTileWithoutIconLeading(
                               value: nomorC?.replaceRange(3, 9, '******'),
                               onPressed: () {},

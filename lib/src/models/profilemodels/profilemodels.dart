@@ -1,12 +1,13 @@
 class ProfileModels {
   int? id;
-  String? name, phone, email, urlProfile, jenisKelamin, dateOfBirth;
+  String? name, phone, email, urlProfile, jenisKelamin, dateOfBirth, namaToko;
   bool? deleted, isVerified;
 
   ProfileModels(
       {this.id,
       this.name,
       this.dateOfBirth,
+      this.namaToko,
       this.jenisKelamin,
       this.urlProfile,
       this.email,
@@ -18,6 +19,7 @@ class ProfileModels {
     return ProfileModels(
         id: json['id'],
         dateOfBirth: json['dob'] ?? 'Belum diset',
+        namaToko: json['nama_toko'] ?? 'Belum diset',
         name: json['name'] ?? '-',
         jenisKelamin: json['jenis_kelamin'] ?? 'Belum diset',
         email: json['email'] ?? "-",
