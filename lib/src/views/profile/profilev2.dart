@@ -19,6 +19,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'address/addresses.dart';
 import 'editprofile/editprofile.dart';
 import 'laporkanbug/laporkanbug.dart';
+import 'mulaijualan/mulaijualan.dart';
 import 'prettycoin/prettycoin.dart';
 import 'resetpassword/resetpassword.dart';
 import 'voucher/voucher.dart';
@@ -93,7 +94,7 @@ class _ProfileV2State extends State<ProfileV2> {
             listTileProfileV2(
                 iconAsset: 'assets/icons/freshicons/Group.png',
                 onPressed: () {
-                  Get.to(() => const PrettyCoin());
+                  Get.to(() => const MulaiJualan());
                 },
                 title: "Mulai Jualan"),
             listTileProfileV2(

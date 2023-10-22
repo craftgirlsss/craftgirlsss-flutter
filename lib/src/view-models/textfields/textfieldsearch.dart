@@ -26,3 +26,34 @@ SizedBox kSearchTextField(
     ),
   );
 }
+
+SizedBox kSearchTextFieldHome(
+    {TextEditingController? controller,
+    String? hintText,
+    double? height = 40}) {
+  return SizedBox(
+    height: height,
+    child: TextField(
+      style: titleInter(
+          color: const Color.fromRGBO(0, 0, 0, 0.867),
+          fontSize: 15,
+          fontWeight: FontWeight.normal),
+      controller: controller,
+      decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.grey.shade200,
+          contentPadding: const EdgeInsets.all(3),
+          hintText: hintText ?? 'Cari Produk',
+          hintStyle: titleInter(
+              color: Colors.black54,
+              fontSize: 15,
+              fontWeight: FontWeight.normal),
+          prefixIconColor: Colors.black54,
+          prefixIcon:
+              Image.asset('assets/icons/freshicons/MagnifyingGlass.png'),
+          border: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderSide: BorderSide.none)),
+    ),
+  );
+}

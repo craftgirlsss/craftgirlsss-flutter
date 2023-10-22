@@ -35,6 +35,54 @@ class AddressController extends GetxController {
   var kabupatenName = "".obs;
   var kecamatanName = "".obs;
 
+  // Read
+  reading() async {
+    // rekomendasi menggunakan try agar tau jika response API gagal
+    try {
+      List result = await vars.client.from('user').select('*').eq("user_uuid",
+          id); // artinya tolong tampilkan semua dari tabel user dimana user_uuid = id
+      // saya taruh hasil di sebuah List karna response API akan berbentuk [{}] bukan object {}
+      print(result);
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  // create
+  creating() async {
+    // rekomendasi menggunakan try agar tau jika response API gagal
+    try {
+      await vars.client.from('user').insert([
+        {'nama': 'Paijo', 'Usia': 15},
+      ]); // artinya tolong insert data ke dalam tabel user dimana nama = paijo, usia 15 tahun
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  updating() async {
+    // rekomendasi menggunakan try agar tau jika response API gagal
+    try {
+      await vars.client
+          .from('user')
+          .update({'nama': 'Painem'})
+          .eq('user_uuid', id)
+          .select(); // artinya tolong update nama = Painem dari dalam tabel user dimana user_uuid = id
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  deleting() async {
+    // rekomendasi menggunakan try agar tau jika response API gagal
+    try {
+      await vars.client.from('user').delete().eq('user_uuid',
+          id); // artinya tolong hapus data dari dalam tabel user dimana user_uuid = id
+    } catch (e) {
+      print(e);
+    }
+  }
+
   fetchAllAddress(context) async {
     isLoadingLoadData.value = true;
     try {

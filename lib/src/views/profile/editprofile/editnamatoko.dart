@@ -55,16 +55,12 @@ class _EditNamaTokoState extends State<EditNamaToko> {
                   } else {
                     try {
                       var id = vars.client.auth.currentUser?.id;
-                      await vars.client
-                          .from('cr_profiles')
-                          .update({'nama_toko': nameController!.text}).eq(
-                              'user_uuid', id);
+                      await vars.client.from('cr_toko').insert(
+                          {'nama': nameController!.text, 'user_uuid': id});
                       Future.delayed(Duration.zero, () {
                         kAlertBerhasil(context,
                             isNeedCancelButton: false,
-                            onOK: () => Navigator.of(context)
-                              ..pop()
-                              ..pop(),
+                            onOK: () => Get.back(),
                             content: "Berhasil merubah nama toko");
                       });
                       Future.delayed(const Duration(seconds: 2), () {

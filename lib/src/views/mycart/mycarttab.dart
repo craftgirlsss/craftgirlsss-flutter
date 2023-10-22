@@ -2,6 +2,7 @@ import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardproduct/cardproductv2.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardtotalproduct/totalpriceproduct.dart';
+import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/views/products/productdetail/productdetailcheckout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,7 +21,15 @@ class _MyCartProductState extends State<MyCartProduct> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: defaultAppBar(title: "Keranjangku", autoImplyLeading: false),
+      // appBar: defaultAppBar(title: "Keranjangku", autoImplyLeading: false),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        title: Text(
+          "Keranjangku",
+          style: titleHome(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: ListView(
         padding:
             const EdgeInsets.only(left: 15, right: 15, bottom: 15, top: 10),

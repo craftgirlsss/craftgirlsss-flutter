@@ -88,3 +88,6 @@ flutter:
     - family: Inter
       fonts:
         - asset: assets/fonts/inter.ttf
+    - family: GreyCliff
+      fonts:
+        - asset: assets/fonts/greycliff.otf

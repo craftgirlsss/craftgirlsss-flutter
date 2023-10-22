@@ -23,3 +23,14 @@ TextStyle titleInter(
       color: color,
       fontWeight: fontWeight);
 }
+
+TextStyle titleHome(
+    {double? fontSize = 28,
+    Color? color = Colors.black,
+    FontWeight? fontWeight = FontWeight.bold}) {
+  return TextStyle(
+      fontFamily: "GreyCliff",
+      fontSize: fontSize,
+      color: color,
+      fontWeight: fontWeight);
+}
