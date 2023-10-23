@@ -36,7 +36,7 @@ class _MulaiJualanState extends State<MulaiJualan> {
                 style: sfPro(
                     fontSize: 15,
                     fontWeight: FontWeight.normal,
-                    color: Colors.black),
+                    color: Colors.black54),
               ),
             ),
           ],

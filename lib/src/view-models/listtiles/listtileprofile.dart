@@ -77,6 +77,89 @@ Widget listTileProfileV2(
   );
 }
 
+Widget listTileProfileV3(
+    {String? title = '',
+    Function()? onPressed,
+    String? value = '',
+    String? iconAsset = '',
+    Color? color = Colors.white}) {
+  return InkWell(
+    onTap: onPressed,
+    child: Container(
+        color: Colors.transparent,
+        height: 50,
+        padding: const EdgeInsets.only(left: 20, right: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              color: Colors.transparent,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    iconAsset!,
+                    errorBuilder: (context, error, stackTrace) =>
+                        const Text('Error'),
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    title!,
+                    style: sfPro(
+                        color: Colors.black87,
+                        fontSize: 15,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              color: Colors.transparent,
+              child: Row(
+                children: [
+                  Text(
+                    value!,
+                    style: sfPro(
+                        color: Colors.black54,
+                        fontSize: 13,
+                        fontWeight: FontWeight.normal),
+                  ),
+                  const SizedBox(width: 8),
+                  const Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 18,
+                    color: Colors.black45,
+                  )
+                ],
+              ),
+            ),
+          ],
+        )
+        // ListTile(
+        //     tileColor: color,
+        //     dense: true,
+        //     minLeadingWidth: 3,
+        //     onTap: onPressed,
+        //     title: Text(
+        //       title!,
+        //       style: sfPro(
+        //           color: Colors.black54,
+        //           fontSize: 15,
+        //           fontWeight: FontWeight.normal),
+        //     ),
+        //     leading: Image.asset(
+        //       iconAsset!,
+        //       errorBuilder: (context, error, stackTrace) => const Text('Error'),
+        //     ),
+        //     trailing: const Icon(
+        //       Icons.arrow_forward_ios_rounded,
+        //       size: 18,
+        //       color: Colors.black54,
+        //     )),
+        ),
+  );
+}
+
 Widget listTileWithoutIconLeading(
     {String? title = '-',
     Function()? onPressed,

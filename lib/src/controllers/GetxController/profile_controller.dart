@@ -26,12 +26,12 @@ class ProfileController extends GetxController {
           .from('cr_profiles')
           .select('*, cr_toko(nama)')
           .eq('user_uuid', id);
-      print(resultProfilesDetail);
+      // print(resultProfilesDetail);
       profileModels.value =
           resultProfilesDetail.map((e) => ProfileModels.fromJson(e)).toList();
       isLoadingProfilePage.value = false;
     } catch (e) {
-      print(e);
+      // print(e);
       isLoadingProfilePage.value = false;
     }
     isLoadingProfilePage.value = false;

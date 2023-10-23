@@ -50,6 +50,8 @@ dependencies:
   flutter_animated_button: ^2.0.3
   date_field: ^3.0.5
   badges: ^3.1.1
+  flutter_screen_lock: ^9.0.1
+  flutter_otp_text_field: ^1.1.1
   # flutter_cupertino_date_picker: ^1.0.26+2
   # flutter_svg: ^2.0.5
   # rxdart: ^0.27.7

@@ -9,44 +9,35 @@ Widget photo(context,
     String? urlPhoto,
     String? email,
     bool? button}) {
-  return Stack(children: [
-    Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 3,
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/backgroundDefault.jpg'))),
-    ),
-    Center(
-      child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-        child: Column(
-          children: [
-            profilePhotoChange(context,
-                onPressed: onPressedButtonChange,
-                button: button,
-                urlProfile:
-                    urlPhoto ?? 'https://googleflutter.com/sample_image.jpg'),
-            Text(
-              "$nama",
-              style: sfPro(
-                  color: Colors.black54,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 5),
-            Text(
-              "$email",
-              style: sfPro(
-                  color: Colors.black54,
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal),
-            ),
-          ],
-        ),
+  return Center(
+    child: Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+      child: Column(
+        children: [
+          profilePhotoChange(context,
+              onPressed: onPressedButtonChange,
+              button: button,
+              urlProfile:
+                  urlPhoto ?? 'https://googleflutter.com/sample_image.jpg'),
+          Text(
+            "$nama",
+            style: sfPro(
+                color: Colors.black54,
+                fontSize: 15,
+                fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 5),
+          Text(
+            "$email",
+            style: sfPro(
+                color: Colors.black54,
+                fontSize: 14,
+                fontWeight: FontWeight.normal),
+          ),
+        ],
       ),
     ),
-  ]);
+  );
 }
 
 Widget profilePhotoChange(context,

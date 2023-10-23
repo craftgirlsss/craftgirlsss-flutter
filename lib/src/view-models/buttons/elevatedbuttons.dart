@@ -107,7 +107,7 @@ Widget kButtonsNew(
   IconData? icons,
   Color? labelColor = Colors.white,
   Color backgroundColor = Colors.green,
-  double? fontSize = 15,
+  double? fontSize = 16,
 }) {
   return ElevatedButton(
       onPressed: onPressed,

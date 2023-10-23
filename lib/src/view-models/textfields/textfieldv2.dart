@@ -11,7 +11,7 @@ SizedBox textFieldV2(
     height: height,
     child: TextField(
       style: sfPro(
-          color: Colors.black87, fontSize: 15, fontWeight: FontWeight.normal),
+          color: Colors.black54, fontSize: 15, fontWeight: FontWeight.normal),
       controller: controller,
       decoration: InputDecoration(
           filled: true,
@@ -27,7 +27,7 @@ SizedBox textFieldV2(
               preffixIcon == true ? Icon(icon, color: Colors.black54) : null,
           border: OutlineInputBorder(
               borderSide: BorderSide.none,
-              borderRadius: BorderRadius.circular(10))),
+              borderRadius: BorderRadius.circular(4))),
     ),
   );
 }
@@ -46,15 +46,15 @@ SizedBox textFieldCustomized(
       controller: controller,
       decoration: InputDecoration(
           filled: true,
-          fillColor: Colors.grey.shade300,
+          fillColor: Colors.grey.shade200,
           contentPadding: const EdgeInsets.all(12),
           hintText: hintText ?? 'Cari',
           prefixIconColor: Colors.black54,
           prefixIcon:
-              preffixIcon == true ? Icon(icon, color: Colors.black54) : null,
+              preffixIcon == true ? Icon(icon, color: Colors.black38) : null,
           border: OutlineInputBorder(
               borderSide: BorderSide.none,
-              borderRadius: BorderRadius.circular(7))),
+              borderRadius: BorderRadius.circular(3))),
     ),
   );
 }

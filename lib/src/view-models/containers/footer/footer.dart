@@ -1,3 +1,4 @@
+import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:flutter/material.dart';
 
 Container footer(context) {
@@ -8,22 +9,25 @@ Container footer(context) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
-      children: const [
+      children: [
         Text(
-          'Version 1.0.0',
-          style: TextStyle(
-              fontFamily: 'Inter',
-              color: Colors.black54,
-              fontSize: 11,
-              fontWeight: FontWeight.bold),
+          'Next Shop',
+          style: sfPro(
+              color: Colors.black54, fontSize: 15, fontWeight: FontWeight.bold),
         ),
         Text(
-          'Develop by Craftgirlsss',
-          style: TextStyle(
-              fontFamily: 'Inter',
+          'Version 1.0.0 Beta',
+          style: sfPro(
               color: Colors.black54,
-              fontSize: 11,
-              fontWeight: FontWeight.bold),
+              fontSize: 15,
+              fontWeight: FontWeight.normal),
+        ),
+        Text(
+          'Powered by Craftgirlsss',
+          style: sfPro(
+              color: Colors.black54,
+              fontSize: 15,
+              fontWeight: FontWeight.normal),
         ),
       ],
     ),

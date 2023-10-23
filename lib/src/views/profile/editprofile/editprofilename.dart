@@ -40,6 +40,7 @@ class _EditprofileNameState extends State<EditprofileName> {
             child: kButtonsNew(
               context,
               backgroundColor: Colors.green,
+              // fontSize: 14,
               onPressed: () async {
                 if (nameController!.text == widget.name) {
                   kAlertTidakTau(context,

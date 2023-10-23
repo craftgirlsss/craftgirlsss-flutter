@@ -93,7 +93,8 @@ class _EditProfileState extends State<EditProfile> {
                                         button: true,
                                         urlPhoto:
                                             "https://zhfjjcaxzhmrexhkzest.supabase.co/storage/v1/object/public/${profileC.profileModels[0].urlProfile}",
-                                        email: profileC.profileModels[0].email,
+                                        email: profileC.profileModels[0].email
+                                            ?.replaceRange(2, 8, '******'),
                                         nama: profileC.profileModels[0].name,
                                         onPressedButtonChange: () async {
                                         getImage(ImageSource.gallery);
@@ -160,7 +161,7 @@ class _EditProfileState extends State<EditProfile> {
                               onPressed: () {},
                               title: "No. Handphone"),
                           listTileWithoutIconLeading(
-                              value: emailC?.replaceRange(2, 14, '******'),
+                              value: emailC?.replaceRange(2, 8, '******'),
                               onPressed: () {
                                 Get.to(() => const EditEmail());
                               },

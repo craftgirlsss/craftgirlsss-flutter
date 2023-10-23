@@ -54,7 +54,7 @@ class _LaporkanBugState extends State<LaporkanBug> {
                   prefixIconColor: Colors.black54,
                   border: OutlineInputBorder(
                       borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10))),
+                      borderRadius: BorderRadius.circular(3))),
               maxLines: 10,
               minLines: 1,
             ),

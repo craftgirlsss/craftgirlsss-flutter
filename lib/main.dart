@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:craftgirlsss/src/helpers/certificates/certificate.dart';
+import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/views/splashscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -32,8 +33,16 @@ class MyApp extends StatelessWidget {
       transitionDuration: const Duration(milliseconds: 500),
       defaultTransition: Transition.rightToLeft,
       title: 'Craftgirlsss',
-      darkTheme: ThemeData.dark().copyWith(primaryColor: Colors.red),
+      // darkTheme: ThemeData.dark().copyWith(primaryColor: Colors.red),
       theme: ThemeData(
+        textTheme: TextTheme(
+            bodySmall: sfPro(),
+            bodyLarge: sfPro(),
+            bodyMedium: sfPro(),
+            displaySmall: sfPro(),
+            displayMedium: sfPro()),
+        textButtonTheme: TextButtonThemeData(
+            style: ButtonStyle(textStyle: MaterialStatePropertyAll(sfPro()))),
         primarySwatch: Colors.blue,
       ),
       home: const SplashScreen(),
