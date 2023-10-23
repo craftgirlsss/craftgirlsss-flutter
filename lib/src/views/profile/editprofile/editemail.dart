@@ -45,7 +45,7 @@ class _EditEmailState extends State<EditEmail> {
               offset: const Offset(-15, 0),
               child: Text(
                 "Kirimkan saya notifikasi tentang produk trend, dan produk dengan tawaran terbaik.",
-                style: titleInter(
+                style: sfPro(
                     color: Colors.black54,
                     fontSize: 13,
                     fontWeight: FontWeight.normal),

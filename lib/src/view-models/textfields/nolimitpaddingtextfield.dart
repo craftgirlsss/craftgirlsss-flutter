@@ -9,7 +9,7 @@ TextFormField kNoLimitPaddingTextField(
   return TextFormField(
     onTap: onTap,
     controller: controller,
-    style: titleInter(
+    style: sfPro(
         color: Colors.black54, fontSize: 14, fontWeight: FontWeight.normal),
     // enabled: suffixIcon == true ? false : true,
     decoration: InputDecoration(
@@ -21,7 +21,7 @@ TextFormField kNoLimitPaddingTextField(
             ? const Icon(Icons.keyboard_arrow_right_rounded,
                 color: Colors.black45, size: 22)
             : null,
-        hintStyle: titleInter(
+        hintStyle: sfPro(
             color: Colors.black54, fontSize: 14, fontWeight: FontWeight.normal),
         border: const OutlineInputBorder(borderSide: BorderSide.none)),
     validator: (value) {

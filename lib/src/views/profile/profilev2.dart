@@ -43,7 +43,7 @@ class _ProfileV2State extends State<ProfileV2> {
         backgroundColor: Colors.white,
         appBar: defaultAppBar(title: "Pengaturan"),
         body: ListView(
-          padding: const EdgeInsets.all(10),
+          // padding: const EdgeInsets.all(10),
           children: [
             Obx(
               () => profileC.isLoadingProfilePage.value == true
@@ -53,7 +53,8 @@ class _ProfileV2State extends State<ProfileV2> {
                           button: true,
                           urlPhoto:
                               "https://zhfjjcaxzhmrexhkzest.supabase.co/storage/v1/object/public/${profileC.profileModels[0].urlProfile}",
-                          email: profileC.profileModels[0].email,
+                          email: profileC.profileModels[0].email
+                              ?.replaceRange(2, 6, '*******'),
                           nama: profileC.profileModels[0].name,
                           onPressedButtonChange: () async {
                           getImage(ImageSource.gallery);
@@ -61,7 +62,10 @@ class _ProfileV2State extends State<ProfileV2> {
                       : kNoData(),
             ),
             const SizedBox(height: 20),
-            kRowsInfoPengiriman(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: kRowsInfoPengiriman(),
+            ),
             const SizedBox(height: 20),
             listTileProfileV2(
                 iconAsset: 'assets/icons/freshicons/Usernew.png',

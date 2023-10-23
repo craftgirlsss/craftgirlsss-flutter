@@ -18,18 +18,18 @@ Container totalPriceProductCheckOut(context,
       children: [
         Text(
           "Informasi Pemesanan",
-          style: titleInter(
+          style: sfPro(
               color: Colors.black54, fontSize: 15, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 10),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text('Total Pemesanan',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold)),
           Text(orderTotal != null ? formatCurrency.format(orderTotal) : 'Rp 0',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold)),
@@ -37,7 +37,7 @@ Container totalPriceProductCheckOut(context,
         const SizedBox(height: 5),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text('Biaya Pengiriman',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold)),
@@ -45,7 +45,7 @@ Container totalPriceProductCheckOut(context,
               biayaPengiriman != null
                   ? formatCurrency.format(biayaPengiriman)
                   : 'Rp 0',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold)),
@@ -53,7 +53,7 @@ Container totalPriceProductCheckOut(context,
         const SizedBox(height: 5),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text('Biaya Lainnya',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold)),
@@ -61,7 +61,7 @@ Container totalPriceProductCheckOut(context,
               biayaLainnya != null
                   ? formatCurrency.format(biayaLainnya)
                   : 'Rp 0',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold)),
@@ -69,7 +69,7 @@ Container totalPriceProductCheckOut(context,
         const SizedBox(height: 5),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text('Diskon',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold)),
@@ -77,7 +77,7 @@ Container totalPriceProductCheckOut(context,
               discount != null
                   ? "-${formatCurrency.format(discount)}"
                   : '-Rp 0',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold)),
@@ -87,13 +87,13 @@ Container totalPriceProductCheckOut(context,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Grand Total',
-                style: titleInter(
+                style: sfPro(
                     color: Colors.black54,
                     fontSize: 14,
                     fontWeight: FontWeight.bold)),
             Text(
                 grandTotal != null ? formatCurrency.format(grandTotal) : 'Rp 0',
-                style: titleInter(
+                style: sfPro(
                     color: Colors.black54,
                     fontSize: 14,
                     fontWeight: FontWeight.bold)),

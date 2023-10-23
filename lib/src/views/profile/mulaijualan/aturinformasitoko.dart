@@ -1,6 +1,7 @@
 import 'package:craftgirlsss/src/controllers/GetxController/profile_controller.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
+import 'package:craftgirlsss/src/view-models/listtiles/listtileprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,17 +22,17 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
   void initState() {
     super.initState();
     namaTokoC = TextEditingController(
-        text: profileController.profileModels[0].namaToko);
+        text: profileController.profileModels[0].toko?.name);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       appBar:
           defaultAppBar(autoImplyLeading: true, title: "Atur Informasi Toko"),
       body: Obx(() => Container(
-            color: Colors.grey.shade50,
+            // color: Colors.white,
             child: Stepper(
               elevation: 1,
               type: StepperType.horizontal,
@@ -39,7 +40,7 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
               currentStep: controller.currentStep.value,
               onStepContinue: () {
                 if (controller.currentStep.value == buildStep().length - 1) {
-                  print("Send data to server");
+                  // print("Send data to server");
                 } else {
                   controller.currentStep.value++;
                 }
@@ -62,7 +63,7 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
       Step(
           title: Text(
             'Atur Informasi Toko',
-            style: titleInter(
+            style: sfPro(
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
                 fontSize: 12),
@@ -72,21 +73,21 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
             physics: const ClampingScrollPhysics(),
             children: [
               Container(
-                padding: const EdgeInsets.only(left: 4, right: 4, top: 4),
+                // padding: const EdgeInsets.only(left: 6, right: 6, top: 6),
                 decoration: const BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.transparent,
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(3),
-                        topRight: Radius.circular(3))),
+                        topLeft: Radius.circular(8),
+                        topRight: Radius.circular(8))),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     RichText(
                       text: TextSpan(
                         text: 'Nama Toko',
-                        style: titleInter(
-                            color: Colors.black,
-                            fontSize: 13,
+                        style: sfPro(
+                            color: Colors.black54,
+                            fontSize: 15,
                             fontWeight: FontWeight.normal),
                         children: const <TextSpan>[
                           TextSpan(
@@ -97,19 +98,26 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                         ],
                       ),
                     ),
-                    Obx(() => Text('${lengthText.value}/30'))
+                    Obx(() => Text(
+                          '${lengthText.value}/30',
+                          style: sfPro(
+                              color: Colors.black54,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal),
+                        ))
                   ],
                 ),
               ),
+              const SizedBox(height: 5),
               SizedBox(
-                height: 60,
+                height: 40,
                 child: TextField(
                   // maxLength: 30,
                   onChanged: (value) {
                     lengthText.value = value.length;
                   },
-                  style: titleInter(
-                      color: Colors.black87,
+                  style: sfPro(
+                      color: Colors.black54,
                       fontSize: 15,
                       fontWeight: FontWeight.normal),
                   controller: namaTokoC,
@@ -118,9 +126,27 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                       fillColor: Colors.white,
                       contentPadding: EdgeInsets.all(12),
                       prefixIconColor: Colors.black54,
-                      border: OutlineInputBorder(borderSide: BorderSide.none)),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(8),
+                              topRight: Radius.circular(8)))),
                 ),
-              )
+              ),
+              const SizedBox(height: 3),
+              listTileWithoutIconLeading(
+                size: 15,
+                withDivider: false,
+                color: Colors.white,
+                value: "",
+                withBorderRadius: true,
+                bottomLeftRadius: 8,
+                bottomRightRadius: 8,
+                onPressed: () {
+                  // Get.to(() => EditprofileName(name: namaC));
+                },
+                title: "Atur Alamat & Layanan Pengiriman",
+              ),
             ],
           ),
           isActive: controller.currentStep.value >= 0,
@@ -130,7 +156,7 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
       Step(
           title: Text(
             'Upload Produk',
-            style: titleInter(
+            style: sfPro(
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
                 fontSize: 12),

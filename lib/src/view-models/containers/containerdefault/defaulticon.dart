@@ -12,7 +12,7 @@ Container kDefaultSelected() {
         border: Border.all(color: Colors.red.shade700)),
     child: Text(
       'Default',
-      style: titleInter(
+      style: sfPro(
           color: Colors.white, fontSize: 12, fontWeight: FontWeight.normal),
     ),
   );
@@ -31,7 +31,7 @@ GestureDetector kDefaultSelectedAddress({String? name, Function()? onTap}) {
       ),
       child: Text(
         name ?? 'Default',
-        style: titleInter(
+        style: sfPro(
             color: Colors.black, fontSize: 12, fontWeight: FontWeight.normal),
       ),
     ),

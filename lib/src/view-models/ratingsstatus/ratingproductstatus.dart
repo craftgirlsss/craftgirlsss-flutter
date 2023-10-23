@@ -19,7 +19,7 @@ Container kRatings({String? value}) {
         ),
         Text(
           value ?? '0',
-          style: titleInter(color: Colors.black, fontSize: 12),
+          style: sfPro(color: Colors.black, fontSize: 12),
         )
       ],
     ),
@@ -48,7 +48,7 @@ Container ratingRow(context,
               const SizedBox(width: 5),
               Text(
                 rating != null ? rating.toString() : 0.toString(),
-                style: titleInter(color: Colors.black, fontSize: 12),
+                style: sfPro(color: Colors.black, fontSize: 12),
               ),
               const VerticalDivider(
                 indent: 10,
@@ -59,11 +59,11 @@ Container ratingRow(context,
               ),
               Text(
                 formatNumber(soldCount ?? 0),
-                style: titleInter(color: Colors.black, fontSize: 12),
+                style: sfPro(color: Colors.black, fontSize: 12),
               ),
               Text(
                 ' Terjual',
-                style: titleInter(color: Colors.black, fontSize: 12),
+                style: sfPro(color: Colors.black, fontSize: 12),
               ),
             ],
           ),
@@ -95,8 +95,8 @@ ListTile kTileUlasan(context, {double? rating, Function()? onPressed}) {
     onTap: onPressed,
     title: Text(
       "Penilaian produk",
-      style: titleInter(
-          color: Colors.black, fontSize: 13, fontWeight: FontWeight.bold),
+      style:
+          sfPro(color: Colors.black, fontSize: 13, fontWeight: FontWeight.bold),
     ),
     subtitle: Row(
       children: [
@@ -104,7 +104,7 @@ ListTile kTileUlasan(context, {double? rating, Function()? onPressed}) {
         const SizedBox(width: 5),
         Text(
           rating != null ? rating.toString() : 0.toString(),
-          style: titleInter(color: Colors.black, fontSize: 12),
+          style: sfPro(color: Colors.black, fontSize: 12),
         ),
       ],
     ),
@@ -112,7 +112,7 @@ ListTile kTileUlasan(context, {double? rating, Function()? onPressed}) {
         onPressed: onPressed,
         child: Text(
           'Lihat ulasan',
-          style: titleInter(color: Colors.blue, fontSize: 12),
+          style: sfPro(color: Colors.blue, fontSize: 12),
         )),
   );
 }

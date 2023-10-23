@@ -91,3 +91,6 @@ flutter:
     - family: GreyCliff
       fonts:
         - asset: assets/fonts/greycliff.otf
+    - family: SFPro
+      fonts:
+        - asset: assets/fonts/SF-Pro.ttf

@@ -60,7 +60,7 @@ Widget listTileProfileV2(
         onTap: onPressed,
         title: Text(
           title!,
-          style: titleInter(
+          style: sfPro(
               color: Colors.black54,
               fontSize: 15,
               fontWeight: FontWeight.normal),
@@ -78,24 +78,44 @@ Widget listTileProfileV2(
 }
 
 Widget listTileWithoutIconLeading(
-    {String? title = '-', Function()? onPressed, String? value}) {
+    {String? title = '-',
+    Function()? onPressed,
+    String? value,
+    double topLeftRadius = 0,
+    double bottomLeftRadius = 0,
+    double topRigthRadius = 0,
+    double bottomRightRadius = 0,
+    bool? withDivider = true,
+    bool? withBorderRadius = false,
+    double? size = 15,
+    Color? color = Colors.transparent}) {
   return GestureDetector(
     onTap: onPressed,
     child: Column(
       children: [
         Container(
             height: 38,
+            decoration: BoxDecoration(
+                color: color,
+                borderRadius: withBorderRadius == true
+                    ? BorderRadius.only(
+                        topLeft: Radius.circular(topLeftRadius),
+                        bottomLeft: Radius.circular(bottomLeftRadius),
+                        bottomRight: Radius.circular(bottomRightRadius),
+                        topRight: Radius.circular(topRigthRadius))
+                    : BorderRadius.zero),
             padding: const EdgeInsets.all(5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
+                  padding: const EdgeInsets.only(left: 5),
                   color: Colors.transparent,
                   child: Text(
                     title!,
-                    style: titleInter(
+                    style: sfPro(
                         color: Colors.black54,
-                        fontSize: 15,
+                        fontSize: size,
                         fontWeight: FontWeight.normal),
                   ),
                 ),
@@ -104,9 +124,9 @@ Widget listTileWithoutIconLeading(
                   child: Row(children: [
                     Text(
                       value ?? 'Atur Sekarang',
-                      style: titleInter(
+                      style: sfPro(
                           color: Colors.black54,
-                          fontSize: 15,
+                          fontSize: size,
                           fontWeight: FontWeight.normal),
                     ),
                     const SizedBox(width: 5),
@@ -119,7 +139,9 @@ Widget listTileWithoutIconLeading(
                 )
               ],
             )),
-        const Divider()
+        withDivider == true
+            ? const Divider()
+            : const SizedBox(height: 0, width: 0)
       ],
     ),
   );

@@ -16,7 +16,7 @@ Widget kColumnItem(
         const SizedBox(height: 5),
         Text(
           name!,
-          style: titleInter(
+          style: sfPro(
               color: Colors.black54,
               fontSize: 15,
               fontWeight: FontWeight.normal),

@@ -8,7 +8,7 @@ SizedBox kSearchTextField(
   return SizedBox(
     height: height,
     child: TextField(
-      style: titleInter(
+      style: sfPro(
           color: Colors.black87, fontSize: 15, fontWeight: FontWeight.normal),
       controller: controller,
       decoration: InputDecoration(
@@ -16,7 +16,7 @@ SizedBox kSearchTextField(
           fillColor: Colors.grey.shade200,
           contentPadding: const EdgeInsets.all(3),
           hintText: hintText ?? 'Cari',
-          hintStyle: titleInter(
+          hintStyle: sfPro(
               color: Colors.black54,
               fontSize: 15,
               fontWeight: FontWeight.normal),
@@ -34,7 +34,7 @@ SizedBox kSearchTextFieldHome(
   return SizedBox(
     height: height,
     child: TextField(
-      style: titleInter(
+      style: sfPro(
           color: const Color.fromRGBO(0, 0, 0, 0.867),
           fontSize: 15,
           fontWeight: FontWeight.normal),
@@ -44,7 +44,7 @@ SizedBox kSearchTextFieldHome(
           fillColor: Colors.grey.shade200,
           contentPadding: const EdgeInsets.all(3),
           hintText: hintText ?? 'Cari Produk',
-          hintStyle: titleInter(
+          hintStyle: sfPro(
               color: Colors.black54,
               fontSize: 15,
               fontWeight: FontWeight.normal),

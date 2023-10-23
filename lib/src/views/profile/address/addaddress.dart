@@ -74,7 +74,7 @@ class _AddAddressPageState extends State<AddAddressPage>
             const SizedBox(height: 5),
             Text(
               '  Info Saya',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.normal),
@@ -86,7 +86,7 @@ class _AddAddressPageState extends State<AddAddressPage>
             const SizedBox(height: 5),
             Text(
               '  Alamat Saya',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.normal),
@@ -121,7 +121,7 @@ class _AddAddressPageState extends State<AddAddressPage>
             const SizedBox(height: 5),
             Text(
               '  Pengaturan Alamat Saya',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.normal),
@@ -185,7 +185,7 @@ class _AddAddressPageState extends State<AddAddressPage>
                               axis: Axis.vertical,
                               child: Text(
                                 'Anda memilih : $pilihan',
-                                style: titleInter(
+                                style: sfPro(
                                     fontSize: 14,
                                     color: Colors.green.shade600,
                                     fontWeight: FontWeight.normal),
@@ -193,7 +193,7 @@ class _AddAddressPageState extends State<AddAddressPage>
                             ),
                             // Text(
                             //   'Anda memilih : $pilihan',
-                            //   style: titleInter(
+                            //   style: sfPro(
                             //       fontSize: 14,
                             //       color: Colors.green.shade600,
                             //       fontWeight: FontWeight.normal),
@@ -212,7 +212,7 @@ class _AddAddressPageState extends State<AddAddressPage>
                 children: [
                   Text(
                     '  Atur sebagai alamat utama',
-                    style: titleInter(
+                    style: sfPro(
                         color: Colors.black54,
                         fontSize: 14,
                         fontWeight: FontWeight.normal),

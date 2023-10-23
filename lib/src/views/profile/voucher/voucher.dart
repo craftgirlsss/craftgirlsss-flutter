@@ -33,27 +33,27 @@ class _VoucherPageState extends State<VoucherPage> {
               Tab(
                   icon: Text(
                 "Semua",
-                style: titleInter(
+                style: sfPro(
                     color: Colors.black54,
                     fontSize: 13,
                     fontWeight: FontWeight.normal),
               )),
               Tab(
                   icon: Text("Craftgirlsss",
-                      style: titleInter(
+                      style: sfPro(
                           color: Colors.black54,
                           fontSize: 13,
                           fontWeight: FontWeight.normal))),
               Tab(
                   icon: Text("Gratis Ongkir",
-                      style: titleInter(
+                      style: sfPro(
                           color: Colors.black54,
                           fontSize: 13,
                           fontWeight: FontWeight.normal))),
             ],
           ),
           title: Text('Voucherku',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 16,
                   fontWeight: FontWeight.normal)),

@@ -19,7 +19,7 @@ class _ListOfAddressKabupatenState extends State<ListOfAddressKabupaten> {
 
   @override
   void initState() {
-    addressC.getKabupaten(context,idProvince: widget.idProvince);
+    addressC.getKabupaten(context, idProvince: widget.idProvince);
     super.initState();
   }
 
@@ -32,7 +32,7 @@ class _ListOfAddressKabupatenState extends State<ListOfAddressKabupaten> {
         children: [
           const SizedBox(height: 10),
           Text('  Kabupaten',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 15,
                   fontWeight: FontWeight.normal)),
@@ -75,7 +75,7 @@ class _ListOfAddressKabupatenState extends State<ListOfAddressKabupaten> {
                                   addressC.kabupatenModels.value!.rajaongkir
                                       .results[index].cityName,
                                   textAlign: TextAlign.start,
-                                  style: titleInter(
+                                  style: sfPro(
                                       color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.normal),

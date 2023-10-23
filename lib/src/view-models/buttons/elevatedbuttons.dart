@@ -92,7 +92,7 @@ Widget kButtonsWithImage(
           )
         : Text(
             label!,
-            style: titleInter(
+            style: sfPro(
                 color: labelColor,
                 fontSize: fonSize,
                 fontWeight: FontWeight.bold),
@@ -118,7 +118,7 @@ Widget kButtonsNew(
       ),
       child: Text(
         label ?? '-',
-        style: titleInter(
+        style: sfPro(
             fontSize: fontSize,
             color: labelColor,
             fontWeight: FontWeight.normal),
@@ -145,7 +145,7 @@ Widget kButtonsNewWithImage(
       icon: Icon(icons, color: iconColor),
       label: Text(
         label ?? '-',
-        style: titleInter(
+        style: sfPro(
             fontSize: fontSize,
             color: labelColor,
             fontWeight: FontWeight.normal),

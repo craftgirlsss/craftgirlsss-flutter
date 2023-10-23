@@ -110,7 +110,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   child: Text(
                     "Sweeter 3Second all size",
                     overflow: TextOverflow.ellipsis,
-                    style: titleInter(
+                    style: sfPro(
                         color: Colors.red,
                         fontSize: 17,
                         fontWeight: FontWeight.normal),
@@ -175,7 +175,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(formatCurrency.format(1200000),
-                style: titleInter(
+                style: sfPro(
                     color: Colors.red,
                     fontSize: 18,
                     fontWeight: FontWeight.bold)),

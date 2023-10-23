@@ -19,14 +19,14 @@ Widget ticketContainerGratisOngkir(context,
           children: [
             Text(
               title ?? '-',
-              style: titleInter(
+              style: sfPro(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             ),
             Text(
               subtitle ?? '-',
-              style: titleInter(
+              style: sfPro(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
@@ -37,7 +37,7 @@ Widget ticketContainerGratisOngkir(context,
               children: [
                 Text(
                   "Berlaku sampai\n$expireDate",
-                  style: titleInter(
+                  style: sfPro(
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
                       color: Colors.white),
@@ -50,7 +50,7 @@ Widget ticketContainerGratisOngkir(context,
                   ),
                   onPressed: onPressed,
                   child: Text("Gunakan",
-                      style: titleInter(
+                      style: sfPro(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.black54)),
@@ -80,14 +80,14 @@ Widget ticketContainerCashBack(context,
           children: [
             Text(
               title ?? '-',
-              style: titleInter(
+              style: sfPro(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             ),
             Text(
               subtitle ?? '-',
-              style: titleInter(
+              style: sfPro(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
@@ -98,7 +98,7 @@ Widget ticketContainerCashBack(context,
               children: [
                 Text(
                   "Berlaku sampai\n$expireDate",
-                  style: titleInter(
+                  style: sfPro(
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
                       color: Colors.white),
@@ -111,7 +111,7 @@ Widget ticketContainerCashBack(context,
                   ),
                   onPressed: onPressed,
                   child: Text("Gunakan",
-                      style: titleInter(
+                      style: sfPro(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.black54)),

@@ -13,7 +13,7 @@ Widget kProductSpecification(context, {Function()? onTap}) {
         children: [
           Text(
             'Spesifikasi',
-            style: titleInter(
+            style: sfPro(
                 color: Colors.black87,
                 fontSize: 15,
                 fontWeight: FontWeight.bold),
@@ -22,7 +22,7 @@ Widget kProductSpecification(context, {Function()? onTap}) {
             onPressed: onTap,
             child: Text(
               'Lihat',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
                   fontSize: 12),

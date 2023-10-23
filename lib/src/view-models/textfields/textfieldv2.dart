@@ -10,7 +10,7 @@ SizedBox textFieldV2(
   return SizedBox(
     height: height,
     child: TextField(
-      style: titleInter(
+      style: sfPro(
           color: Colors.black87, fontSize: 15, fontWeight: FontWeight.normal),
       controller: controller,
       decoration: InputDecoration(
@@ -18,7 +18,7 @@ SizedBox textFieldV2(
           fillColor: Colors.grey.shade100,
           contentPadding: const EdgeInsets.all(12),
           hintText: hintText ?? '',
-          hintStyle: titleInter(
+          hintStyle: sfPro(
               color: Colors.black54,
               fontSize: 15,
               fontWeight: FontWeight.normal),
@@ -41,7 +41,7 @@ SizedBox textFieldCustomized(
   return SizedBox(
     height: height,
     child: TextField(
-      style: titleInter(
+      style: sfPro(
           color: Colors.black87, fontSize: 15, fontWeight: FontWeight.normal),
       controller: controller,
       decoration: InputDecoration(
@@ -68,7 +68,7 @@ SizedBox textFieldV3(
   return SizedBox(
     height: height,
     child: TextField(
-      style: titleInter(
+      style: sfPro(
           color: Colors.black87, fontSize: 15, fontWeight: FontWeight.normal),
       controller: controller,
       decoration: InputDecoration(
@@ -79,7 +79,7 @@ SizedBox textFieldV3(
           prefixIconColor: Colors.black54,
           prefixIcon:
               preffixIcon == true ? Icon(icon, color: Colors.black54) : null,
-          border: OutlineInputBorder(borderSide: BorderSide.none)),
+          border: const OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
 }

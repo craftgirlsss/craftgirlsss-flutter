@@ -88,14 +88,14 @@ Widget cardProductV2(context,
                                   productName ?? '-',
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
-                                  style: titleInter(
+                                  style: sfPro(
                                       fontWeight: FontWeight.normal,
                                       fontSize: 14),
                                 ),
                                 const SizedBox(height: 5),
                                 Text(
                                   formatCurrency.format(150000),
-                                  style: titleInter(
+                                  style: sfPro(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 14),
                                 ),
@@ -120,7 +120,7 @@ Widget cardProductV2(context,
                                         ratings != null
                                             ? ratings.toString()
                                             : '3.5',
-                                        style: titleInter(
+                                        style: sfPro(
                                             color: Colors.white, fontSize: 12),
                                       )
                                     ],
@@ -260,14 +260,14 @@ class _CardProductForMyCartState extends State<CardProductForMyCart> {
                                     widget.productName ?? '-',
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
-                                    style: titleInter(
+                                    style: sfPro(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 14),
                                   ),
                                   const SizedBox(height: 5),
                                   Text(
                                     formatCurrency.format(totalPriceNow),
-                                    style: titleInter(
+                                    style: sfPro(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 14),
                                   ),
@@ -277,13 +277,13 @@ class _CardProductForMyCartState extends State<CardProductForMyCart> {
                                     children: [
                                       Text(
                                           'Ukuran : ${widget.ukuran != null ? widget.ukuran?.toUpperCase() : "-"}',
-                                          style: titleInter(
+                                          style: sfPro(
                                               fontWeight: FontWeight.normal,
                                               fontSize: 12)),
                                       const SizedBox(width: 5),
                                       Text(
                                         'Warna : ${widget.warna ?? "-"}',
-                                        style: titleInter(
+                                        style: sfPro(
                                             fontWeight: FontWeight.normal,
                                             fontSize: 12),
                                       )
@@ -478,14 +478,14 @@ class CardProductListForWhistList extends GetxController {
                                         : '-',
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
-                                    style: titleInter(
+                                    style: sfPro(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 14),
                                   ),
                                   const SizedBox(height: 5),
                                   Text(
                                     formatCurrency.format(totalPriceNow),
-                                    style: titleInter(
+                                    style: sfPro(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 14),
                                   ),
@@ -495,13 +495,13 @@ class CardProductListForWhistList extends GetxController {
                                     children: [
                                       Text(
                                           'Ukuran : ${productSize.value.isNotEmpty ? productSize.value.toUpperCase() : "-"}',
-                                          style: titleInter(
+                                          style: sfPro(
                                               fontWeight: FontWeight.normal,
                                               fontSize: 12)),
                                       const SizedBox(width: 5),
                                       Text(
                                         'Warna : ${productColor.value.isNotEmpty ? productColor.value : "-"}',
-                                        style: titleInter(
+                                        style: sfPro(
                                             fontWeight: FontWeight.normal,
                                             fontSize: 12),
                                       )
@@ -676,14 +676,14 @@ Widget cardProductForCart(context,
                                   productName ?? '-',
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
-                                  style: titleInter(
+                                  style: sfPro(
                                       fontWeight: FontWeight.normal,
                                       fontSize: 14),
                                 ),
                                 const SizedBox(height: 5),
                                 Text(
                                   formatCurrency.format(150000),
-                                  style: titleInter(
+                                  style: sfPro(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 14),
                                 ),
@@ -708,7 +708,7 @@ Widget cardProductForCart(context,
                                         ratings != null
                                             ? ratings.toString()
                                             : '3.5',
-                                        style: titleInter(
+                                        style: sfPro(
                                             color: Colors.white, fontSize: 12),
                                       )
                                     ],

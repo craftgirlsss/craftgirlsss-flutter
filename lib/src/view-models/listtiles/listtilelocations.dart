@@ -22,7 +22,7 @@ ListTile kListTileMyLocation(
     ),
     dense: true,
     title: Text(title ?? '-',
-        style: titleInter(
+        style: sfPro(
             color: Colors.black87,
             fontSize: 13,
             fontWeight: FontWeight.normal)),
@@ -33,7 +33,7 @@ ListTile kListTileMyLocation(
             descriptionLocation != null
                 ? descriptionLocation.toUpperCase()
                 : '-',
-            style: titleInter(
+            style: sfPro(
                 color: Colors.black54,
                 fontSize: 14,
                 fontWeight: FontWeight.normal)),
@@ -63,13 +63,13 @@ ListTile kMyCurrentLocation(
     ),
     dense: true,
     title: Text('Pakai lokasi saat ini',
-        style: titleInter(
+        style: sfPro(
             color: Colors.black87,
             fontSize: 13,
             fontWeight: FontWeight.normal)),
     subtitle: Text(
         descriptionLocation != null ? descriptionLocation.toUpperCase() : '-',
-        style: titleInter(
+        style: sfPro(
             color: Colors.black54,
             fontSize: 14,
             fontWeight: FontWeight.normal)),

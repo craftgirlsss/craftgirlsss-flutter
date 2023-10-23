@@ -38,7 +38,7 @@ Container productReview(context,
             children: [
               Text(
                 commentatorName ?? 'Unknown',
-                style: titleInter(
+                style: sfPro(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 12),
@@ -48,7 +48,7 @@ Container productReview(context,
               const SizedBox(height: 5),
               Text(reasons ?? '-',
                   overflow: TextOverflow.clip,
-                  style: titleInter(
+                  style: sfPro(
                       color: Colors.black54,
                       fontWeight: FontWeight.normal,
                       fontSize: 12)),
@@ -58,7 +58,7 @@ Container productReview(context,
                           onPressed: () {},
                           child: Text(
                             'Lihat gambar',
-                            style: titleInter(
+                            style: sfPro(
                                 color: Colors.blue,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 12),

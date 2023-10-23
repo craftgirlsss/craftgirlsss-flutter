@@ -49,7 +49,7 @@ class MainPageState extends State<MainPage> {
             ),
             title: Text(
               'Home',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold),
@@ -68,7 +68,7 @@ class MainPageState extends State<MainPage> {
             ),
             title: Text(
               'Cari',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold),
@@ -87,7 +87,7 @@ class MainPageState extends State<MainPage> {
             ),
             title: Text(
               'Keranjang',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold),
@@ -106,7 +106,7 @@ class MainPageState extends State<MainPage> {
             ),
             title: Text(
               'Pengaturan',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 14,
                   fontWeight: FontWeight.bold),

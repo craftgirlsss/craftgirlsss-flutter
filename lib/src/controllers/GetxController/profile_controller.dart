@@ -22,13 +22,16 @@ class ProfileController extends GetxController {
   fetchProfile() async {
     isLoadingProfilePage.value = true;
     try {
-      List resultProfilesDetail =
-          await vars.client.from('cr_profiles').select('*').eq('user_uuid', id);
-      // print(resultProfilesDetail);
+      List resultProfilesDetail = await vars.client
+          .from('cr_profiles')
+          .select('*, cr_toko(nama)')
+          .eq('user_uuid', id);
+      print(resultProfilesDetail);
       profileModels.value =
           resultProfilesDetail.map((e) => ProfileModels.fromJson(e)).toList();
       isLoadingProfilePage.value = false;
     } catch (e) {
+      print(e);
       isLoadingProfilePage.value = false;
     }
     isLoadingProfilePage.value = false;

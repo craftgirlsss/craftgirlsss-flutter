@@ -57,7 +57,7 @@ class _LoginPageV2State extends State<LoginPageV2> {
               const SizedBox(height: 10),
               Center(
                 child: Text('Masuk ke akun anda',
-                    style: titleInter(
+                    style: sfPro(
                         color: Colors.black54,
                         fontSize: 15,
                         fontWeight: FontWeight.normal)),
@@ -65,7 +65,7 @@ class _LoginPageV2State extends State<LoginPageV2> {
               const SizedBox(height: 30),
               Text(
                 'Email',
-                style: titleInter(
+                style: sfPro(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: Colors.black54),
@@ -76,7 +76,7 @@ class _LoginPageV2State extends State<LoginPageV2> {
               const SizedBox(height: 10),
               Text(
                 'Password',
-                style: titleInter(
+                style: sfPro(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: Colors.black54),
@@ -85,7 +85,7 @@ class _LoginPageV2State extends State<LoginPageV2> {
               SizedBox(
                 height: 45,
                 child: TextField(
-                  style: titleInter(
+                  style: sfPro(
                       color: Colors.black87,
                       fontSize: 15,
                       fontWeight: FontWeight.normal),
@@ -129,8 +129,7 @@ class _LoginPageV2State extends State<LoginPageV2> {
                     },
                     child: Text(
                       "Lupa kata sandi?",
-                      style:
-                          titleInter(color: Colors.pink.shade300, fontSize: 13),
+                      style: sfPro(color: Colors.pink.shade300, fontSize: 13),
                     ),
                   )
                 ],
@@ -160,7 +159,7 @@ class _LoginPageV2State extends State<LoginPageV2> {
                     },
                     selectedTextColor: Colors.green,
                     transitionType: TransitionType.RIGHT_TO_LEFT,
-                    textStyle: titleInter(color: Colors.white),
+                    textStyle: sfPro(color: Colors.white),
                     backgroundColor: loginC.isLoadingSignIn.value == true
                         ? Colors.white
                         : Colors.green,
@@ -176,22 +175,21 @@ class _LoginPageV2State extends State<LoginPageV2> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Tidak punya akun?",
-                      style: titleInter(color: Colors.black54, fontSize: 14)),
+                      style: sfPro(color: Colors.black54, fontSize: 14)),
                   TextButton(
                       onPressed: () {
                         Get.to(() => const SignUpV2());
                       },
                       child: Text(
                         "Buat sekarang",
-                        style: titleInter(
-                            color: Colors.pink.shade300, fontSize: 14),
+                        style: sfPro(color: Colors.pink.shade300, fontSize: 14),
                       )),
                 ],
               ),
               Center(
                 child: Text(
                   'Atau Masuk Dengan',
-                  style: titleInter(
+                  style: sfPro(
                       color: Colors.black54,
                       fontSize: 14,
                       fontWeight: FontWeight.bold),

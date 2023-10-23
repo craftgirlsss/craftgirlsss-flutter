@@ -31,7 +31,7 @@ class _ListOfAddressProvinceState extends State<ListOfAddressProvince> {
         children: [
           const SizedBox(height: 10),
           Text('  Provinsi',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 15,
                   fontWeight: FontWeight.normal)),
@@ -47,8 +47,12 @@ class _ListOfAddressProvinceState extends State<ListOfAddressProvince> {
                         return InkWell(
                           onTap: () {
                             // menyimpan id province
-                            addressC.provinceName.value = addressC.provinceModels
-                                .value!.rajaongkir.results[index].province;
+                            addressC.provinceName.value = addressC
+                                .provinceModels
+                                .value!
+                                .rajaongkir
+                                .results[index]
+                                .province;
                             Get.to(() => ListOfAddressKabupaten(
                                 idProvince: addressC.provinceModels.value!
                                     .rajaongkir.results[index].provinceId));
@@ -65,7 +69,7 @@ class _ListOfAddressProvinceState extends State<ListOfAddressProvince> {
                                   addressC.provinceModels.value!.rajaongkir
                                       .results[index].province,
                                   textAlign: TextAlign.start,
-                                  style: titleInter(
+                                  style: sfPro(
                                       color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.normal),

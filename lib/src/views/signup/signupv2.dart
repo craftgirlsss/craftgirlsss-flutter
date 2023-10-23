@@ -60,7 +60,7 @@ class _SignUpV2State extends State<SignUpV2> {
                   ),
                   Center(
                     child: Text('Buat akun baru anda',
-                        style: titleInter(
+                        style: sfPro(
                             color: Colors.black54,
                             fontSize: 15,
                             fontWeight: FontWeight.normal)),
@@ -68,7 +68,7 @@ class _SignUpV2State extends State<SignUpV2> {
                   const SizedBox(height: 30),
                   Text(
                     'Nama Lengkap',
-                    style: titleInter(
+                    style: sfPro(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.black54),
@@ -79,7 +79,7 @@ class _SignUpV2State extends State<SignUpV2> {
                   const SizedBox(height: 10),
                   Text(
                     'Email',
-                    style: titleInter(
+                    style: sfPro(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.black54),
@@ -90,7 +90,7 @@ class _SignUpV2State extends State<SignUpV2> {
                   const SizedBox(height: 10),
                   Text(
                     'Nomor Handphone',
-                    style: titleInter(
+                    style: sfPro(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.black54),
@@ -103,7 +103,7 @@ class _SignUpV2State extends State<SignUpV2> {
                   const SizedBox(height: 10),
                   Text(
                     'Password',
-                    style: titleInter(
+                    style: sfPro(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.black54),
@@ -112,7 +112,7 @@ class _SignUpV2State extends State<SignUpV2> {
                   SizedBox(
                     height: 45,
                     child: TextFormField(
-                      style: titleInter(
+                      style: sfPro(
                           color: Colors.black87,
                           fontSize: 15,
                           fontWeight: FontWeight.normal),
@@ -156,7 +156,7 @@ class _SignUpV2State extends State<SignUpV2> {
                   const SizedBox(height: 10),
                   Text(
                     'Ulangi Password',
-                    style: titleInter(
+                    style: sfPro(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.black54),
@@ -165,7 +165,7 @@ class _SignUpV2State extends State<SignUpV2> {
                   SizedBox(
                     height: 45,
                     child: TextFormField(
-                      style: titleInter(
+                      style: sfPro(
                           color: Colors.black87,
                           fontSize: 15,
                           fontWeight: FontWeight.normal),
@@ -245,7 +245,7 @@ class _SignUpV2State extends State<SignUpV2> {
                         },
                         selectedTextColor: Colors.green,
                         transitionType: TransitionType.RIGHT_TO_LEFT,
-                        textStyle: titleInter(color: Colors.white),
+                        textStyle: sfPro(color: Colors.white),
                         backgroundColor: signUpC.isLoadingSignIn.value == true
                             ? Colors.white
                             : Colors.green,
@@ -261,15 +261,14 @@ class _SignUpV2State extends State<SignUpV2> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Sudah punya akun?",
-                          style:
-                              titleInter(color: Colors.black54, fontSize: 14)),
+                          style: sfPro(color: Colors.black54, fontSize: 14)),
                       TextButton(
                           onPressed: () {
                             Get.back();
                           },
                           child: Text(
                             "Masuk sekarang",
-                            style: titleInter(
+                            style: sfPro(
                                 color: Colors.pink.shade300, fontSize: 14),
                           )),
                     ],

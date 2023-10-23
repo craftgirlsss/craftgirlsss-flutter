@@ -1,4 +1,3 @@
-import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardproduct/cardproductv2.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardtotalproduct/totalpriceproduct.dart';

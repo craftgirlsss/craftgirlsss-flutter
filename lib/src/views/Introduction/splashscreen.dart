@@ -48,7 +48,7 @@ class IntroductionScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8),
                         child: Text(
                           "Temukan fashion favorit pilihan anda sekarang.",
-                          style: titleInter(fontSize: 38, color: Colors.white),
+                          style: sfPro(fontSize: 38, color: Colors.white),
                         ),
                       ),
                     ],

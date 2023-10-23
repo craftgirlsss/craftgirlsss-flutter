@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:craftgirlsss/src/models/addressmodels/addressmodels.dart';
 import 'package:craftgirlsss/src/models/addressmodels/kabupatenmodels.dart';
 import 'package:craftgirlsss/src/models/addressmodels/kecamatanmodels.dart';
@@ -35,54 +34,6 @@ class AddressController extends GetxController {
   var kabupatenName = "".obs;
   var kecamatanName = "".obs;
 
-  // Read
-  reading() async {
-    // rekomendasi menggunakan try agar tau jika response API gagal
-    try {
-      List result = await vars.client.from('user').select('*').eq("user_uuid",
-          id); // artinya tolong tampilkan semua dari tabel user dimana user_uuid = id
-      // saya taruh hasil di sebuah List karna response API akan berbentuk [{}] bukan object {}
-      print(result);
-    } catch (e) {
-      print(e);
-    }
-  }
-
-  // create
-  creating() async {
-    // rekomendasi menggunakan try agar tau jika response API gagal
-    try {
-      await vars.client.from('user').insert([
-        {'nama': 'Paijo', 'Usia': 15},
-      ]); // artinya tolong insert data ke dalam tabel user dimana nama = paijo, usia 15 tahun
-    } catch (e) {
-      print(e);
-    }
-  }
-
-  updating() async {
-    // rekomendasi menggunakan try agar tau jika response API gagal
-    try {
-      await vars.client
-          .from('user')
-          .update({'nama': 'Painem'})
-          .eq('user_uuid', id)
-          .select(); // artinya tolong update nama = Painem dari dalam tabel user dimana user_uuid = id
-    } catch (e) {
-      print(e);
-    }
-  }
-
-  deleting() async {
-    // rekomendasi menggunakan try agar tau jika response API gagal
-    try {
-      await vars.client.from('user').delete().eq('user_uuid',
-          id); // artinya tolong hapus data dari dalam tabel user dimana user_uuid = id
-    } catch (e) {
-      print(e);
-    }
-  }
-
   fetchAllAddress(context) async {
     isLoadingLoadData.value = true;
     try {
@@ -100,19 +51,11 @@ class AddressController extends GetxController {
           .eq('user_uuid', id)
           .eq('deleted', false)
           .eq('is_default', true);
-      // print("ini length dari default ${isDefaultMoreThanOne.length}");
-      // print(
-      //     "Ini id address yang ada default nya ${isDefaultMoreThanOne[0]['id']}");
       idDefault.value = isDefaultMoreThanOne[0]['id'];
       itemDefault.value = isDefaultMoreThanOne.length;
     } catch (e) {
       debugPrint(e.toString());
       isLoadingLoadData.value = false;
-      // kAlertGagal(context, title: e.toString());
-      // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-      //     content: Text('Gagal mendapatkan alamat',
-      //         style: TextStyle(color: Colors.white)),
-      //     backgroundColor: Colors.red));
     }
     isLoadingLoadData.value = false;
   }

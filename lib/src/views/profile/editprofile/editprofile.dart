@@ -64,7 +64,7 @@ class _EditProfileState extends State<EditProfile> {
     nomorC = profileC.profileModels[0].phone ?? '-';
     gender = profileC.profileModels[0].jenisKelamin ?? 'Atur Sekarang';
     finaldate = profileC.profileModels[0].dateOfBirth ?? 'Atur Sekarang';
-    namaToko = profileC.profileModels[0].namaToko;
+    namaToko = profileC.profileModels[0].toko?.name;
   }
 
   @override
@@ -148,7 +148,7 @@ class _EditProfileState extends State<EditProfile> {
                               title: "Tanggal Lahir"),
                           listTileWithoutIconLeading(
                               value: namaToko ??
-                                  profileC.profileModels[0].namaToko,
+                                  profileC.profileModels[0].toko?.name,
                               onPressed: () {
                                 Get.to(() => EditNamaToko(
                                       name: namaToko,

@@ -33,7 +33,7 @@ class _ResetPasswordState extends State<ResetPassword> {
           Text(
             "Untuk memastikan bahwa ini adalah akun anda, mohon untuk mengklik tombol dibawah ini untuk memverifikasi ubah kata sandi ke alamat email ${widget.email?.replaceRange(3, 9, '********') ?? '-'}.",
             textAlign: TextAlign.center,
-            style: titleInter(
+            style: sfPro(
                 color: Colors.black54,
                 fontSize: 14,
                 fontWeight: FontWeight.normal),

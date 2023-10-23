@@ -11,13 +11,13 @@ Container kDescription(context, {String? description}) {
       children: [
         Text(
           "Deskripsi",
-          style: titleInter(
+          style: sfPro(
               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),
         ),
         const SizedBox(height: 10),
         Text(
           description ?? '',
-          style: titleInter(
+          style: sfPro(
               color: Colors.black54,
               fontSize: 13,
               fontWeight: FontWeight.normal),

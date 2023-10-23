@@ -33,7 +33,7 @@ class _ListOfAddressPostalCodeState extends State<ListOfAddressPostalCode> {
           const SizedBox(height: 10),
           Center(
             child: Text('Tuliskan Kode Pos',
-                style: titleInter(
+                style: sfPro(
                     color: Colors.black54,
                     fontSize: 15,
                     fontWeight: FontWeight.normal)),

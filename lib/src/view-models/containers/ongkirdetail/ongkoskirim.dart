@@ -17,12 +17,12 @@ Container kOngkir(
         children: [
           Text(
             "Ongkos Kirim ",
-            style: titleInter(
+            style: sfPro(
                 color: Colors.black, fontWeight: FontWeight.bold, fontSize: 13),
           ),
           Text(
             formatCurrency.format(ongkir ?? 0),
-            style: titleInter(
+            style: sfPro(
                 color: Colors.red, fontWeight: FontWeight.bold, fontSize: 13),
           )
         ],
@@ -34,7 +34,7 @@ Container kOngkir(
           Text(
             'Akan diterima pada tanggal $startDate - $endDate $month',
             textAlign: TextAlign.start,
-            style: titleInter(
+            style: sfPro(
                 color: Colors.black54,
                 fontWeight: FontWeight.normal,
                 fontSize: 12),
@@ -45,7 +45,7 @@ Container kOngkir(
           onPressed: onTap,
           child: Text(
             'Lihat detail',
-            style: titleInter(
+            style: sfPro(
                 color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 12),
           ))
     ]),

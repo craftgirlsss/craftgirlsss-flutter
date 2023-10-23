@@ -37,7 +37,7 @@ class _LaporkanBugState extends State<LaporkanBug> {
           padding: kDefaultPadding(),
           children: [
             TextField(
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black87,
                   fontSize: 15,
                   fontWeight: FontWeight.normal),
@@ -47,7 +47,7 @@ class _LaporkanBugState extends State<LaporkanBug> {
                   fillColor: Colors.grey.shade100,
                   contentPadding: const EdgeInsets.all(12),
                   hintText: 'Deskripsikan bug yang anda temukan',
-                  hintStyle: titleInter(
+                  hintStyle: sfPro(
                       color: Colors.black54,
                       fontSize: 15,
                       fontWeight: FontWeight.normal),
@@ -65,7 +65,7 @@ class _LaporkanBugState extends State<LaporkanBug> {
                 offset: const Offset(-16, 0),
                 child: Text(
                   "Tambah Video",
-                  style: titleInter(
+                  style: sfPro(
                       color: Colors.black87,
                       fontSize: 14,
                       fontWeight: FontWeight.normal),
@@ -79,7 +79,7 @@ class _LaporkanBugState extends State<LaporkanBug> {
                 offset: const Offset(-16, 0),
                 child: Text(
                   "Tambah Gambar",
-                  style: titleInter(
+                  style: sfPro(
                       color: Colors.black87,
                       fontSize: 14,
                       fontWeight: FontWeight.normal),

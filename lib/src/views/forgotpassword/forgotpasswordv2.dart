@@ -59,7 +59,7 @@ class _ForgotPasswordV2State extends State<ForgotPasswordV2> {
                     child: Text(
                         'Masukkan alamat email akun anda yang telah terdaftar sebelumnya',
                         textAlign: TextAlign.center,
-                        style: titleInter(
+                        style: sfPro(
                             color: Colors.black54,
                             fontSize: 15,
                             fontWeight: FontWeight.normal)),
@@ -67,7 +67,7 @@ class _ForgotPasswordV2State extends State<ForgotPasswordV2> {
                   const SizedBox(height: 30),
                   Text(
                     'Email',
-                    style: titleInter(
+                    style: sfPro(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.black54),
@@ -100,7 +100,7 @@ class _ForgotPasswordV2State extends State<ForgotPasswordV2> {
                         },
                         selectedTextColor: Colors.green,
                         transitionType: TransitionType.RIGHT_TO_LEFT,
-                        textStyle: titleInter(color: Colors.white),
+                        textStyle: sfPro(color: Colors.white),
                         backgroundColor: forgotC.isLoadingSignIn.value == true
                             ? Colors.white
                             : Colors.green,
@@ -117,15 +117,14 @@ class _ForgotPasswordV2State extends State<ForgotPasswordV2> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Ingat password saya?",
-                          style:
-                              titleInter(color: Colors.black54, fontSize: 14)),
+                          style: sfPro(color: Colors.black54, fontSize: 14)),
                       TextButton(
                           onPressed: () {
                             Get.back();
                           },
                           child: Text(
                             "Masuk sekarang",
-                            style: titleInter(
+                            style: sfPro(
                                 color: Colors.pink.shade300, fontSize: 14),
                           )),
                     ],

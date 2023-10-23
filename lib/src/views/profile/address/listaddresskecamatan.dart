@@ -33,7 +33,7 @@ class _ListOfAddressKecamatanState extends State<ListOfAddressKecamatan> {
         children: [
           const SizedBox(height: 10),
           Text('  Kecamatan',
-              style: titleInter(
+              style: sfPro(
                   color: Colors.black54,
                   fontSize: 15,
                   fontWeight: FontWeight.normal)),
@@ -68,7 +68,7 @@ class _ListOfAddressKecamatanState extends State<ListOfAddressKecamatan> {
                                   addressC.kecamatanModels.value!.rajaongkir
                                       .results[index].subdistrictName,
                                   textAlign: TextAlign.start,
-                                  style: titleInter(
+                                  style: sfPro(
                                       color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.normal),

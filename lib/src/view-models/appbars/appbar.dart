@@ -81,11 +81,11 @@ AppBar defaultAppBar(
         : null,
     title: Text(
       title ?? '',
-      style: titleInter(
+      style: sfPro(
           color: Colors.black54, fontSize: 16, fontWeight: FontWeight.bold),
     ),
     elevation: 0,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.transparent,
     actions: withActions == true ? actions : null,
   );
 }

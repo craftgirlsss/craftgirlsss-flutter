@@ -33,36 +33,36 @@ showProductSpecification(context) {
                   children: [
                     TableRow(children: [
                       Text('Stok',
-                          style: titleInter(
+                          style: sfPro(
                               color: Colors.black54,
                               fontSize: 15,
                               fontWeight: FontWeight.normal)),
                       Text('31',
-                          style: titleInter(
+                          style: sfPro(
                               color: Colors.black54,
                               fontSize: 15,
                               fontWeight: FontWeight.normal)),
                     ]),
                     TableRow(children: [
                       Text('Ukuran',
-                          style: titleInter(
+                          style: sfPro(
                               color: Colors.black54,
                               fontSize: 15,
                               fontWeight: FontWeight.normal)),
                       Text('XL, L, XXL, M',
-                          style: titleInter(
+                          style: sfPro(
                               color: Colors.black54,
                               fontSize: 15,
                               fontWeight: FontWeight.normal)),
                     ]),
                     TableRow(children: [
                       Text('Merek',
-                          style: titleInter(
+                          style: sfPro(
                               color: Colors.black54,
                               fontSize: 15,
                               fontWeight: FontWeight.normal)),
                       Text('Cardinal',
-                          style: titleInter(
+                          style: sfPro(
                               color: Colors.black54,
                               fontSize: 15,
                               fontWeight: FontWeight.normal)),
@@ -102,7 +102,7 @@ showProductOngkir(context,
                 Center(
                   child: Text(
                     "Informasi Ongkir",
-                    style: titleInter(
+                    style: sfPro(
                         color: Colors.black54,
                         fontWeight: FontWeight.normal,
                         fontSize: 15),
@@ -115,7 +115,7 @@ showProductOngkir(context,
                     dense: false,
                     title: Text(
                       'Kirim ke',
-                      style: titleInter(
+                      style: sfPro(
                           color: Colors.black54,
                           fontSize: 13,
                           fontWeight: FontWeight.normal),
@@ -129,7 +129,7 @@ showProductOngkir(context,
                       icon: const Icon(Icons.keyboard_arrow_right_outlined),
                       label: Text(
                         kabupaten != null ? kabupaten.toUpperCase() : '-',
-                        style: titleInter(
+                        style: sfPro(
                             color: Colors.white,
                             fontSize: 15,
                             fontWeight: FontWeight.normal),
@@ -139,7 +139,7 @@ showProductOngkir(context,
                     contentPadding: const EdgeInsets.all(0),
                     title: Text(
                       'Biaya',
-                      style: titleInter(
+                      style: sfPro(
                           color: Colors.black54,
                           fontSize: 13,
                           fontWeight: FontWeight.normal),
@@ -148,14 +148,14 @@ showProductOngkir(context,
                       priceOngkir != null
                           ? formatCurrency.format(priceOngkir)
                           : 'Rp. 0',
-                      style: titleInter(
+                      style: sfPro(
                           color: Colors.black54,
                           fontSize: 13,
                           fontWeight: FontWeight.normal),
                     )),
                 Text(
                   'Akan diterima pada tanggal $startDate - $endDate $month',
-                  style: titleInter(
+                  style: sfPro(
                       color: Colors.black54,
                       fontSize: 13,
                       fontWeight: FontWeight.normal),

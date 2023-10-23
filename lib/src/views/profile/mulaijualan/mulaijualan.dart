@@ -33,7 +33,7 @@ class _MulaiJualanState extends State<MulaiJualan> {
               child: Text(
                 "Untuk memulai menjadi penjual, daftar sebagai penjual dengan melengkapi indormasi yang diperlukan.",
                 textAlign: TextAlign.center,
-                style: titleInter(
+                style: sfPro(
                     fontSize: 15,
                     fontWeight: FontWeight.normal,
                     color: Colors.black),
