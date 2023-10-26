@@ -66,11 +66,13 @@ AppBar kAppBar(context,
 
 AppBar defaultAppBar(
     {String? title,
+    bool? centerTitle = true,
     bool? autoImplyLeading = false,
     bool? withActions = false,
     List<Widget>? actions}) {
   return AppBar(
-    centerTitle: true,
+    titleSpacing: 0,
+    centerTitle: centerTitle,
     leading: autoImplyLeading == true
         ? InkWell(
             onTap: () => Get.back(),
@@ -82,7 +84,7 @@ AppBar defaultAppBar(
     title: Text(
       title ?? '',
       style: sfPro(
-          color: Colors.black54, fontSize: 16, fontWeight: FontWeight.bold),
+          color: Colors.black54, fontSize: 18, fontWeight: FontWeight.bold),
     ),
     elevation: 0,
     backgroundColor: Colors.transparent,

@@ -1,11 +1,11 @@
+import 'package:craftgirlsss/src/controllers/GetxController/profile_controller.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_lock/flutter_screen_lock.dart';
 import 'package:get/get.dart';
-
-import 'nextpaydashboard.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'nextpayverify.dart';
 
 class NextPay extends StatefulWidget {
@@ -17,8 +17,10 @@ class NextPay extends StatefulWidget {
 
 class _NextPayState extends State<NextPay> {
   InputController controller = InputController();
+  ProfileController profileController = Get.put(ProfileController());
   @override
   Widget build(BuildContext context) {
+    // print(profileController.profileModels[0].email);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: defaultAppBar(autoImplyLeading: true, title: "NextPay"),
@@ -48,8 +50,13 @@ class _NextPayState extends State<NextPay> {
           padding: const EdgeInsets.all(8.0),
           child: kButtonsNew(
             context,
-            label: "Aktivasi Sekarang",
+            label: profileController.isLoadingSetValue.isTrue
+                ? "Loading..."
+                : "Aktivasi Sekarang",
             onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              await profileController.activatingNextPay();
+              await prefs.setBool('nextpay_active', true);
               Get.to(() => const NextPayVerifyPage());
               // screenLock(
               //     context: context,

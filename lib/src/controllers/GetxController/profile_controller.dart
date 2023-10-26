@@ -9,6 +9,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class ProfileController extends GetxController {
   var isLoadingProfilePage = false.obs;
+  var isLoadingSetValue = false.obs;
   var isLoadingUploadImage = false.obs;
   var profileModels = <ProfileModels>[].obs;
   var urlPhotoSupabase = ''.obs;
@@ -80,5 +81,35 @@ class ProfileController extends GetxController {
       isLoadingUploadImage.value = false;
     }
     isLoadingUploadImage.value = false;
+  }
+
+  activatingNextPay() async {
+    isLoadingSetValue.value = true;
+    try {
+      await vars.client
+          .from('cr_profiles')
+          .update({"nextpay_active": true}).eq('user_uuid', id);
+      isLoadingSetValue.value = false;
+    } catch (e) {
+      // print(e);
+      isLoadingSetValue.value = false;
+    }
+    isLoadingSetValue.value = false;
+  }
+
+  setUpPinNextPay({int? passcode}) async {
+    isLoadingSetValue.value = true;
+    try {
+      await vars.client
+          .from('cr_profiles')
+          .update({"passcode": passcode})
+          .eq('user_uuid', id)
+          .eq('nextpay_active', true);
+      isLoadingSetValue.value = false;
+    } catch (e) {
+      // print(e);
+      isLoadingSetValue.value = false;
+    }
+    isLoadingSetValue.value = false;
   }
 }

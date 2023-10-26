@@ -81,6 +81,7 @@ Widget listTileProfileV3(
     {String? title = '',
     Function()? onPressed,
     String? value = '',
+    Color? valueColor = Colors.black45,
     String? iconAsset = '',
     Color? color = Colors.white}) {
   return InkWell(
@@ -120,7 +121,7 @@ Widget listTileProfileV3(
                   Text(
                     value!,
                     style: sfPro(
-                        color: Colors.black54,
+                        color: valueColor,
                         fontSize: 13,
                         fontWeight: FontWeight.normal),
                   ),

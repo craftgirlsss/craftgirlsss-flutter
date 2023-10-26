@@ -3,6 +3,7 @@ import 'package:craftgirlsss/src/helpers/paddings/defaultpadding.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
+import 'package:craftgirlsss/src/views/profile/NextPay/nextpaydashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
@@ -17,35 +18,42 @@ class NextPayVerifyPage extends StatefulWidget {
 class _NextPayVerifyPageState extends State<NextPayVerifyPage> {
   ProfileController profileC = Get.put(ProfileController());
   var onComplete = false.obs;
+  var otp = ''.obs;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        appBar: defaultAppBar(
-            autoImplyLeading: true, title: "Verifikasi Akun Anda"),
+        appBar: defaultAppBar(autoImplyLeading: true, title: "Atur PIN"),
         body: ListView(
           padding: kDefaultPadding(),
           children: [
             Text(
-              "Kami telah mengirimkan kode verifikasi kepada email ${profileC.profileModels[0].email?.replaceRange(2, 8, '******')} untuk dapat mengaktifasi akun NextPay anda.",
-              style: sfPro(fontSize: 16, color: Colors.black54),
+              "Atur PIN NextPay",
+              style: titleHome(color: Colors.black54),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
             OtpTextField(
-              numberOfFields: 5,
+              numberOfFields: 6,
               borderColor: const Color(0xFF512DA8),
               showFieldAsBox: true,
               onCodeChanged: (String code) {},
               onSubmit: (String verificationCode) {
-                if (verificationCode.length == 5) {
+                if (verificationCode.length == 6) {
                   onComplete.value = true;
+                  otp.value = verificationCode;
                 } else {
                   onComplete.value = false;
                 }
               }, // end onSubmit
             ),
+            const SizedBox(height: 10),
+            Text(
+              'Atur PIN NextPay anda untuk menjaga keamanan saldo anda, pastikan atur pin yang sulit untuk ditebak',
+              textAlign: TextAlign.center,
+              style: sfPro(color: Colors.black54, fontSize: 15),
+            )
           ],
         ),
         bottomSheet: Obx(
@@ -53,10 +61,13 @@ class _NextPayVerifyPageState extends State<NextPayVerifyPage> {
               padding: const EdgeInsets.all(8.0),
               child: kButtonsNew(
                 context,
-                label: "Submit",
+                label:
+                    profileC.isLoadingSetValue.isTrue ? "Loading..." : "Submit",
                 onPressed: onComplete.value == true
                     ? () async {
-                        // Get.to(() => const NextPayVerifyPage());
+                        await profileC.setUpPinNextPay(
+                            passcode: int.parse(otp.value));
+                        Get.to(() => const NextPayDashboard());
                       }
                     : null,
               )),

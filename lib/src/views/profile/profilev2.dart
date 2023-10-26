@@ -1,3 +1,4 @@
+import 'package:craftgirlsss/src/helpers/formatcurrency/formatcurrency.dart';
 import 'package:craftgirlsss/src/helpers/globalvariable/variablehelper.dart'
     as vars;
 import 'dart:io';
@@ -11,6 +12,7 @@ import 'package:craftgirlsss/src/view-models/popup/alerttidaktau/alerttidaktau.d
 import 'package:craftgirlsss/src/view-models/profilephoto/profilephoto.dart';
 import 'package:craftgirlsss/src/view-models/rows/rowsinfopengiriman/rowsinfopengiriman.dart';
 import 'package:craftgirlsss/src/views/login/login.dart';
+import 'package:craftgirlsss/src/views/profile/NextPay/nextpaydashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -34,6 +36,20 @@ class ProfileV2 extends StatefulWidget {
 
 class _ProfileV2State extends State<ProfileV2> {
   ProfileController profileC = Get.put(ProfileController());
+
+  bool? nextpayisactive;
+  Future getNextPayRegistered() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('nextpay_active');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getNextPayRegistered()
+        .then((value) => setState(() => nextpayisactive = value));
+  }
+
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
@@ -97,13 +113,27 @@ class _ProfileV2State extends State<ProfileV2> {
                   Get.to(() => const PrettyCoin());
                 },
                 title: "Next Coins"),
-            listTileProfileV3(
-                iconAsset: 'assets/icons/freshicons/Wallet.png',
-                onPressed: () {
-                  Get.to(() => const NextPay());
-                },
-                value: 'Aktifkan Sekarang',
-                title: "NextPay"),
+            Obx(
+              () => listTileProfileV3(
+                  iconAsset: 'assets/icons/freshicons/Wallet.png',
+                  onPressed: () {
+                    if (nextpayisactive == false) {
+                      Get.to(() => const NextPay());
+                    } else {
+                      Get.to(() => const NextPayDashboard());
+                    }
+                  },
+                  valueColor: Colors.green.shade500,
+                  value: profileC.isLoadingProfilePage.value == true
+                      ? ""
+                      : profileC.profileModels.isNotEmpty
+                          ? profileC.profileModels[0].nextPayActive == true
+                              ? formatCurrency.format(
+                                  profileC.profileModels[0].nextPayWallet)
+                              : 'Aktifkan Sekarang'
+                          : '',
+                  title: "NextPay"),
+            ),
             listTileProfileV3(
                 iconAsset: 'assets/icons/freshicons/Group.png',
                 onPressed: () {
@@ -192,3 +222,10 @@ class _ProfileV2State extends State<ProfileV2> {
         .update({'url_profile': fullURL}).eq('user_uuid', id);
   }
 }
+
+/* 
+profileC.profileModels[0].nextPayActive == true
+                    ? formatCurrency
+                        .format(profileC.profileModels[0].nextPayWallet)
+                    : 
+*/
