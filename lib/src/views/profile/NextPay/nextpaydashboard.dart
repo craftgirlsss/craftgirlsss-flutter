@@ -1,8 +1,8 @@
 import 'package:craftgirlsss/src/controllers/GetxController/profile_controller.dart';
 import 'package:craftgirlsss/src/helpers/formatcurrency/formatcurrency.dart';
-import 'package:craftgirlsss/src/helpers/mediaquery/mediaqueries.dart';
 import 'package:craftgirlsss/src/helpers/paddings/defaultpadding.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
+import 'package:craftgirlsss/src/view-models/containers/cardmenunextpay/cardmenu.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -108,33 +108,23 @@ class _NextPayDashboardState extends State<NextPayDashboard> {
             ],
           ),
           const SizedBox(height: 14),
-          Container(
-            width: sized(context).width,
-            height: sized(context).height / 4,
-            padding:
-                const EdgeInsets.only(top: 8, bottom: 8, right: 15, left: 15),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade100,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 7,
-                  offset: Offset(4, 8), // Shadow position
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                Row(
-                  children: [Image.asset('assets/icons/freshicons/topup.png')],
-                ),
-                Row(
-                  children: [],
-                )
-              ],
-            ),
-          )
+          cardMenuNextPay(context),
+          const SizedBox(height: 20),
+          Text(
+            "Transaksi terakhir",
+            style: sfPro(
+                color: Colors.black54,
+                fontSize: 17,
+                fontWeight: FontWeight.normal),
+          ),
+          const Divider(color: Colors.black54),
+          ListView.separated(
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              itemBuilder: (context, index) => Text(index.toString()),
+              separatorBuilder: (context, index) =>
+                  const Divider(color: Colors.black45),
+              itemCount: 10)
         ],
       ),
     );

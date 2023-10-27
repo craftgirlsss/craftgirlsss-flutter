@@ -84,12 +84,14 @@ class _ProfileV2State extends State<ProfileV2> {
               child: kRowsInfoPengiriman(),
             ),
             const SizedBox(height: 10),
-            listTileProfileV3(
+            Obx(() => listTileProfileV3(
                 iconAsset: 'assets/icons/freshicons/Usernew.png',
-                onPressed: () {
-                  Get.to(() => const EditProfile());
-                },
-                title: "Edit Profil"),
+                onPressed: profileC.profileModels.isNotEmpty
+                    ? () {
+                        Get.to(() => const EditProfile());
+                      }
+                    : null,
+                title: "Edit Profil")),
             listTileProfileV3(
                 iconAsset: 'assets/icons/freshicons/MapPinLinenew.png',
                 onPressed: () {
@@ -116,13 +118,15 @@ class _ProfileV2State extends State<ProfileV2> {
             Obx(
               () => listTileProfileV3(
                   iconAsset: 'assets/icons/freshicons/Wallet.png',
-                  onPressed: () {
-                    if (nextpayisactive == false) {
-                      Get.to(() => const NextPay());
-                    } else {
-                      Get.to(() => const NextPayDashboard());
-                    }
-                  },
+                  onPressed: profileC.profileModels.isNotEmpty
+                      ? () {
+                          if (nextpayisactive == false) {
+                            Get.to(() => const NextPay());
+                          } else {
+                            Get.to(() => const NextPayDashboard());
+                          }
+                        }
+                      : null,
                   valueColor: Colors.green.shade500,
                   value: profileC.isLoadingProfilePage.value == true
                       ? ""
