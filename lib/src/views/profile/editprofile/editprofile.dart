@@ -16,7 +16,6 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
 import 'editemail.dart';
 import 'editnamatoko.dart';
 import 'editprofilename.dart';

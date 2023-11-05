@@ -2,10 +2,13 @@ import 'package:craftgirlsss/src/controllers/GetxController/profile_controller.d
 import 'package:craftgirlsss/src/helpers/formatcurrency/formatcurrency.dart';
 import 'package:craftgirlsss/src/helpers/paddings/defaultpadding.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
+import 'package:craftgirlsss/src/view-models/containers/cardmenunextpay/cardhistorytransction.dart';
 import 'package:craftgirlsss/src/view-models/containers/cardmenunextpay/cardmenu.dart';
+import 'package:craftgirlsss/src/view-models/containers/saldo/saldo.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class NextPayDashboard extends StatefulWidget {
   const NextPayDashboard({super.key});
@@ -76,35 +79,8 @@ class _NextPayDashboardState extends State<NextPayDashboard> {
                         profileController.profileModels[0].nextPayWallet),
                     style: sfPro(fontWeight: FontWeight.bold, fontSize: 25),
                   )),
-              Obx(() => Container(
-                    padding: const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        color: Colors.grey.shade100,
-                        borderRadius: BorderRadius.circular(25)),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'assets/icons/freshicons/coins-colors.png',
-                          width: 20,
-                          height: 20,
-                        ),
-                        const SizedBox(width: 3),
-                        Text(
-                          profileController.profileModels[0].nextPayWallet
-                              .toString(),
-                          style: sfPro(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 16,
-                              color: Colors.black45),
-                        ),
-                        const Icon(
-                          Icons.keyboard_arrow_right,
-                          size: 14,
-                          color: Colors.black45,
-                        )
-                      ],
-                    ),
-                  )),
+              Obx(() => saldoKoin(
+                  saldoKoin: profileController.profileModels[0].nextPayWallet)),
             ],
           ),
           const SizedBox(height: 14),
@@ -113,7 +89,7 @@ class _NextPayDashboardState extends State<NextPayDashboard> {
           Text(
             "Transaksi terakhir",
             style: sfPro(
-                color: Colors.black54,
+                color: Colors.black,
                 fontSize: 17,
                 fontWeight: FontWeight.normal),
           ),
@@ -121,7 +97,16 @@ class _NextPayDashboardState extends State<NextPayDashboard> {
           ListView.separated(
               shrinkWrap: true,
               physics: const ScrollPhysics(),
-              itemBuilder: (context, index) => Text(index.toString()),
+              itemBuilder: (context, index) => cardHistoryTransactionNextPay(
+                    context,
+                    deskripsi: "Transaksi ke Orang tua",
+                    jumlahTransaksi: 1250000,
+                    namaTransaksi: "Transfer",
+                    onPressed: () {},
+                    statusTransaksi: "Berhasil",
+                    urlImage: 'assets/images/nextpayimage.jpg',
+                    waktuTransaksi: DateFormat.yMMMd().format(DateTime.now()),
+                  ),
               separatorBuilder: (context, index) =>
                   const Divider(color: Colors.black45),
               itemCount: 10)

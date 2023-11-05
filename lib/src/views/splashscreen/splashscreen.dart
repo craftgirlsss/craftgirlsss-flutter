@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:craftgirlsss/src/mainpage.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';

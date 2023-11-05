@@ -78,13 +78,14 @@ AppBar defaultAppBar(
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back,
-              color: Colors.black54,
+              color: Colors.black,
+              weight: 0.5,
             ))
         : null,
     title: Text(
       title ?? '',
       style: sfPro(
-          color: Colors.black54, fontSize: 18, fontWeight: FontWeight.bold),
+          color: Colors.black, fontSize: 18, fontWeight: FontWeight.normal),
     ),
     elevation: 0,
     backgroundColor: Colors.transparent,

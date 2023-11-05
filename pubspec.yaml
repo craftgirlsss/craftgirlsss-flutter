@@ -80,6 +80,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/icons/freshicons/
+    - assets/icons/freshicons/NextPayIcons/
     - assets/icons/category/
 
   fonts:

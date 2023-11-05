@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             displayMedium: sfPro()),
         textButtonTheme: TextButtonThemeData(
             style: ButtonStyle(textStyle: MaterialStatePropertyAll(sfPro()))),
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: const SplashScreen(),
     );
