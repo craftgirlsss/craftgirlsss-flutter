@@ -5,7 +5,7 @@ Container footer(context) {
   return Container(
     padding: const EdgeInsets.all(10),
     width: MediaQuery.of(context).size.width,
-    color: Colors.grey.shade200,
+    color: Colors.white,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -13,20 +13,20 @@ Container footer(context) {
         Text(
           'Next Shop',
           style: sfPro(
-              color: Colors.black54, fontSize: 15, fontWeight: FontWeight.bold),
+              color: Colors.black54, fontSize: 11, fontWeight: FontWeight.bold),
         ),
         Text(
           'Version 1.0.0 Beta',
           style: sfPro(
               color: Colors.black54,
-              fontSize: 15,
+              fontSize: 11,
               fontWeight: FontWeight.normal),
         ),
         Text(
           'Powered by Craftgirlsss',
           style: sfPro(
               color: Colors.black54,
-              fontSize: 15,
+              fontSize: 11,
               fontWeight: FontWeight.normal),
         ),
       ],
