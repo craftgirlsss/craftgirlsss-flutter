@@ -58,15 +58,15 @@ class _ProfileV2State extends State<ProfileV2> {
       },
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: defaultAppBar(title: "Pengaturan"),
         body: ListView(
-          // padding: const EdgeInsets.all(10),
           children: [
             Obx(
               () => profileC.isLoadingProfilePage.value == true
                   ? kLoading()
                   : profileC.profileModels.isNotEmpty
-                      ? photo(context,
+                      ? profileInfo(context,
+                          voucher: 0,
+                          whislist: 0,
                           button: true,
                           urlPhoto:
                               "https://zhfjjcaxzhmrexhkzest.supabase.co/storage/v1/object/public/${profileC.profileModels[0].urlProfile}",
@@ -78,7 +78,6 @@ class _ProfileV2State extends State<ProfileV2> {
                         })
                       : kNoData(),
             ),
-            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: kRowsInfoPengiriman(),

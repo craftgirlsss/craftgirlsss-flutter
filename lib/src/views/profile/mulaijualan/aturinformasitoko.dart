@@ -1,8 +1,10 @@
+import 'package:craftgirlsss/src/controllers/GetxController/kurir_controller.dart';
 import 'package:craftgirlsss/src/controllers/GetxController/profile_controller.dart';
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/view-models/listtiles/listtileprofile.dart';
 import 'package:craftgirlsss/src/views/profile/editprofile/editemail.dart';
+import 'package:craftgirlsss/src/views/profile/jasakuriruntuktoko/jasakurirpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,6 +20,7 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
   var lengthText = 0.obs;
   HomeController controller = Get.put(HomeController());
   ProfileController profileController = Get.put(ProfileController());
+  KurirController kurirController = Get.put(KurirController());
   TextEditingController? namaTokoC;
 
   @override
@@ -179,7 +182,7 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                 bottomLeftRadius: 8,
                 bottomRightRadius: 8,
                 onPressed: () {
-                  // Get.to(() => EditprofileName(name: namaC));
+                  Get.to(() => const JasaKurirPage());
                 },
                 title: "Atur Alamat & Layanan Pengiriman",
               ),
@@ -221,7 +224,8 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                   bottomLeftRadius: 8,
                   bottomRightRadius: 8,
                   onPressed: () {
-                    Get.to(() => const EditEmail());
+                    Get.to(() => EditEmail(
+                        email: profileController.profileModels[0].email));
                   },
                   title: 'Email',
                 ),

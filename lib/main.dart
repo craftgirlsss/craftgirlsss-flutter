@@ -35,6 +35,8 @@ class MyApp extends StatelessWidget {
       title: 'Craftgirlsss',
       // darkTheme: ThemeData.dark().copyWith(primaryColor: Colors.red),
       theme: ThemeData(
+        bottomSheetTheme:
+            const BottomSheetThemeData(backgroundColor: Colors.white),
         textTheme: TextTheme(
             bodySmall: sfPro(),
             bodyLarge: sfPro(),

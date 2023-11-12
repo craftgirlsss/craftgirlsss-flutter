@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 Widget ticketContainerGratisOngkir(context,
     {String? title,
     String? subtitle,
+    double? height = 130,
     Function()? onPressed,
     String? expireDate}) {
   return ClipPath(
@@ -12,7 +13,7 @@ Widget ticketContainerGratisOngkir(context,
     child: Container(
         padding: const EdgeInsets.only(left: 30, top: 15, right: 30),
         color: Colors.green.shade200, // <-- background color
-        height: 130, // <-- height
+        height: height, // <-- height
         width: MediaQuery.of(context).size.width, // <-- width
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

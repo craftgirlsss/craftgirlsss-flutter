@@ -16,105 +16,61 @@ class MainPage extends StatefulWidget {
 class MainPageState extends State<MainPage> {
   int currentIndex = 0;
 
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomePage(),
+    SearchPage(),
+    MyCartProduct(),
+    ProfileV2()
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   List listOfColors = [
     const HomePage(),
     const SearchPage(),
     const MyCartProduct(),
-    // const ProfileTab()
     const ProfileV2()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: listOfColors[currentIndex],
-      bottomNavigationBar: BottomNavyBar(
-        backgroundColor: Colors.white,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        selectedIndex: currentIndex,
-        onItemSelected: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-        items: <BottomNavyBarItem>[
-          BottomNavyBarItem(
-            inactiveColor: Colors.black,
-            icon: Padding(
-              padding: const EdgeInsets.only(left: 4),
-              child: Image.asset(
-                'assets/icons/freshicons/fluent_home-32-regular.png',
-                scale: 1.3,
-              ),
+      body: _widgetOptions.elementAt(currentIndex),
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Colors.white,
+        ),
+        child: BottomNavigationBar(
+          elevation: 0,
+          useLegacyColorScheme: true,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
             ),
-            title: Text(
-              'Home',
-              style: sfPro(
-                  color: Colors.black54,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Business',
             ),
-            activeColor: Colors.red,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            inactiveColor: Colors.black,
-            icon: Padding(
-              padding: const EdgeInsets.only(left: 4),
-              child: Image.asset(
-                'assets/icons/freshicons/MagnifyingGlass.png',
-                scale: 1.3,
-              ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.school),
+              label: 'School',
             ),
-            title: Text(
-              'Cari',
-              style: sfPro(
-                  color: Colors.black54,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
             ),
-            activeColor: Colors.green,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            inactiveColor: Colors.black,
-            icon: Padding(
-              padding: const EdgeInsets.only(left: 4),
-              child: Image.asset(
-                'assets/icons/freshicons/ShoppingCart.png',
-                scale: 1.3,
-              ),
-            ),
-            title: Text(
-              'Keranjang',
-              style: sfPro(
-                  color: Colors.black54,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
-            ),
-            activeColor: Colors.amber.shade800,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            inactiveColor: Colors.black,
-            icon: Padding(
-              padding: const EdgeInsets.only(left: 4),
-              child: Image.asset(
-                'assets/icons/freshicons/GearSix.png',
-                scale: 1.3,
-              ),
-            ),
-            title: Text(
-              'Pengaturan',
-              style: sfPro(
-                  color: Colors.black54,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
-            ),
-            activeColor: Colors.blue,
-            textAlign: TextAlign.center,
-          ),
-        ],
+          ],
+          currentIndex: currentIndex,
+          selectedItemColor: Colors.amber[800],
+          unselectedItemColor: Colors.grey.shade300,
+          onTap: _onItemTapped,
+          
+        ),
       ),
     );
   }
