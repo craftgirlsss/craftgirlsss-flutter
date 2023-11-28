@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'otpinput.dart';
 
 class OTPDisplay extends StatefulWidget {
-  const OTPDisplay({Key? key}) : super(key: key);
+  const OTPDisplay({super.key});
 
   @override
   State<OTPDisplay> createState() => _OTPDisplayState();

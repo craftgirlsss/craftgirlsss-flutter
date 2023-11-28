@@ -1,3 +1,5 @@
+import 'package:craftgirlsss/src/helpers/globalvariable/variablehelper.dart'
+    as vars;
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/popup/alertberhasil/alertberhasil.dart';
@@ -5,8 +7,6 @@ import 'package:craftgirlsss/src/view-models/popup/alertgagal/alertgagal.dart';
 import 'package:craftgirlsss/src/view-models/popup/alerttidaktau/alerttidaktau.dart';
 import 'package:craftgirlsss/src/view-models/textfields/textfieldv2.dart';
 import 'package:flutter/material.dart';
-import 'package:craftgirlsss/src/helpers/globalvariable/variablehelper.dart'
-    as vars;
 import 'package:get/get.dart';
 
 class EditprofileName extends StatefulWidget {
@@ -68,7 +68,9 @@ class _EditprofileNameState extends State<EditprofileName> {
                     });
                   } catch (e) {
                     // print(e);
-                    kAlertGagal(context, title: "Gagal mengupdate nama");
+                    Future.delayed(Duration.zero, () {
+                      kAlertGagal(context, title: "Gagal mengupdate nama");
+                    });
                   }
                 }
               },

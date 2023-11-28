@@ -70,7 +70,9 @@ class _EditNamaTokoState extends State<EditNamaToko> {
                       });
                     } catch (e) {
                       // print(e);
+                      Future.delayed(Duration.zero, (){
                       kAlertGagal(context, title: "Gagal mengupdate nama");
+                      });
                     }
                   }
                 },

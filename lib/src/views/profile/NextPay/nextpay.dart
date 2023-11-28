@@ -3,7 +3,7 @@ import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screen_lock/flutter_screen_lock.dart';
+// import 'package:flutter_screen_lock/flutter_screen_lock.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'nextpayverify.dart';
@@ -16,7 +16,7 @@ class NextPay extends StatefulWidget {
 }
 
 class _NextPayState extends State<NextPay> {
-  InputController controller = InputController();
+  // InputController controller = InputController();
   ProfileController profileController = Get.put(ProfileController());
   @override
   Widget build(BuildContext context) {

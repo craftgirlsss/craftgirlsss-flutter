@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:craftgirlsss/src/view-models/containers/cardproduct/cardroductflashsale.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class FlashSaleState extends State<FlashSale> {
   bool countDown = true;
   bool countDown1 = true;
 
-  Future<bool> _onWillPop() async {
+  Future<bool> onWillPop() async {
     final isRunning = timer == null ? false : timer!.isActive;
     if (isRunning) {
       timer?.cancel();
@@ -104,8 +105,11 @@ class FlashSaleState extends State<FlashSale> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _onWillPop,
+    return PopScope(
+      canPop: true,
+      onPopInvoked: (value) {
+        onWillPop();
+      },
       child: Container(
         padding: const EdgeInsets.all(5),
         width: MediaQuery.of(context).size.width,

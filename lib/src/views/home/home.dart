@@ -3,7 +3,7 @@ import 'package:craftgirlsss/src/view-models/containers/cardproduct/cardproductv
 import 'package:craftgirlsss/src/view-models/containers/container-icons/containericons.dart';
 import 'package:craftgirlsss/src/view-models/containers/containersnextpay/containernextpay.dart';
 // import 'package:craftgirlsss/src/view-models/containers/flashsale/flashsale.dart';
-import 'package:craftgirlsss/src/view-models/containers/footer/footer.dart';
+// import 'package:craftgirlsss/src/view-models/containers/footer/footer.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -192,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                                       activeColor: Colors.red,
                                       color: Colors.grey.shade300),
                                   dotsCount: listItemStaredImages.length,
-                                  position: indexImage.toDouble(),
+                                  position: indexImage,
                                 ),
                               ),
                             ],
@@ -296,6 +296,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   const SizedBox(width: 10),
                                   Container(
+                                    color: Colors.transparent,
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,

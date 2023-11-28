@@ -4,8 +4,7 @@ import 'package:photo_view/photo_view.dart';
 class ImageViewer extends StatelessWidget {
   final bool? networkImage;
   final String urlImage;
-  const ImageViewer({Key? key, required this.urlImage, this.networkImage})
-      : super(key: key);
+  const ImageViewer({super.key, required this.urlImage, this.networkImage});
 
   @override
   Widget build(BuildContext context) {

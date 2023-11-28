@@ -5,7 +5,7 @@ import 'package:craftgirlsss/src/view-models/buttons/elevatedbuttons.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/views/profile/NextPay/nextpaydashboard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+// import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
 class NextPayVerifyPage extends StatefulWidget {
@@ -34,20 +34,20 @@ class _NextPayVerifyPageState extends State<NextPayVerifyPage> {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-            OtpTextField(
-              numberOfFields: 6,
-              borderColor: const Color(0xFF512DA8),
-              showFieldAsBox: true,
-              onCodeChanged: (String code) {},
-              onSubmit: (String verificationCode) {
-                if (verificationCode.length == 6) {
-                  onComplete.value = true;
-                  otp.value = verificationCode;
-                } else {
-                  onComplete.value = false;
-                }
-              }, // end onSubmit
-            ),
+            // OtpTextField(
+            //   numberOfFields: 6,
+            //   borderColor: const Color(0xFF512DA8),
+            //   showFieldAsBox: true,
+            //   onCodeChanged: (String code) {},
+            //   onSubmit: (String verificationCode) {
+            //     if (verificationCode.length == 6) {
+            //       onComplete.value = true;
+            //       otp.value = verificationCode;
+            //     } else {
+            //       onComplete.value = false;
+            //     }
+            //   }, // end onSubmit
+            // ),
             const SizedBox(height: 10),
             Text(
               'Atur PIN NextPay anda untuk menjaga keamanan saldo anda, pastikan atur pin yang sulit untuk ditebak',

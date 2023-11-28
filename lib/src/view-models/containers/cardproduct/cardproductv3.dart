@@ -37,6 +37,7 @@ Widget cardProductV3(context,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
+            color: Colors.transparent,
             child: Column(
               children: [
                 Stack(
@@ -51,6 +52,7 @@ Widget cardProductV3(context,
                     ),
                     discount == true
                         ? Container(
+                          color: Colors.transparent,
                             child: Positioned(
                               top: 0,
                               right: 0,
@@ -76,6 +78,7 @@ Widget cardProductV3(context,
                         : Container(),
                     gratisOngkir == true
                         ? Container(
+                          color: Colors.transparent,
                             child: Positioned(
                               bottom: 0,
                               left: 0,
@@ -123,7 +126,7 @@ Widget cardProductV3(context,
                           : const SizedBox(height: 0, width: 0),
                       theBestProduct == true
                           ? const SizedBox(width: 5)
-                          : Container(height: 0, width: 0),
+                          : const SizedBox(height: 0, width: 0),
                       Flexible(
                         child: Text(
                           productName,
@@ -215,6 +218,7 @@ Widget cardProductV3(context,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
+                  color: Colors.transparent,
                   child: Row(
                     children: [
                       Text(

@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:flutter/scheduler.dart';
+// import 'package:flutter/scheduler.dart';
 
 Future<void> main() async {
   HttpOverrides.global = CertificateNetwork();
   WidgetsFlutterBinding.ensureInitialized();
-  SchedulerBinding.instance.window.platformBrightness == Brightness.light;
+  // SchedulerBinding.instance.window.platformBrightness == Brightness.light;
   runApp(const MyApp());
   await Supabase.initialize(
     url: 'https://zhfjjcaxzhmrexhkzest.supabase.co',

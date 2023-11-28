@@ -93,7 +93,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       activeColor: Colors.red,
                       color: Colors.white),
                   dotsCount: imageSample.length,
-                  position: currentIndex.toDouble(),
+                  position: currentIndex,
                 ),
               ),
             ],

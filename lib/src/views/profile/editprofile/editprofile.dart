@@ -1,8 +1,9 @@
-import 'package:craftgirlsss/src/helpers/globalvariable/variablehelper.dart'
-    as vars;
 import 'dart:io';
+
 import 'package:craftgirlsss/src/controllers/GetxController/profile_controller.dart';
 import 'package:craftgirlsss/src/helpers/getrandom/getrandomstring.dart';
+import 'package:craftgirlsss/src/helpers/globalvariable/variablehelper.dart'
+    as vars;
 import 'package:craftgirlsss/src/view-models/appbars/appbar.dart';
 import 'package:craftgirlsss/src/view-models/listtiles/listtileprofile.dart';
 import 'package:craftgirlsss/src/view-models/loadings/loading.dart';
@@ -16,6 +17,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
 import 'editemail.dart';
 import 'editnamatoko.dart';
 import 'editprofilename.dart';
@@ -234,7 +236,10 @@ class _EditProfileState extends State<EditProfile> {
                   });
                 } catch (e) {
                   // print(e);
-                  kAlertGagal(context, title: "Gagal mengupdate jenis kelamin");
+                  Future.delayed(Duration.zero, () {
+                    kAlertGagal(context,
+                        title: "Gagal mengupdate jenis kelamin");
+                  });
                 }
               });
               Get.back();

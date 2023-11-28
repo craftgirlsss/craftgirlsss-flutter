@@ -36,7 +36,7 @@ class _JasaKurirPageState extends State<JasaKurirPage> {
       } else if (kurirController.modelsKurir[i].status == "Next Day") {
         nextdayKurir.add(kurirController.modelsKurir[i].name);
       } else {
-        print("error");
+      debugPrint("error");
       }
     }
     super.initState();
@@ -207,7 +207,7 @@ class _ListTilesKurirState extends State<ListTilesKurir> {
                 value: useKurir.value,
                 onChanged: (value) {
                   useKurir.value = !useKurir.value;
-                  print("index ${widget.index} = $value");
+                  debugPrint("index ${widget.index} = $value");
                 },
                 activeColor: Colors.green.shade700,
               ),

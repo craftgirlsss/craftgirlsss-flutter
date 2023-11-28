@@ -162,13 +162,14 @@ Widget cardProductV2(context,
   );
 }
 
+@immutable
 class CardProductForMyCart extends StatefulWidget {
-  String? productName, urlImage, ukuran, warna;
-  Function()? onPressed;
-  int? index, productPrice;
-  CardProductForMyCart(
+  final String? productName, urlImage, ukuran, warna;
+  final Function()? onPressed;
+  final int? index, productPrice;
+  const CardProductForMyCart(
       {super.key,
-      required this.productName,
+      this.productName,
       this.onPressed,
       this.urlImage,
       this.index,

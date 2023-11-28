@@ -105,7 +105,7 @@ class _SearchPageState extends State<SearchPage> {
                         activeColor: Colors.red,
                         color: Colors.white),
                     dotsCount: imageSample.length,
-                    position: currentIndex.toDouble(),
+                    position: currentIndex,
                   ),
                 ),
               ],
