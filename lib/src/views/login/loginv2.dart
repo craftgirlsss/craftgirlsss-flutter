@@ -1,4 +1,5 @@
 import 'dart:ui';
+
 import 'package:craftgirlsss/src/controllers/GetxController/login_controller.dart';
 import 'package:craftgirlsss/src/view-models/fontstyles/title.dart';
 import 'package:craftgirlsss/src/view-models/popup/alertgagal/alertgagal.dart';
@@ -186,15 +187,15 @@ class _LoginPageV2State extends State<LoginPageV2> {
                       )),
                 ],
               ),
-              Center(
-                child: Text(
-                  'Atau Masuk Dengan',
-                  style: sfPro(
-                      color: Colors.black54,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+              // Center(
+              //   child: Text(
+              //     'Atau Masuk Dengan',
+              //     style: sfPro(
+              //         color: Colors.black54,
+              //         fontSize: 14,
+              //         fontWeight: FontWeight.bold),
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.only(
                     left: 20, right: 20, bottom: 50, top: 20),
